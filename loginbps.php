@@ -37,7 +37,7 @@
   ======================================================== -->
 </head>
 
-<body class="login-body" >
+<body class="login-body">
 
   <main>
     <div class="container">
@@ -45,7 +45,7 @@
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center" >
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
@@ -57,13 +57,13 @@
               <div class="card mb-3">
 
                 <div class="card-body">
+                  <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+                    <div class="pt-4 pb-2">
+                      <h5 class="card-title text-center pb-0 fs-4">Masuk </h5>
+                      <p class="text-center small">Masukkan username & password untuk login</p>
+                    </div>
 
-                  <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Masuk </h5>
-                    <p class="text-center small">Masukkan username & password untuk login</p>
-                  </div>
-
-                  <div class="col-12">
+                    <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
                         <input type="text" name="username" class="form-control" id="username" required>
@@ -79,25 +79,69 @@
 
                     <div class="col-12">
                     </div>
-                    </div>
-                            <input type="submit" value="Login" class="btn btn-dark-outline" style="background-color:#e5e90a;">
-                  </form>
-
                 </div>
-              </div>
+                <input type="submit" value="Login" class="btn btn-dark-outline" style="background-color:#e5e90a;">
+                </form>
 
-              <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-              </div>
+                <?php
+                //Fungsi untuk mencegah inputan karakter yang tidak sesuai
 
+                function input($username)
+                {
+                  $username = trim($username);
+                  $username = stripslashes($username);
+                  $username = htmlspecialchars($username);
+                  return $username;
+                }
+                //Cek apakah ada kiriman form dari method post
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+                  session_start();
+                  include "config.php";
+                  $username = input($_POST["username"]);
+                  $password = input(md5($_POST["password"]));
+
+                  $sql = "select * from pengguna where id_pengguna='" . $username . "' and password='" . $password . "' limit 1";
+                  $hasil = pg_query($conn, $sql);
+                  $jumlah = pg_num_rows($hasil);
+
+                  if ($jumlah > 0) {
+                    $row = pg_fetch_assoc($hasil);
+                    $_SESSION["id_pemgguna"] = $row["username"];
+                    $_SESSION["password"] = $row["password"];
+                    $_SESSION["role"] = $row["role"];
+
+
+                    if ($_SESSION["role"] = $row["role"] == 1) {
+                      header("Location:inventoris/index_inventori.php");
+                    } else {
+                      header("Location:pegawai/dashboard.php");
+                    }
+                  } else {
+                    echo "<div class='alert alert-danger'>
+				<strong>Error!</strong> Username dan password salah. 
+			  </div>";
+                  }
+                }
+
+                ?>
+
+
+              </div>
             </div>
+
+            <div class="credits">
+              <!-- All the links in the footer should remain intact. -->
+              <!-- You can delete the links only if you purchased the pro version. -->
+              <!-- Licensing information: https://bootstrapmade.com/license/ -->
+              <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+            </div>
+
           </div>
         </div>
+    </div>
 
-      </section>
+    </section>
 
     </div>
   </main><!-- End #main -->
