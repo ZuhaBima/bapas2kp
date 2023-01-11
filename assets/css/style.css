@@ -18,6 +18,12 @@ body {
   color: #000000;
 }
 
+.login-body {
+  font-family: "Open Sans", sans-serif;
+  background: #012970;
+  color: #000000;
+}
+
 a {
   color: #2d8ae0;
   text-decoration: none;
