@@ -1,6 +1,6 @@
 <?php
 session_start();
-session_destroy();
+if ($_SESSION['status'] == 'login')
+    session_destroy();
 
 header('Location:loginbps.php');
-?>

@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
+  <?php
+session_start();
+if ($_SESSION['status'] == 'login') { ?>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>BKA CMB (Pegawai) - Bapas Pekanbaru</title>
+  <title>BKD AR (Pegawai) - Bapas Pekanbaru</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -65,7 +68,7 @@
           </a>      
         </li><!-- End Search Icon-->
 
-        <a class="btn btn-outline-light" style="margin-right: 10px" href="#">Logout</a>
+        <a class="btn btn-outline-light" style="margin-right: 10px" href="../logout.php">Logout</a>
   </header><!-- End Header -->
   
   
@@ -83,61 +86,61 @@
       </a>
 </li><!-- End Dashboard Nav -->
   
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="../pegawai/bka-asimilasi rumah.html">
-                <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
-              </a>
-            </li>
-            <li>
-              <a href="../pegawai/bka-cuti bersyarat.html">
-                <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
-              </a>
-            </li>
-            <li>
-              <a href="../pegawai/bka-cuti menjelang bebas.html">
-                <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
-              </a>
-            </li>
-            <li>
-              <a href="../pegawai/bka-pembebasan bersyarat.html">
-                <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
-              </a>
-            </li>
-          </ul>
-        </li><!-- End Components Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-journal-text"></i><span>BKD</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="../pegawai/bkd-asimilasi rumah.html">
-                <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
-              </a>
-            </li>
-            <li>
-              <a href="../pegawai/bkd-cuti bersyarat.html">
-                <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
-              </a>
-            </li>
-            <li>
-              <a href="../pegawai/bkd-cuti menjelang bebas.html">
-                <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
-              </a>
-            </li>
-            <li>
-              <a href="../pegawai/bkd-pembebasan bersyarat.html">
-                <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
-              </a>
-            </li>
-          </ul>
-        </li><!-- End Forms Nav -->
+<li class="nav-item">
+  <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+    <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
+  </a>
+  <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+      <a href="../pegawai/bka-asimilasi rumah.php">
+        <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
+      </a>
+    </li>
+    <li>
+      <a href="../pegawai/bka-cuti bersyarat.php">
+        <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
+      </a>
+    </li>
+    <li>
+      <a href="../pegawai/bka-cuti menjelang bebas.php">
+        <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
+      </a>
+    </li>
+    <li>
+      <a href="../pegawai/bka-pembebasan bersyarat.php">
+        <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
+      </a>
+    </li>
+  </ul>
+</li><!-- End Components Nav -->
+
+<li class="nav-item">
+  <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+    <i class="bi bi-journal-text"></i><span>BKD</span><i class="bi bi-chevron-down ms-auto"></i>
+  </a>
+  <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+      <a href="../pegawai/bkd-asimilasi rumah.php">
+        <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
+      </a>
+    </li>
+    <li>
+      <a href="../pegawai/bkd-cuti bersyarat.php">
+        <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
+      </a>
+    </li>
+    <li>
+      <a href="../pegawai/bkd-cuti menjelang bebas.php">
+        <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
+      </a>
+    </li>
+    <li>
+      <a href="../pegawai/bkd-pembebasan bersyarat.php">
+        <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
+      </a>
+    </li>
+  </ul>
+</li><!-- End Forms Nav -->
     
         <li class="nav-heading">Pages</li>
   
@@ -160,12 +163,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Cuti Menjelang Bebas</h1>
+      <h1>Asimilasi Rumah</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../pegawai/dashboard.html">Home</a></li>
-          <li class="breadcrumb-item">BKA</li>
-          <li class="breadcrumb-item"><a href="../pegawai/bka-cuti menjelang bebas.html">Cuti Menjelang Bebas</a></li>
+          <li class="breadcrumb-item">BKD</li>
+          <li class="breadcrumb-item"><a href="../pegawai/bkd-asimilasi rumah.html">Asimilasi Rumah</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -202,5 +205,7 @@
   <script src="../assets/js/main.js"></script>
 
 </body>
+<?php } else {echo 'maaf Anda belum login.';}
+?>
 
 </html>
