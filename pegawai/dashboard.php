@@ -1,3 +1,7 @@
+<?php
+session_start();
+if ($_SESSION['status'] == 'login') { ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,7 +69,9 @@
           </a>
         </li><!-- End Search Icon-->
 
-        <a class="btn btn-outline-light" style="margin-right: 10px" href="#">Logout</a>
+        <a class="btn btn-outline-light" style="margin-right: 10px" href="logout.php">Logout</a>
+    
+
   </header><!-- End Header -->
 
 
@@ -203,3 +209,6 @@
 </body>
 
 </html>
+
+<?php } else {echo 'maaf Anda belum login.';}
+?>
