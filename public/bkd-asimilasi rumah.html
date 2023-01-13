@@ -42,34 +42,22 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../public/Dashboard.html" class="logo d-flex align-items-center">
+<a href="../public/Dashboard.html" class="logo d-flex align-items-center">
         <img src="../assets/img/bapas.png" alt="">
         <img src="../assets/img/pemasyarakatan.png" alt="">
         <span class="d-none d-lg-block">Bapas Pekanbaru</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
-  
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
+
   
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
   
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
-            <i class="bi bi-search"></i>
-          </a>
-        </li><!-- End Search Icon-->
-
-       
-        <a class="btn btn-outline-light" style="margin-right: 10px" href="loginbps.php">Login</a>
+             
+    <a class="btn btn-outline-light" style="margin-right: 10px" href="loginbps.php">Login</a>
   </header><!-- End Header -->
-  
+
   
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
@@ -171,23 +159,64 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
-
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Tabel Transaksi</h5>
-              
-            </div>
-              
-           
-            </div>
-          </div>
+  
+  
+    <div class="mainpage">
+      <div class="container">
+  
+          <div class="row height d-flex justify-content-center align-items-center">
+            <div class="col-md-6">
+              <div class="form">
+                <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control form-input" placeholder="Search anything...">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                <span class="left-pan"><i class="fa fa"></i></span>
+                </form>
+              </div>
+            </div>        
         </div>
       </div>
-    </section>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Lapas Asal</th>
+            <th scope="col">Litmas</th>
+            <th scope="col">PK</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Dewi Herlina Binti Afrizal</td>
+            <td>Pekanbaru</td>
+            <td>Cuti Menjelang Bebas</td>
+            <td>Syamsu</td>
+            <td><span class="badge rounded-pill bg-success">Sudah Dikirim</span></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Putri Annisa Binti Putra</td>
+            <td>Pekanbaru</td>
+            <td>Cuti Menjelang Bebas</td>
+            <td>Syamsu</td>
+            <td><span class="badge rounded-pill bg-danger">Ditolak</span></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Putri Citra Kirana</td>
+            <td>Pekanbaru</td>
+            <td>Cuti Menjelang Bebas</td>
+            <td>Syamsu</td>
+            <td><span class="badge rounded-pill bg-warning">Sedang Diproses</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </main> <!-- End #main -->
 
   </main><!-- End #main -->
 
