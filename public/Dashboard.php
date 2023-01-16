@@ -5,13 +5,15 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>BKD CMB - Bapas Pekanbaru</title>
+  <title>Dashboard - Bapas Pekanbaru</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="../assets/img/bapas.png" rel="icon">
+  <link href="../assets/img/pemasyarakatan.png" rel="icon">
   <link href="../assets/img/bapas.png" rel="Logoo">
+  
   
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -55,10 +57,8 @@
       <ul class="d-flex align-items-center">
   
              
-    <a class="btn btn-outline-light" style="margin-right: 10px" href="loginbps.php">Login</a>
+    <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Login</a>
   </header><!-- End Header -->
-  
-  
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
   
@@ -67,11 +67,11 @@
         <li class="nav-heading">Main Menu</li>
         </li><!-- End Profile Page Nav -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="../public/Dashboard.html">
+          <a class="nav-link " href="../public/Dashboard.html">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
-    </li><!-- End Dashboard Nav -->
+        </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -94,7 +94,7 @@
               </a>
             </li>
             <li>
-              <a href="../public/bkd-pembebasan bersyarat.html">
+              <a href="../public/bka-pembebasan bersyarat.html">
                 <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
               </a>
             </li>
@@ -107,22 +107,22 @@
           </a>
           <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
-              <a href="../public/bkd-asimilasi rumah.html">
+              <a href="../public/bkd-asimilasi rumah.php">
                 <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
               </a>
             </li>
             <li>
-              <a href="../public/bkd-cuti bersyarat.html">
+              <a href="../public/bkd-cuti bersyarat.php">
                 <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
               </a>
             </li>
             <li>
-              <a href="../public/bkd-cuti menjelang bebas.html">
+              <a href="../public/bkd-cuti menjelang bebas.php">
                 <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
               </a>
             </li>
             <li>
-              <a href="../public/bkd-pembebasan bersyarat.html">
+              <a href="../public/bkd-pembebasan bersyarat.php">
                 <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
               </a>
             </li>
@@ -150,71 +150,24 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Cuti Menjelang Bebas</h1>
+      <h1>Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../public/Dashboard.html">Home</a></li>
-          <li class="breadcrumb-item">BKD</li>
-          <li class="breadcrumb-item"><a href="../public/bkd-cuti menjelang bebas.html">Cuti Menjelang Bebas</a></li>
+          <li class="breadcrumb-item">Dashboard</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+
     <div class="mainpage">
-      <div class="container">
-  
-          <div class="row height d-flex justify-content-center align-items-center">
-            <div class="col-md-6">
-              <div class="form">
-                <form class="search-form d-flex align-items-center" method="POST" action="#">
-                <i class="fa fa-search"></i>
-                <input type="text" class="form-control form-input" placeholder="Search anything...">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-                <span class="left-pan"><i class="fa fa"></i></span>
-                </form>
-              </div>
-            </div>        
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Jumlah Total Litmas BKD</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
         </div>
       </div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">Nama</th>
-            <th scope="col">Lapas Asal</th>
-            <th scope="col">Litmas</th>
-            <th scope="col">PK</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Dewi Herlina Binti Afrizal</td>
-            <td>Pekanbaru</td>
-            <td>Cuti Menjelang Bebas</td>
-            <td>Syamsu</td>
-            <td><span class="badge rounded-pill bg-success">Sudah Dikirim</span></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Putri Annisa Binti Putra</td>
-            <td>Pekanbaru</td>
-            <td>Cuti Menjelang Bebas</td>
-            <td>Syamsu</td>
-            <td><span class="badge rounded-pill bg-danger">Ditolak</span></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Putri Citra Kirana</td>
-            <td>Pekanbaru</td>
-            <td>Cuti Menjelang Bebas</td>
-            <td>Syamsu</td>
-            <td><span class="badge rounded-pill bg-warning">Sedang Diproses</span></td>
-          </tr>
-        </tbody>
-      </table>
     </div>
-    </main> <!-- End #main -->
+  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">

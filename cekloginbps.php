@@ -33,13 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($_SESSION['role'] = $row['role'] == 1) {
             header('Location:inventoris/index_inventori.php');
-        } else {
+        } else if ($_SESSION['role'] = $row['role'] == 2) {
             header('Location:pegawai/dashboard.php');
         }
     } else {
         echo "<div class='alert alert-danger'>
-				<strong>Error!</strong> Username dan password salah. 
-			  </div>";
+        <strong>Error!</strong> Username dan password salah. 
+      </div>";
     }
 }
-?>
