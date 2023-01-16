@@ -59,7 +59,7 @@ include "../config.php";
       <ul class="d-flex align-items-center">
 
 
-        <a class="btn btn-outline-light" style="margin-right: 10px" href="loginbps.php">Login</a>
+        <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Login</a>
   </header><!-- End Header -->
 
 
@@ -111,22 +111,22 @@ include "../config.php";
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../public/bkd-asimilasi rumah.html">
+            <a href="../public/bkd-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
           </li>
           <li>
-            <a href="../public/bkd-cuti bersyarat.html">
+            <a href="../public/bkd-cuti bersyarat.php">
               <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
             </a>
           </li>
           <li>
-            <a href="../public/bkd-cuti menjelang bebas.html">
+            <a href="../public/bkd-cuti menjelang bebas.php">
               <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
             </a>
           </li>
           <li>
-            <a href="../public/bkd-pembebasan bersyarat.html">
+            <a href="../public/bkd-pembebasan bersyarat.php">
               <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
             </a>
           </li>

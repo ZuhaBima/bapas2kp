@@ -9,7 +9,7 @@ include "../config.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>BKD PB - Bapas Pekanbaru</title>
+  <title>Dashboard - Bapas Pekanbaru</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -61,6 +61,7 @@ include "../config.php";
 
         <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Login</a>
   </header><!-- End Header -->
+
 
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
@@ -153,15 +154,16 @@ include "../config.php";
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Pembebasan Bersyarat</h1>
+      <h1>Asimilasi Rumah</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../public/Dashboard.html">Home</a></li>
           <li class="breadcrumb-item">BKD</li>
-          <li class="breadcrumb-item"><a href="../public/bkd-pembebasan bersyarat.html">Pembebasan Bersyarat</a></li>
+          <li class="breadcrumb-item"><a href="../public/bkd-asimilasi rumah.html">Asimilasi Rumah</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+
 
     <div class="mainpage">
       <div class="container">
@@ -193,10 +195,10 @@ include "../config.php";
         <tbody>
           <?php
 
-          $result = pg_query($conn, "SELECT * FROM litmas  WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2");
-          $result2 = pg_query($conn, "SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2");
-          $result3 = pg_query($conn, "SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2");
-          $result4 = pg_query($conn, "SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2");
+          $result = pg_query($conn, "SELECT * FROM litmas  WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2");
+          $result2 = pg_query($conn, "SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2");
+          $result3 = pg_query($conn, "SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2");
+          $result4 = pg_query($conn, "SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2");
 
 
           while ($row = pg_fetch_array($result)) {
@@ -223,7 +225,10 @@ include "../config.php";
         </tbody>
       </table>
     </div>
-  </main>
+  </main> <!-- End #main -->
+
+  </main><!-- End #main -->
+
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
