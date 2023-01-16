@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>BKD CB (ADMIN)- Bapas Pekanbaru</title>
+  <title>BKD DataklienPB (ADMIN)- Bapas Pekanbaru</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -127,12 +127,13 @@
             </a>
           </li>
         </ul>
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="../adminbps/userbapas.html">
-            <i class="bi bi-people"></i>
-            <span>User</span>
-          </a>
-      </li><!-- End Forms Nav -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/userbapas.html">
+          <i class="bi bi-people"></i>
+          <span>User</span>
+        </a>
+  </li><!-- End Forms Nav -->
 
   </aside><!-- End Sidebar-->
 
@@ -144,68 +145,106 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../adminbps/dashboard.html">Home</a></li>
           <li class="breadcrumb-item">BKD</li>
-          <li class="breadcrumb-item"><a href="../adminbps/bkd-cuti bersyarat.html">Cuti Bersyarat</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/bkd-cuti menjelang bebas.html">Cuti Menjelang Bebas</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/bkd-datakliencmb.html">Tambah Data Klien</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
     <div class="mainpage">
       <div class="container">
+
+    </div>
+    <!-- Button trigger modal -->
+    <section class="section">
+        <div class="row">
+          <div class="col-lg-12">
   
-          <div class="row height d-flex justify-content-center align-items-center">
-            <div class="col-md-6">
-              <div class="form">
-                <form class="search-form d-flex align-items-center" method="POST" action="#">
-                <i class="fa fa-search"></i>
-                <input type="text" class="form-control form-input" placeholder="Search anything...">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-                <span class="left-pan"><i class="fa fa"></i></span>
-                </form>
-              </div>
-            </div>        
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Silahkan Masukkan Data Klien Baru</h5>
+  
+                <!-- General Form Elements -->
+                <form>
+                  <div class="row mb-6">
+                    <label for="inputText" class="col-sm-2 col-form-label">Nama Klien</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row mb-6">
+                    <label class="col-sm-2 col-form-label">Lapas Asal</label>
+                    <div class="col-sm-10">
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Pilih</option>
+                        <option value="1">Lapas Kelas II Pekanbaru</option>
+                        <option value="2">Lapas Kelas III Pekanbaru</option>
+                      </select>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row mb-6">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Nama PK</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row mb-6">
+                    <label class="col-sm-2 col-form-label">Jenis Kasus</label>
+                    <div class="col-sm-10">
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Pilih</option>
+                        <option value="1">Narkotika</option>
+                        <option value="2">Pembunuhan</option>
+                        <option value="2">Pencurian</option>
+                      </select>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row mb-6">
+                    <label class="col-sm-2 col-form-label">Status Klien</label>
+                    <div class="col-sm-10">
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Pilih</option>
+                        <option value="1">Diterima</option>
+                        <option value="2">Ditolak</option>
+                      </select>
+                    </div>
+                  </div>
+                </form><!-- End General Form Elements -->
+          </div>
         </div>
-      </div>
-      <br>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">Nama</th>
-            <th scope="col">Lapas Asal</th>
-            <th scope="col">PK</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Dewi Herlina Binti Afrizal</td>
-            <td>Pekanbaru</td>
-            <td>Syamsu</td>
-            <td><a class="btn btn-primary" href="#" role="button">Ubah Status</a></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Putri Annisa Binti Putra</td>
-            <td>Pekanbaru</td>
-            <td>Syamsu</td>
-            <td><a class="btn btn-primary" href="#" role="button">Ubah Status</a></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Putri Citra Kirana</td>
-            <td>Pekanbaru</td>
-            <td>Syamsu</td>
-            <td><a class="btn btn-primary" href="#" role="button">Ubah Status</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      </section>
 
+    <!-- Button trigger modal -->
     <div class="mx-auto" style="width: 200px;">
-      <a class="btn btn-primary" href="../adminbps/bkd-datakliencb.html" role="button">Tambah Data Klien</a>
-    </div>
-  </main><!-- End #main -->
-
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Tambah
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                apakah anda yakin ingin menambahkan data klien ini?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                <button type="button" class="btn btn-primary">Iya</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+          </main><!-- End #main -->
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
@@ -221,6 +260,7 @@
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
