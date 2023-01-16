@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<?php
-include "../config.php";
-
-?>
+<?php include '../config.php'; ?>
 <html lang="en">
 
 <head>
@@ -83,22 +80,22 @@ include "../config.php";
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../public/bka-asimilasi rumah.html">
+            <a href="../public/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
           </li>
           <li>
-            <a href="../public/bka-cuti bersyarat.html">
+            <a href="../public/bka-cuti bersyarat.php">
               <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
             </a>
           </li>
           <li>
-            <a href="../public/bka-cuti menjelang bebas.html">
+            <a href="../public/bka-cuti menjelang bebas.php">
               <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
             </a>
           </li>
           <li>
-            <a href="../public/bka-pembebasan bersyarat.html">
+            <a href="../public/bka-pembebasan bersyarat.php">
               <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
             </a>
           </li>
@@ -193,20 +190,29 @@ include "../config.php";
         </thead>
         <tbody>
           <?php
-
-
-
-          $result = pg_query($conn, "SELECT * FROM litmas  WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2");
-          $result2 = pg_query($conn, "SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2");
-          $result3 = pg_query($conn, "SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2");
-          $result4 = pg_query($conn, "SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2");
-
+          $result = pg_query(
+              $conn,
+              'SELECT * FROM litmas  WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
+          );
+          $result2 = pg_query(
+              $conn,
+              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
+          );
+          $result3 = pg_query(
+              $conn,
+              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
+          );
+          $result4 = pg_query(
+              $conn,
+              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
+          );
 
           while ($row = pg_fetch_array($result)) {
-            $row2 = pg_fetch_array($result2);
-            $row3 = pg_fetch_array($result3);
-            $row4 = pg_fetch_array($result4);
-          ?>
+
+              $row2 = pg_fetch_array($result2);
+              $row3 = pg_fetch_array($result3);
+              $row4 = pg_fetch_array($result4);
+              ?>
 
             <tr>
               <td><?= $row['id_litmas'] ?></td>
