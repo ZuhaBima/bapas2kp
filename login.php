@@ -86,6 +86,8 @@
                             <input type="submit" value="Login" class="btn btn-primary">
                   </form>
 
+                  
+
                   <?php
 		 //Fungsi untuk mencegah inputan karakter yang tidak sesuai
 		 
