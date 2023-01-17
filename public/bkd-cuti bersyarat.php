@@ -193,32 +193,33 @@ include "../config.php";
         </thead>
         <tbody>
           <?php
+ $result = pg_query($conn, "SELECT * FROM litmas  WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2");
+ $result2 = pg_query($conn, "SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2");
+ $result3 = pg_query($conn, "SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2");
+ $result4 = pg_query($conn, "SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2");
+ $result5 = pg_query($conn, "SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2");
 
 
+ while ($row = pg_fetch_array($result)) {
+   $row2 = pg_fetch_array($result2);
+   $row3 = pg_fetch_array($result3);
+   $row4 = pg_fetch_array($result4);
+   $row5 = pg_fetch_array($result5);
+ ?>
 
-          $result = pg_query($conn, "SELECT * FROM litmas  WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2");
-          $result2 = pg_query($conn, "SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2");
-          $result3 = pg_query($conn, "SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2");
-          $result4 = pg_query($conn, "SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2");
+   <tr>
+     <td><?= $row['id_litmas'] ?></td>
+     <td><?= $row['nama_klien'] ?></td>
+     <td><?= $row3['nama_lapas'] ?></td>
+     <td><?= $row4['jenis_kasus'] ?></td>
+     <td><?= $row2['nama_pegawai'] ?></td>
+     <td><span class="badge rounded-pill bg-primary"><?= $row5['nama_status_litmas'] ?></span></td>
 
 
-          while ($row = pg_fetch_array($result)) {
-            $row2 = pg_fetch_array($result2);
-            $row3 = pg_fetch_array($result3);
-            $row4 = pg_fetch_array($result4);
-          ?>
+     <td align="center">
 
-            <tr>
-              <td><?= $row['id_litmas'] ?></td>
-              <td><?= $row['nama_klien'] ?></td>
-              <td><?= $row3['nama_lapas'] ?></td>
-              <td><?= $row4['jenis_kasus'] ?></td>
-              <td><?= $row2['nama_pegawai'] ?></td>
-              <td><?= $row['id_status'] ?></td>
-              <td align="center">
-
-              </td>
-            </tr>
+     </td>
+   </tr>
           <?php
           }
           ?>
