@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<?php
-include "../config.php";
-
-?>
+<?php include '../config.php'; ?>
 <html lang="en">
 
 <head>
@@ -83,22 +80,22 @@ include "../config.php";
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../public/bka-asimilasi rumah.html">
+            <a href="../public/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
           </li>
           <li>
-            <a href="../public/bka-cuti bersyarat.html">
+            <a href="../public/bka-cuti bersyarat.php">
               <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
             </a>
           </li>
           <li>
-            <a href="../public/bka-cuti menjelang bebas.html">
+            <a href="../public/bka-cuti menjelang bebas.php">
               <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
             </a>
           </li>
           <li>
-            <a href="../public/bka-pembebasan bersyarat.html">
+            <a href="../public/bka-pembebasan bersyarat.php">
               <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
             </a>
           </li>

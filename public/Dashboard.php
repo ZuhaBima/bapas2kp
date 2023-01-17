@@ -160,8 +160,11 @@
     </div><!-- End Page Title -->
 
     <div class="mainpage">
-      <div class="container">
-  
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Jumlah Total Litmas BKD</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        </div>
       </div>
     </div>
   </main><!-- End #main -->
