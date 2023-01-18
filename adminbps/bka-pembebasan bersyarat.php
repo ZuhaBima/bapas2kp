@@ -183,7 +183,7 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
+            <th scope="row">199291003121</th>
             <td>Dewi Herlina Binti Afrizal</td>
             <td>Pekanbaru</td>
             <td>Syamsu</td>
@@ -191,7 +191,7 @@
             <td><a class="btn btn-primary" href="../adminbps/bka-statuspb.html" role="button">Ubah Status</a></td>
           </tr>
           <tr>
-            <th scope="row">2</th>
+            <th scope="row">193901022212</th>
             <td>Putri Annisa Binti Putra</td>
             <td>Pekanbaru</td>
             <td>Syamsu</td>
@@ -199,7 +199,7 @@
             <td><a class="btn btn-primary" href="../adminbps/bka-statuspb.html" role="button">Ubah Status</a></td>
           </tr>
           <tr>
-            <th scope="row">3</th>
+            <th scope="row">193901022215</th>
             <td>Putri Citra Kirana</td>
             <td>Pekanbaru</td>
             <td>Syamsu</td>
