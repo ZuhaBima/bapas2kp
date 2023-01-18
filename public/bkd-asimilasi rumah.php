@@ -212,7 +212,15 @@
               <td><?= $row3['nama_lapas'] ?></td>
               <td><?= $row4['jenis_kasus'] ?></td>
               <td><?= $row2['nama_pegawai'] ?></td>
-              <td><span class="badge rounded-pill bg-primary"><?= $row5['nama_status_litmas'] ?></span></td>
+              <td>
+                <?php if ($row['id_status'] == 1) {
+                ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
+                <?php   } else if ($row['id_status'] == 2) {
+                ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
+                <?php   } else {
+                ?><span class="badge rounded-pill bg-danger">Ditolak</span>
+                <?php   } ?>
+              </td>
 
 
               <td align="center">
