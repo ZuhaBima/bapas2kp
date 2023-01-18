@@ -45,7 +45,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
   
   <div class="d-flex align-items-center justify-content-between">
-<a href="../public/Dashboard.html" class="logo d-flex align-items-center">
+<a href="../public/Dashboard.php" class="logo d-flex align-items-center">
       <img src="../assets/img/bapas.png" alt="">
       <img src="../assets/img/pemasyarakatan.png" alt="">
       <span class="d-none d-lg-block">Bapas Pekanbaru</span>
