@@ -219,8 +219,9 @@
               </td>
 
               <td>
+
                 <div class="con">
-                  <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
+                  <i class="bi bi-pencil-square bg-icon-primary " href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
                   <i class="bi bi-trash-fill bg-icon-danger" style="color: tomato;" href="#" role="button"></i>
                 </div>
               </td>
