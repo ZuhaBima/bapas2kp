@@ -147,9 +147,9 @@
       <h1>Cuti Menjelang Bebas</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../adminbps/dashboard.html">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
           <li class="breadcrumb-item">BKD</li>
-          <li class="breadcrumb-item"><a href="../adminbps/bkd-cuti menjelang bebas.html">Cuti Menjelang Bebas</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/bkd-cuti menjelang bebas.php">Cuti Menjelang Bebas</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -221,8 +221,8 @@
 
               <td>
                 <div class="con">
-                  <a class="btn btn-primary btn-sm" href="#" style="margin-bottom: 4px; " role="button">Ubah Data</a>
-                  <a class="btn btn-danger btn-sm" href="#" role="button">Hapus Data</a>
+                <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
+                  <i class="bi bi-trash-fill bg-icon-danger" style="color: tomato;" href="#" role="button"></i>
                 </div>
               </td>
             </tr>
