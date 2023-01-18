@@ -175,42 +175,81 @@ if ($_SESSION['status'] == 'login') { ?>
         <a class="btn btn-primary" href="../adminbps/bka-datakliencmb.php" role="button">+</a>
       </div>
       <br>
-      <table class="table table-bordered">
+      <table class="table">
         <thead>
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">Nama</th>
+          <tr align="center">
+            <th scope="col">Nomor Litmas</th>
+            <th scope="col">Nama Klien</th>
             <th scope="col">Lapas Asal</th>
-            <th scope="col">PK</th>
             <th scope="col">Kasus</th>
+            <th scope="col">PK</th>
             <th scope="col">Status</th>
+            <th scope="col">Edit</th>
+
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">199291003121</th>
-            <td>Dewi Herlina Binti Afrizal</td>
-            <td>Pekanbaru</td>
-            <td>Syamsu</td>
-            <td>Narkoba</td>
-            <td><a class="btn btn-primary" href="../adminbps/bka-statuscmb.php" role="button">Ubah Status</a></td>
-          </tr>
-          <tr>
-            <th scope="row">193901022212</th>
-            <td>Putri Annisa Binti Putra</td>
-            <td>Pekanbaru</td>
-            <td>Syamsu</td>
-            <td>Pembunuhan</td>
-            <td><a class="btn btn-primary" href="../adminbps/bka-statuscmb.php" role="button">Ubah Status</a></td>
-          </tr>
-          <tr>
-            <th scope="row">193901022215</th>
-            <td>Putri Citra Kirana</td>
-            <td>Pekanbaru</td>
-            <td>Syamsu</td>
-            <td>Pencurian</td>
-            <td><a class="btn btn-primary" href="../adminbps/bka-statuscmb.php" role="button">Ubah Status</a></td>
-          </tr>
+          <?php
+          $result = pg_query(
+              $conn,
+              'SELECT * FROM litmas  WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+          );
+          $result2 = pg_query(
+              $conn,
+              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+          );
+          $result3 = pg_query(
+              $conn,
+              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+          );
+          $result4 = pg_query(
+              $conn,
+              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+          );
+          $result5 = pg_query(
+              $conn,
+              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+          );
+
+          while ($row = pg_fetch_array($result)) {
+
+              $row2 = pg_fetch_array($result2);
+              $row3 = pg_fetch_array($result3);
+              $row4 = pg_fetch_array($result4);
+              $row5 = pg_fetch_array($result5);
+              ?>
+
+            <tr align="center">
+              <td><?= $row['id_litmas'] ?></td>
+              <td><?= $row['nama_klien'] ?></td>
+              <td><?= $row3['nama_lapas'] ?></td>
+              <td><?= $row4['jenis_kasus'] ?></td>
+              <td><?= $row2['nama_pegawai'] ?></td>
+              <!-- <td><span class="badge rounded-pill bg-secondary"><?= $row5[
+                  'nama_status_litmas'
+              ] ?></span></td> -->
+              <td>
+                <?php if (
+                    $row['id_status'] == 1
+                ) { ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
+                <?php } elseif (
+                    $row['id_status'] == 2
+                ) { ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
+                <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
+                <?php } ?>
+              </td>
+
+              <td>
+                <div class="con">
+                  <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
+                  <i class="bi bi-trash-fill bg-icon-danger" style="color: tomato;" href="#" role="button"></i>
+                </div>
+              </td>
+            </tr>
+          <?php
+          }
+          ?>
+
         </tbody>
       </table>
     </div>
