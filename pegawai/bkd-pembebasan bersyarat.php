@@ -58,7 +58,7 @@ if ($_SESSION['status'] == 'login') { ?>
     <ul class="d-flex align-items-center">
 
            
-  <a class="btn btn-outline-light" style="margin-right: 10px" href="loginbps.php">Logout</a>
+  <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
 </header><!-- End Header -->
   
     <!-- ======= Sidebar ======= -->

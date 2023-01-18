@@ -1,7 +1,12 @@
 <!DOCTYPE html>
+<?php include '../config.php'; ?>
+
 <html lang="en">
 
 <head>
+<?php
+session_start();
+if ($_SESSION['status'] == 'login') { ?>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -42,7 +47,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-<a href="../adminbps/dashboard.html" class="logo d-flex align-items-center">
+<a href="../adminbps/dashboard.php" class="logo d-flex align-items-center">
         <img src="../assets/img/bapas.png" alt="">
         <img src="../assets/img/pemasyarakatan.png" alt="">
         <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -55,7 +60,7 @@
       <ul class="d-flex align-items-center">
   
              
-    <a class="btn btn-outline-light" style="margin-right: 10px" href="loginbps.php">Logout</a>
+    <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
   </header><!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
@@ -66,7 +71,7 @@
       <li class="nav-heading">Main Menu</li>
       </li><!-- End Profile Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/dashboard.html">
+        <a class="nav-link collapsed" href="../adminbps/dashboard.php">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
@@ -78,22 +83,22 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../adminbps/bka-asimilasi rumah.html">
+            <a href="../adminbps/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-cuti bersyarat.html">
+            <a href="../adminbps/bka-cuti bersyarat.php">
               <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-cuti menjelang bebas.html">
+            <a href="../adminbps/bka-cuti menjelang bebas.php">
               <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-pembebasan bersyarat.html">
+            <a href="../adminbps/bka-pembebasan bersyarat.php">
               <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
             </a>
           </li>
@@ -106,29 +111,29 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../adminbps/bkd-asimilasi rumah.html">
+            <a href="../adminbps/bkd-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-cuti bersyarat.html">
+            <a href="../adminbps/bkd-cuti bersyarat.php">
               <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-cuti menjelang bebas.html">
+            <a href="../adminbps/bkd-cuti menjelang bebas.php">
               <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-pembebasan bersyarat.html">
+            <a href="../adminbps/bkd-pembebasan bersyarat.php">
               <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
             </a>
           </li>
         </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/userbapas.html">
+        <a class="nav-link collapsed" href="../adminbps/userbapas.php">
           <i class="bi bi-people"></i>
           <span>User</span>
         </a>
@@ -139,12 +144,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Home</h1>
+      <h1>Cuti Bersyarat</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../adminbps/dashboard.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Home</a></li>
           <li class="breadcrumb-item">BKA</li>
-          <li class="breadcrumb-item"><a href="../adminbps/bka-cuti bersyarat.html">Cuti Bersyarat</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/bka-cuti bersyarat.php">Cuti Bersyarat</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -166,45 +171,84 @@
       </div>
       <br>
       <div  style="float: right; margin-bottom: 5px;">
-        <a class="btn btn-primary" href="../adminbps/bka-datakliencb.html" role="button">+</a>
+        <a class="btn btn-primary" href="../adminbps/bka-datakliencb.php" role="button">+</a>
       </div>
       <br>
-      <table class="table table-bordered">
+      <table class="table">
         <thead>
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">Nama</th>
+          <tr align="center">
+            <th scope="col">Nomor Litmas</th>
+            <th scope="col">Nama Klien</th>
             <th scope="col">Lapas Asal</th>
-            <th scope="col">PK</th>
             <th scope="col">Kasus</th>
+            <th scope="col">PK</th>
             <th scope="col">Status</th>
+            <th scope="col">Edit</th>
+
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Dewi Herlina Binti Afrizal</td>
-            <td>Pekanbaru</td>
-            <td>Syamsu</td>
-            <td>Narkoba</td>
-            <td><a class="btn btn-primary" href="../adminbps/bka-statuscb.html" role="button">Ubah Status</a></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Putri Annisa Binti Putra</td>
-            <td>Pekanbaru</td>
-            <td>Syamsu</td>
-            <td>Pembunuhan</td>
-            <td><a class="btn btn-primary" href="../adminbps/bka-statuscb.html" role="button">Ubah Status</a></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Putri Citra Kirana</td>
-            <td>Pekanbaru</td>
-            <td>Syamsu</td>
-            <td>Pencurian</td>
-            <td><a class="btn btn-primary" href="../adminbps/bka-statuscb.html" role="button">Ubah Status</a></td>
-          </tr>
+          <?php
+          $result = pg_query(
+              $conn,
+              'SELECT * FROM litmas  WHERE id_jenis_litmas = 1 AND id_jenis_klien= 1'
+          );
+          $result2 = pg_query(
+              $conn,
+              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 1 AND id_jenis_klien= 1'
+          );
+          $result3 = pg_query(
+              $conn,
+              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 1 AND id_jenis_klien= 1'
+          );
+          $result4 = pg_query(
+              $conn,
+              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 1 AND id_jenis_klien= 1'
+          );
+          $result5 = pg_query(
+              $conn,
+              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 1 AND id_jenis_klien= 1'
+          );
+
+          while ($row = pg_fetch_array($result)) {
+
+              $row2 = pg_fetch_array($result2);
+              $row3 = pg_fetch_array($result3);
+              $row4 = pg_fetch_array($result4);
+              $row5 = pg_fetch_array($result5);
+              ?>
+
+            <tr align="center">
+              <td><?= $row['id_litmas'] ?></td>
+              <td><?= $row['nama_klien'] ?></td>
+              <td><?= $row3['nama_lapas'] ?></td>
+              <td><?= $row4['jenis_kasus'] ?></td>
+              <td><?= $row2['nama_pegawai'] ?></td>
+              <!-- <td><span class="badge rounded-pill bg-secondary"><?= $row5[
+                  'nama_status_litmas'
+              ] ?></span></td> -->
+              <td>
+                <?php if (
+                    $row['id_status'] == 1
+                ) { ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
+                <?php } elseif (
+                    $row['id_status'] == 2
+                ) { ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
+                <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
+                <?php } ?>
+              </td>
+
+              <td>
+                <div class="con">
+                  <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom:5px; color:blue;" class="edit" role="button"></i>
+                  <i class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="#" role="button"></i>
+                </div>
+              </td>
+            </tr>
+          <?php
+          }
+          ?>
+
         </tbody>
       </table>
     </div>
@@ -241,5 +285,7 @@
   <script src="../assets/js/main.js"></script>
 
 </body>
-
+<?php } else {echo 'maaf Anda belum login.';}
+?>
+  
 </html>

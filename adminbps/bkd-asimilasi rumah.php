@@ -3,6 +3,9 @@
 <html lang="en">
 
 <head>
+<?php
+  session_start();
+  if ($_SESSION['status'] == 'login') { ?>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -43,7 +46,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../adminbps/dashboard.html" class="logo d-flex align-items-center">
+      <a href="../adminbps/dashboard.php" class="logo d-flex align-items-center">
         <img src="../assets/img/bapas.png" alt="">
         <img src="../assets/img/pemasyarakatan.png" alt="">
         <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -67,7 +70,7 @@
       <li class="nav-heading">Main Menu</li>
       </li><!-- End Profile Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/dashboard.html">
+        <a class="nav-link collapsed" href="../adminbps/dashboard.php">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
@@ -79,22 +82,22 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../adminbps/bka-asimilasi rumah.html">
+            <a href="../adminbps/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-cuti bersyarat.html">
+            <a href="../adminbps/bka-cuti bersyarat.php">
               <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-cuti menjelang bebas.html">
+            <a href="../adminbps/bka-cuti menjelang bebas.php">
               <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-pembebasan bersyarat.html">
+            <a href="../adminbps/bka-pembebasan bersyarat.php">
               <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
             </a>
           </li>
@@ -129,7 +132,7 @@
         </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/userbapas.html">
+        <a class="nav-link collapsed" href="../adminbps/userbapas.php">
           <i class="bi bi-people"></i>
           <span>User</span>
         </a>
@@ -230,7 +233,7 @@
     </div>
 
     <div class="mx-auto" style="width: 200px;">
-      <a class="btn btn-primary" href="../adminbps/bkd-dataklienar.html" role="button">Tambah Data Klien</a>
+      <a class="btn btn-primary" href="../adminbps/bkd-dataklienar.php" role="button">Tambah Data Klien</a>
     </div>
   </main><!-- End #main -->
 
@@ -264,5 +267,7 @@
   <script src="../assets/js/main.js"></script>
 
 </body>
-
+<?php } else {echo 'maaf Anda belum login.';}
+  ?>
+  
 </html>

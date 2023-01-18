@@ -60,11 +60,10 @@ if ($_SESSION['status'] == 'login') { ?>
       <ul class="d-flex align-items-center">
   
              
-    <a class="btn btn-outline-light" style="margin-right: 10px" href="loginbps.php">Logout</a>
+    <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
   </header><!-- End Header -->
 =======
   </head>
->>>>>>> 3f39ec5bf5b1c4552dac6e63c72d3075d12dead0
 
   <body>
 
@@ -236,7 +235,5 @@ if ($_SESSION['status'] == 'login') { ?>
 
   </html>
 
-<?php } else {
-  echo 'maaf Anda belum login.';
-}
+<?php } else {echo 'maaf Anda belum login.';}
 ?>
