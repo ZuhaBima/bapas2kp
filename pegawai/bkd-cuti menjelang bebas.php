@@ -4,8 +4,8 @@
 
 <head>
   <?php
-session_start();
-if ($_SESSION['status'] == 'login') { ?>
+  session_start();
+  if ($_SESSION['status'] == 'login') { ?>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -59,7 +59,7 @@ if ($_SESSION['status'] == 'login') { ?>
     <ul class="d-flex align-items-center">
 
            
-  <a class="btn btn-outline-light" style="margin-right: 10px" href="loginbps.php">Logout</a>
+  <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
 </header><!-- End Header -->
   
   
@@ -197,6 +197,6 @@ if ($_SESSION['status'] == 'login') { ?>
 
 </body>
 <?php } else {echo 'maaf Anda belum login.';}
-?>
+  ?>
 
 </html>

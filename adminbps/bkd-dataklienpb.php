@@ -1,7 +1,12 @@
 <!DOCTYPE html>
+<?php include '../config.php'; ?>
+
 <html lang="en">
 
 <head>
+<?php
+  session_start();
+  if ($_SESSION['status'] == 'login') { ?>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -42,7 +47,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-<a href="../adminbps/dashboard.html" class="logo d-flex align-items-center">
+<a href="../adminbps/dashboard.php" class="logo d-flex align-items-center">
         <img src="../assets/img/bapas.png" alt="">
         <img src="../assets/img/pemasyarakatan.png" alt="">
         <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -55,7 +60,7 @@
       <ul class="d-flex align-items-center">
   
              
-    <a class="btn btn-outline-light" style="margin-right: 10px" href="loginbps.php">Logout</a>
+    <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
   </header><!-- End Header -->
 
 
@@ -67,7 +72,7 @@
       <li class="nav-heading">Main Menu</li>
       </li><!-- End Profile Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/dashboard.html">
+        <a class="nav-link collapsed" href="../adminbps/dashboard.php">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
@@ -79,22 +84,22 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../adminbps/bka-asimilasi rumah.html">
+            <a href="../adminbps/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-cuti bersyarat.html">
+            <a href="../adminbps/bka-cuti bersyarat.php">
               <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-cuti menjelang bebas.html">
+            <a href="../adminbps/bka-cuti menjelang bebas.php">
               <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-pembebasan bersyarat.html">
+            <a href="../adminbps/bka-pembebasan bersyarat.php">
               <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
             </a>
           </li>
@@ -107,29 +112,29 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../adminbps/bkd-asimilasi rumah.html">
+            <a href="../adminbps/bkd-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-cuti bersyarat.html">
+            <a href="../adminbps/bkd-cuti bersyarat.php">
               <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-cuti menjelang bebas.html">
+            <a href="../adminbps/bkd-cuti menjelang bebas.php">
               <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-pembebasan bersyarat.html">
+            <a href="../adminbps/bkd-pembebasan bersyarat.php">
               <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
             </a>
           </li>
         </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/userbapas.html">
+        <a class="nav-link collapsed" href="../adminbps/userbapas.php">
           <i class="bi bi-people"></i>
           <span>User</span>
         </a>
@@ -143,86 +148,81 @@
       <h1>Tambah Data Klien</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../adminbps/dashboard.html">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
           <li class="breadcrumb-item">BKD</li>
-          <li class="breadcrumb-item"><a href="../adminbps/bkd-cuti bersyarat.html">Cuti Bersyarat</a></li>
-          <li class="breadcrumb-item"><a href="../adminbps/bkd-datakliencb.html">Tambah Data Klien</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/bkd-pembebasan bersyarat.php">Pembebasan Bersyarat</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/bkd-dataklienpb.php">Tambah Data Klien</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    <div class="mainpage">
-      <div class="container">
-
-    </div>
-    <!-- Button trigger modal -->
     <section class="section">
-        <div class="row">
-          <div class="col-lg-12">
-  
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Silahkan Masukkan Data Klien Baru</h5>
-  
-                <!-- General Form Elements -->
-                <form>
-                  <div class="row mb-6">
-                    <label for="inputText" class="col-sm-2 col-form-label">Nomor Litmas</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control">
-                    </div>
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Silahkan Masukkan Data Klien Baru</h5>
+
+              <!-- General Form Elements -->
+              <form>
+                <div class="row mb-6">
+                  <label for="inputText" class="col-sm-2 col-form-label">Nomor Litmas</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control">
                   </div>
-                  <br>
-                  <div class="row mb-6">
-                    <label for="inputText" class="col-sm-2 col-form-label">Nama Klien</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control">
-                    </div>
+                </div>
+                <br>
+                <div class="row mb-6">
+                  <label for="inputText" class="col-sm-2 col-form-label">Nama Klien</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control">
                   </div>
-                  <br>
-                  <div class="row mb-6">
-                    <label class="col-sm-2 col-form-label">Lapas Asal</label>
-                    <div class="col-sm-10">
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>Pilih</option>
-                        <option value="1">Lapas Kelas II Pekanbaru</option>
-                        <option value="2">Lapas Kelas III Pekanbaru</option>
-                      </select>
-                    </div>
+                </div>
+                <br>
+                <div class="row mb-6">
+                  <label class="col-sm-2 col-form-label">Lapas Asal</label>
+                  <div class="col-sm-10">
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Pilih</option>
+                      <option value="1">Lapas Kelas II Pekanbaru</option>
+                      <option value="2">Lapas Kelas III Pekanbaru</option>
+                    </select>
                   </div>
-                  <br>
-                  <div class="row mb-6">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Nama PK</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control">
-                    </div>
+                </div>
+                <br>
+                <div class="row mb-6">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">Nama PK</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control">
                   </div>
-                  <br>
-                  <div class="row mb-6">
-                    <label class="col-sm-2 col-form-label">Jenis Kasus</label>
-                    <div class="col-sm-10">
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>Pilih</option>
-                        <option value="1">Narkotika</option>
-                        <option value="2">Pembunuhan</option>
-                        <option value="2">Pencurian</option>
-                      </select>
-                    </div>
+                </div>
+                <br>
+                <div class="row mb-6">
+                  <label class="col-sm-2 col-form-label">Jenis Kasus</label>
+                  <div class="col-sm-10">
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Pilih</option>
+                      <option value="1">Narkotika</option>
+                      <option value="2">Pembunuhan</option>
+                      <option value="2">Pencurian</option>
+                    </select>
                   </div>
-                  <br>
-                  <div class="row mb-6">
-                    <label class="col-sm-2 col-form-label">Status Klien</label>
-                    <div class="col-sm-10">
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>Pilih</option>
-                        <option value="1">Diterima</option>
-                        <option value="2">Ditolak</option>
-                      </select>
-                    </div>
+                </div>
+                <br>
+                <div class="row mb-6">
+                  <label class="col-sm-2 col-form-label">Status Klien</label>
+                  <div class="col-sm-10">
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Pilih</option>
+                      <option value="1">Diterima</option>
+                      <option value="2">Ditolak</option>
+                    </select>
                   </div>
-                </form><!-- End General Form Elements -->
-          </div>
+                </div>
+              </form><!-- End General Form Elements -->
         </div>
-      </section>
+      </div>
+    </section>
 
     <!-- Button trigger modal -->
     <div class="container-fluid py-5">
@@ -256,7 +256,7 @@
     </div>
   </div>
   </main><!-- End #main -->
-
+ 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
@@ -287,5 +287,6 @@
   <script src="../assets/js/main.js"></script>
 
 </body>
-
+<?php } else {echo 'maaf Anda belum login.';}
+  ?>
 </html>
