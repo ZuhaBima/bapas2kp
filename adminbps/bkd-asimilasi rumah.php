@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>BKD CMB (ADMIN)- Bapas Pekanbaru</title>
+  <title>BKD AR (ADMIN)- Bapas Pekanbaru</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -57,7 +57,6 @@
              
     <a class="btn btn-outline-light" style="margin-right: 10px" href="loginbps.php">Logout</a>
   </header><!-- End Header -->
-
 
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
@@ -140,18 +139,18 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Cuti Menjelang Bebas</h1>
+      <h1>Asimilasi Rumah</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../adminbps/dashboard.html">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/dashboard.html">Home</a></li>
           <li class="breadcrumb-item">BKD</li>
-          <li class="breadcrumb-item"><a href="../adminbps/bkd-cuti menjelang bebas.html">Cuti Menjelang Bebas</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/bkd-asimilasi rumah.html">Asimilasi Rumah</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
     <div class="mainpage">
       <div class="container">
-
+  
           <div class="row height d-flex justify-content-center align-items-center">
             <div class="col-md-6">
               <div class="form">
@@ -165,10 +164,6 @@
             </div>        
         </div>
       </div>
-      <div  style="float: right; margin-bottom: 5px;">
-        <a class="btn btn-primary" href="../adminbps/bkd-datakliencmb.html" role="button">+</a>
-      </div>
-      
       <br>
       <table class="table table-bordered">
         <thead>
@@ -186,24 +181,28 @@
             <td>Dewi Herlina Binti Afrizal</td>
             <td>Pekanbaru</td>
             <td>Syamsu</td>
-            <td><a class="btn btn-primary" href="../adminbps/bkd-statuscmb.html" role="button">Ubah Status</a></td>
+            <td><a class="btn btn-primary" href="#" role="button">Ubah Status</a></td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>Putri Annisa Binti Putra</td>
             <td>Pekanbaru</td>
             <td>Syamsu</td>
-            <td><a class="btn btn-primary" href="../adminbps/bkd-statuscmb.html" role="button">Ubah Status</a></td>
+            <td><a class="btn btn-primary" href="#" role="button">Ubah Status</a></td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td>Putri Citra Kirana</td>
             <td>Pekanbaru</td>
             <td>Syamsu</td>
-            <td><a class="btn btn-primary" href="../adminbps/bkd-statuscmb.html" role="button">Ubah Status</a></td>
+            <td><a class="btn btn-primary" href="#" role="button">Ubah Status</a></td>
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="mx-auto" style="width: 200px;">
+      <a class="btn btn-primary" href="../adminbps/bkd-dataklienar.html" role="button">Tambah Data Klien</a>
     </div>
   </main><!-- End #main -->
 
