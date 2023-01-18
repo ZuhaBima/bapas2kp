@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php include '../config.php'; ?>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -42,7 +42,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-<a href="../adminbps/dashboard.html" class="logo d-flex align-items-center">
+<a href="../adminbps/dashboard.php" class="logo d-flex align-items-center">
         <img src="../assets/img/bapas.png" alt="">
         <img src="../assets/img/pemasyarakatan.png" alt="">
         <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -66,7 +66,7 @@
       <li class="nav-heading">Main Menu</li>
       </li><!-- End Profile Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/dashboard.html">
+        <a class="nav-link collapsed" href="../adminbps/dashboard.php">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
@@ -78,22 +78,22 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../adminbps/bka-asimilasi rumah.html">
+            <a href="../adminbps/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-cuti bersyarat.html">
+            <a href="../adminbps/bka-cuti bersyarat.php">
               <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-cuti menjelang bebas.html">
+            <a href="../adminbps/bka-cuti menjelang bebas.php">
               <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-pembebasan bersyarat.html">
+            <a href="../adminbps/bka-pembebasan bersyarat.php">
               <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
             </a>
           </li>
@@ -106,29 +106,29 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../adminbps/bkd-asimilasi rumah.html">
+            <a href="../adminbps/bkd-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-cuti bersyarat.html">
+            <a href="../adminbps/bkd-cuti bersyarat.php">
               <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-cuti menjelang bebas.html">
+            <a href="../adminbps/bkd-cuti menjelang bebas.php">
               <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-pembebasan bersyarat.html">
+            <a href="../adminbps/bkd-pembebasan bersyarat.php">
               <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
             </a>
           </li>
         </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/userbapas.html">
+        <a class="nav-link collapsed" href="../adminbps/userbapas.php">
           <i class="bi bi-people"></i>
           <span>User</span>
         </a>
@@ -142,9 +142,9 @@
       <h1>Asimilasi Rumah</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../adminbps/dashboard.html">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
           <li class="breadcrumb-item">BKA</li>
-          <li class="breadcrumb-item"><a href="../adminbps/bka-asimilasi rumah.html">Asimilasi Rumah</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/bka-asimilasi rumah.php">Asimilasi Rumah</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -166,7 +166,7 @@
       </div>
       <br>
       <div  style="float: right; margin-bottom: 5px;">
-        <a class="btn btn-primary" href="../adminbps/bka-dataklienar.html" role="button">+</a>
+        <a class="btn btn-primary" href="../adminbps/bka-dataklienar.php" role="button">+</a>
       </div>
       <br>
       <table class="table table-bordered">
@@ -187,7 +187,7 @@
             <td>Pekanbaru</td>
             <td>Syamsu</td>
             <td>Narkoba</td>
-            <td><a class="btn btn-primary" href="../adminbps/bka-statusar.html" role="button">Ubah Status</a></td>
+            <td><a class="btn btn-primary" href="../adminbps/bka-statusar.php" role="button">Ubah Status</a></td>
           </tr>
           <tr>
             <th scope="row">193901022212</th>
@@ -195,7 +195,7 @@
             <td>Pekanbaru</td>
             <td>Syamsu</td>
             <td>Pembunuhan</td>
-            <td><a class="btn btn-primary" href="../adminbps/bka-statusar.html" role="button">Ubah Status</a></td>
+            <td><a class="btn btn-primary" href="../adminbps/bka-statusar.php" role="button">Ubah Status</a></td>
           </tr>
           <tr>
             <th scope="row">193901022215</th>
@@ -203,7 +203,7 @@
             <td>Pekanbaru</td>
             <td>Syamsu</td>
             <td>Pencurian</td>
-            <td><a class="btn btn-primary" href="../adminbps/bka-statusar.html" role="button">Ubah Status</a></td>
+            <td><a class="btn btn-primary" href="../adminbps/bka-statusar.php" role="button">Ubah Status</a></td>
           </tr>
         </tbody>
       </table>
