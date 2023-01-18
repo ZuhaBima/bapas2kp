@@ -43,7 +43,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../public/Dashboard.html" class="logo d-flex align-items-center">
+      <a href="../public/Dashboard.php" class="logo d-flex align-items-center">
         <img src="../assets/img/bapas.png" alt="">
         <img src="../assets/img/pemasyarakatan.png" alt="">
         <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -67,7 +67,7 @@
       <li class="nav-heading">Main Menu</li>
       </li><!-- End Profile Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../public/Dashboard.html">
+        <a class="nav-link collapsed" href="../public/Dashboard.php">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
@@ -132,14 +132,14 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="users-profile.php">
           <i class="bi bi-person"></i>
           <span>Layanan</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        <a class="nav-link collapsed" href="pages-faq.php">
           <i class="bi bi-question-circle"></i>
           <span>Tentang</span>
         </a>
@@ -153,9 +153,9 @@
       <h1>Pembebasan Bersyarat</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../public/Dashboard.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="../public/Dashboard.php">Home</a></li>
           <li class="breadcrumb-item">BKD</li>
-          <li class="breadcrumb-item"><a href="../public/bkd-pembebasan bersyarat.html">Pembebasan Bersyarat</a></li>
+          <li class="breadcrumb-item"><a href="../public/bkd-pembebasan bersyarat.php">Pembebasan Bersyarat</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -178,7 +178,7 @@
       </div>
       <table class="table">
         <thead>
-          <tr>
+          <tr align="center">
             <th scope="col">Nomor Litmas</th>
             <th scope="col">Nama Klien</th>
             <th scope="col">Lapas Asal</th>
@@ -189,35 +189,50 @@
         </thead>
         <tbody>
           <?php
-
-          $result = pg_query($conn, "SELECT * FROM litmas  WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2");
-          $result2 = pg_query($conn, "SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2");
-          $result3 = pg_query($conn, "SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2");
-          $result4 = pg_query($conn, "SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2");
-          $result5 = pg_query($conn, "SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2");
-
+          $result = pg_query(
+              $conn,
+              'SELECT * FROM litmas  WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2'
+          );
+          $result2 = pg_query(
+              $conn,
+              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2'
+          );
+          $result3 = pg_query(
+              $conn,
+              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2'
+          );
+          $result4 = pg_query(
+              $conn,
+              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2'
+          );
+          $result5 = pg_query(
+              $conn,
+              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2'
+          );
 
           while ($row = pg_fetch_array($result)) {
-            $row2 = pg_fetch_array($result2);
-            $row3 = pg_fetch_array($result3);
-            $row4 = pg_fetch_array($result4);
-            $row5 = pg_fetch_array($result5);
-          ?>
+
+              $row2 = pg_fetch_array($result2);
+              $row3 = pg_fetch_array($result3);
+              $row4 = pg_fetch_array($result4);
+              $row5 = pg_fetch_array($result5);
+              ?>
 
             <tr>
-              <td><?= $row['id_litmas'] ?></td>
-              <td><?= $row['nama_klien'] ?></td>
-              <td><?= $row3['nama_lapas'] ?></td>
-              <td><?= $row4['jenis_kasus'] ?></td>
-              <td><?= $row2['nama_pegawai'] ?></td>
-              <td>
-                <?php if ($row['id_status'] == 1) {
-                ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
-                <?php   } else if ($row['id_status'] == 2) {
-                ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
-                <?php   } else {
-                ?><span class="badge rounded-pill bg-danger">Ditolak</span>
-                <?php   } ?>
+              <td align="center"><?= $row['id_litmas'] ?></td>
+              <td align="center"><?= $row['nama_klien'] ?></td>
+              <td align="center"><?= $row3['nama_lapas'] ?></td>
+              <td align="center"><?= $row4['jenis_kasus'] ?></td>
+              <td align="center"><?= $row2['nama_pegawai'] ?></td>
+              <td align="center">
+                <?php if (
+                    $row['id_status'] == 1
+                ) { ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
+                <?php } elseif (
+                    $row['id_status'] == 2
+                ) { ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
+                <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
+                <?php } ?>
               </td>
 
               <td align="center">

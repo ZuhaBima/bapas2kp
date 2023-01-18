@@ -44,7 +44,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-<a href="../public/Dashboard.html" class="logo d-flex align-items-center">
+<a href="../public/Dashboard.php" class="logo d-flex align-items-center">
         <img src="../assets/img/bapas.png" alt="">
         <img src="../assets/img/pemasyarakatan.png" alt="">
         <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -57,7 +57,7 @@
       <ul class="d-flex align-items-center">
   
              
-    <a class="btn btn-outline-light" style="margin-right: 10px" href="loginbps.php">Login</a>
+    <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Login</a>
   </header><!-- End Header -->
   
   
@@ -69,7 +69,7 @@
         <li class="nav-heading">Main Menu</li>
         </li><!-- End Profile Page Nav -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="../public/Dashboard.html">
+          <a class="nav-link collapsed" href="../public/Dashboard.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
@@ -134,14 +134,14 @@
         <li class="nav-heading">Pages</li>
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="users-profile.html">
+          <a class="nav-link collapsed" href="users-profile.php">
             <i class="bi bi-person"></i>
             <span>Layanan</span>
           </a>
         </li><!-- End Profile Page Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.html">
+          <a class="nav-link collapsed" href="pages-faq.php">
             <i class="bi bi-question-circle"></i>
             <span>Tentang</span>
           </a>
@@ -155,9 +155,9 @@
       <h1>Cuti Bersyarat</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../public/Dashboard.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="../public/Dashboard.php">Home</a></li>
           <li class="breadcrumb-item">BKA</li>
-          <li class="breadcrumb-item"><a href="../public/bka-cuti bersyarat.html">Cuti Bersyarat</a></li>
+          <li class="breadcrumb-item"><a href="../public/bka-cuti bersyarat.php">Cuti Bersyarat</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -177,13 +177,14 @@
             </div>        
         </div>
       </div>
+      <br>
       <table class="table">
         <thead>
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">Nama</th>
+          <tr align="center">
+            <th scope="col">Nomor Litmas</th>
+            <th scope="col">Nama Klien</th>
             <th scope="col">Lapas Asal</th>
-            <th scope="col">Litmas</th>
+            <th scope="col">Kasus</th>
             <th scope="col">PK</th>
             <th scope="col">Status</th>
           </tr>
@@ -215,13 +216,22 @@
               ?>
 
             <tr>
-              <td><?= $row['id_litmas'] ?></td>
-              <td><?= $row['nama_klien'] ?></td>
-              <td><?= $row3['nama_lapas'] ?></td>
-              <td><?= $row4['jenis_kasus'] ?></td>
-              <td><?= $row2['nama_pegawai'] ?></td>
-              <td><?= $row['id_status'] ?></td>
+              <td align="center"><?= $row['id_litmas'] ?></td>
+              <td align="center"><?= $row['nama_klien'] ?></td>
+              <td align="center"><?= $row3['nama_lapas'] ?></td>
+              <td align="center"><?= $row4['jenis_kasus'] ?></td>
+              <td align="center"><?= $row2['nama_pegawai'] ?></td>
               <td align="center">
+                <?php if (
+                    $row['id_status'] == 1
+                ) { ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
+                <?php } elseif (
+                    $row['id_status'] == 2
+                ) { ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
+                <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
+                <?php } ?>
+              </td>
+
 
               </td>
             </tr>
