@@ -2,7 +2,9 @@
 <?php include '../config.php'; ?>
 <html lang="en">
 
-<head>
+<head><?php
+session_start();
+if ($_SESSION['status'] == 'login') { ?>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -56,7 +58,7 @@
       <ul class="d-flex align-items-center">
 
 
-        <a class="btn btn-outline-light" style="margin-right: 10px" href="../public/Dashboard.php">Logout</a>
+      <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
   </header><!-- End Header -->
 
 
@@ -68,7 +70,7 @@
       <li class="nav-heading">Main Menu</li>
       </li><!-- End Profile Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/dashboard.html">
+        <a class="nav-link collapsed" href="../adminbps/dashboard.php">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
@@ -108,22 +110,22 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../adminbps/bkd-asimilasi rumah.html">
+            <a href="../adminbps/bkd-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-cuti bersyarat.html">
+            <a href="../adminbps/bkd-cuti bersyarat.php">
               <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-cuti menjelang bebas.html">
+            <a href="../adminbps/bkd-cuti menjelang bebas.php">
               <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-pembebasan bersyarat.html">
+            <a href="../adminbps/bkd-pembebasan bersyarat.php">
               <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
             </a>
           </li>
@@ -264,4 +266,6 @@
 
 </body>
 
+<?php } else {echo 'maaf Anda belum login.';}
+?>
 </html>

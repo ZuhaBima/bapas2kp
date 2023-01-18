@@ -116,7 +116,7 @@
                     $_SESSION['status'] = 'login';
 
                     if ($_SESSION['role'] = $row['role'] == 1) {
-                      header('Location:inventoris/index_inventori.php');
+                      header('Location:adminbps/dashboard.php');
                     } else if ($_SESSION['role'] = $row['role'] == 2) {
                       header('Location:pegawai/dashboard.php');
                     }
