@@ -168,6 +168,9 @@
           </div>
         </div>
       </div>
+      <div class="mx-auto" style="float : right; margin-bottom:5px;">
+      <a class="btn btn-primary" href="../adminbps/bkd-dataklienar.php" role="button">+</a>
+    </div>
       <br>
       <table class="table">
         <thead>
@@ -232,9 +235,6 @@
       </table>
     </div>
 
-    <div class="mx-auto" style="width: 200px;">
-      <a class="btn btn-primary" href="../adminbps/bkd-dataklienar.php" role="button">Tambah Data Klien</a>
-    </div>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
