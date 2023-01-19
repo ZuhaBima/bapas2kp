@@ -15,8 +15,8 @@ $row4 = pg_fetch_array($query2);
 $kode = $row4['faktur_restok'];
 $urutan = (int) substr($kode, 3, 3);
 $huruf = "FR";
-$urutan=$urutan+1;
-$id = $huruf.sprintf("%03s", $urutan);
+$urutan = $urutan + 1;
+$id = $huruf . sprintf("%03s", $urutan);
 
 ?>
 
@@ -162,7 +162,7 @@ $id = $huruf.sprintf("%03s", $urutan);
             <label for="">Faktur Re-Stok</label>
             <div class="form-group">
               <div class="form-line">
-                <input type="text" name="faktur_restok" value="<?php echo $id?>" class="form-control" maxlength="5" readonly />
+                <input type="text" name="faktur_restok" value="<?php echo $id ?>" class="form-control" maxlength="5" readonly />
               </div>
             </div>
 
@@ -197,7 +197,7 @@ $id = $huruf.sprintf("%03s", $urutan);
             <label for="">Jumlah Pembelian</label>
             <div class="form-group">
               <div class="form-line">
-                <input type="text" name="jumlah_pembelian" class="form-control" id="jumlah" value = 10 readonly />
+                <input type="text" name="jumlah_pembelian" class="form-control" id="jumlah" value=10 readonly />
               </div>
             </div>
 
@@ -211,7 +211,7 @@ $id = $huruf.sprintf("%03s", $urutan);
               }
             </script>
 
-          
+
             <label for="">Harga Total</label>
             <div class="form-group">
               <div class="form-line">
@@ -223,16 +223,16 @@ $id = $huruf.sprintf("%03s", $urutan);
 
 
             <!-- <input type="submit" name="test" value="test" class="btn btn-primary">   -->
-              <br>
-              <a href="#" class="btn btn-primary bi bi-calculator mb-2" name="hitung" onclick="doMath()">Hitung</a>
+            <br>
+            <a href="#" class="btn btn-primary bi bi-calculator mb-2" name="hitung" onclick="doMath()">Hitung</a>
             <input type="submit" name="simpan" value="simpan" onclick="domath()" class="btn btn-primary mb-2">
-              
+
             <?php
             if (isset($_POST['simpan'])) {
 
               $detail = pg_query($conn, "SELECT harga_beli, total_barang from barang where id_barang='$id_brg'");
               while ($row3 = pg_fetch_assoc($detail))
-              $tot = $row3['total_barang'];
+                $tot = $row3['total_barang'];
               $qty = $_POST['jumlah_pembelian'];
               $harga_total = $harga_beli * $qty;
               $faktur_restok = $_POST['faktur_restok'];
@@ -242,19 +242,21 @@ $id = $huruf.sprintf("%03s", $urutan);
               $harga_total = $_POST['harga_total'];
 
               $Stok = $tot + $qty;
-               
-              $inputQuery2 =  pg_query($conn,"UPDATE barang SET total_barang='$Stok' WHERE id_barang='$id_brg'");
+
+              $inputQuery2 =  pg_query($conn, "UPDATE barang SET total_barang='$Stok' WHERE id_barang='$id_brg'");
               $inputQuery = pg_query($conn, "insert into detail_restok (faktur_restok,id_barang,tanggal,harga_total,jumlah_pembelian,harga_beli) values('$faktur_restok','$id_brg','$tanggal','$harga_total','$qty','$harga_beli')");
 
               if ($inputQuery) {
-             
-                  echo "<script>
+
+                echo "<script>
                   alert('Data berhasil ditambah!');
                   window.location = '../inventoris/view_transaksi_restok-inventori.php';
                 </script>";
-                }
-               
               }
+              else{
+                
+              }
+            }
             ?>
 
 

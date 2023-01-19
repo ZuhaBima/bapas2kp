@@ -1,14 +1,6 @@
 <?php
 include "../config.php";
 
-$query = pg_query($conn, "SELECT max(id_barang) as id_barang FROM barang");
-$row = pg_fetch_array($query);
-$kode = $row['id_barang'];
-$urutan = (int) substr($kode, 3, 3);
-$huruf = "B";
-$urutan=$urutan+1;
-$id = $huruf.sprintf("%03s", $urutan);
-
 ?>
 
 <!DOCTYPE html>
@@ -209,7 +201,7 @@ $id = $huruf.sprintf("%03s", $urutan);
       ?>
 
 
-      ?>
+      
 
       </div>
     </section>
