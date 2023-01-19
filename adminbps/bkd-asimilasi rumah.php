@@ -169,6 +169,9 @@
         </div>
         <a class="btn btn-primary" href="../adminbps/bkd-dataklienar.php" style="float: right;" role="button">+</a>
       </div>
+      <div class="mx-auto" style="float : right; margin-bottom:5px;">
+      <a class="btn btn-primary" href="../adminbps/bkd-dataklienar.php" role="button">+</a>
+    </div>
       <br>
       <table class="table">
         <thead>

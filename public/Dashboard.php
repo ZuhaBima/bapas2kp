@@ -81,6 +81,16 @@
           </a>
           <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
+              <a href="../public/bka-diversi.php">
+                <i class="bi bi-circle"></i><span>Diversi</span>
+              </a>
+            </li>
+            <li>
+              <a href="../public/bka-sidang.php">
+                <i class="bi bi-circle"></i><span>Sidang</span>
+              </a>
+            </li>
+            <li>
               <a href="../public/bka-asimilasi rumah.php">
                 <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
               </a>

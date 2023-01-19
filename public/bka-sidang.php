@@ -51,6 +51,7 @@
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
+
   
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
@@ -58,8 +59,7 @@
              
     <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Login</a>
   </header><!-- End Header -->
-  
-  
+
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
   
@@ -161,15 +161,17 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Pembebasan Bersyarat</h1>
+      <h1>Sidang</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../public/Dashboard.php">Home</a></li>
           <li class="breadcrumb-item">BKA</li>
-          <li class="breadcrumb-item"><a href="../public/bka-pembebasan bersyarat.php">Pembebasan Bersyarat</a></li>
+          <li class="breadcrumb-item"><a href="../public/bka-asimilasi rumah.php">Sidang</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+  
+
     <div class="mainpage">
       <div class="container">
   
@@ -189,7 +191,7 @@
       <br>
       <table class="table">
         <thead>
-          <tr align = "center">
+        <tr align="center">
             <th scope="col">Nomor Litmas</th>
             <th scope="col">Nama Klien</th>
             <th scope="col">Lapas Asal</th>
@@ -202,19 +204,19 @@
           <?php
           $result = pg_query(
               $conn,
-              'SELECT * FROM litmas  WHERE id_jenis_litmas = 2 AND id_jenis_klien= 1'
+              'SELECT * FROM litmas  WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
           );
           $result2 = pg_query(
               $conn,
-              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 2 AND id_jenis_klien= 1'
+              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
           );
           $result3 = pg_query(
               $conn,
-              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 2 AND id_jenis_klien= 1'
+              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
           );
           $result4 = pg_query(
               $conn,
-              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 2 AND id_jenis_klien= 1'
+              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
           );
 
           while ($row = pg_fetch_array($result)) {
@@ -223,12 +225,13 @@
               $row3 = pg_fetch_array($result3);
               $row4 = pg_fetch_array($result4);
               ?>
+
             <tr>
-              <td><?= $row['id_litmas'] ?></td>
-              <td><?= $row['nama_klien'] ?></td>
-              <td><?= $row3['nama_lapas'] ?></td>
-              <td><?= $row4['jenis_kasus'] ?></td>
-              <td><?= $row2['nama_pegawai'] ?></td>
+              <td align="center"><?= $row['id_litmas'] ?></td>
+              <td align="center"><?= $row['nama_klien'] ?></td>
+              <td align="center"><?= $row3['nama_lapas'] ?></td>
+              <td align="center"><?= $row4['jenis_kasus'] ?></td>
+              <td align="center"><?= $row2['nama_pegawai'] ?></td>
               <td>
                 <?php if (
                     $row['id_status'] == 1
@@ -245,6 +248,8 @@
           <?php
           }
           ?>
+
+        </tbody>
       </table>
     </div>
     </main> <!-- End #main -->
