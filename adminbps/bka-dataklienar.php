@@ -185,7 +185,8 @@ if ($_SESSION['status'] == 'login') { ?>
           <li class="breadcrumb-item"><a href="../adminbps/bka-dataklienar.php">Tambah Data Klien</a></li>
         </ol>
       </nav>
-    </div><!-- End Page Title -->
+    </div>
+    <!-- End Page Title -->
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
@@ -218,7 +219,7 @@ if ($_SESSION['status'] == 'login') { ?>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Jenis Klien</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" value="BKD" readonly>
+                      <input type="text" class="form-control" value="BKA" readonly>
                     </div>
                   </div>
                   <br>
