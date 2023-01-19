@@ -2,7 +2,7 @@
 
 $host = 'localhost';
 $dbuser = 'postgres';
-$dbpass = 'postgres';
+$dbpass = 'bima';
 $port = '5432';
 $dbname = 'bapas2kp';
 

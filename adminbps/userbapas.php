@@ -71,12 +71,11 @@ if ($_SESSION['status'] == 'login') { ?>
       <li class="nav-item">
       <li class="nav-heading">Main Menu</li>
       </li><!-- End Profile Page Nav -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="../adminbps/dashboard.php">
-              <i class="bi bi-grid"></i>
-              <span>Beranda</span>
-            </a>
-      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/dashboard.php">
+          <i class="bi bi-grid"></i>
+          <span>Beranda</span>
+        </a><!-- End Dashboard Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -133,14 +132,47 @@ if ($_SESSION['status'] == 'login') { ?>
           </li>
         </ul>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/jenisLitmas.php">
+          <i class="bi bi-book"></i>
+          <span>Jenis Litmas</span>
+        </a>
+
         <li class="nav-item">
-            <a class="nav-link" href="../adminbps/userbapas.php">
-              <i class="bi bi-people"></i>
-              <span>User</span>
+        <a class="nav-link collapsed" href="../adminbps/klien.php">
+          <i class="bi bi-person"></i>
+          <span>Klien</span>
+        </a>
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/status.php">
+          <i class="bi bi-activity"></i>
+          <span>Status</span>
+        </a>
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/Lapas.php">
+          <i class="bi bi-file-code-fill"></i>
+          <span>Lapas</span>
+        </a>
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/kasus.php">
+          <i class="bi bi-book-half"></i>
+          <span>Kasus</span>
+        </a>
+
+        <li class="nav-item">
+            <a class="nav-link " href="../adminbps/userbapas.php">
+                <i class="bi bi-people"></i>
+                <span>User</span>
             </a>
-      </li><!-- End Forms Nav -->
+        </li>
+       <!-- End Forms Nav -->
 
   </aside><!-- End Sidebar-->
+
 
   <main id="main" class="main">
 
