@@ -199,7 +199,7 @@
             </div>
           </div>
         </div>
-        <a class="btn btn-primary" href="../adminbps/bkd-dataklienpb.php" style="float: right;" role="button">+</a>
+        <a class="btn btn-primary" href="../adminbps/bkd-datakliencmb.php" style="float: right;" role="button">+</a>
       </div>
       <br>
       <table class="table">
@@ -218,33 +218,33 @@
         <tbody>
           <?php
           $result = pg_query(
-              $conn,
-              'SELECT * FROM litmas  WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
+            $conn,
+            'SELECT * FROM litmas  WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
           );
           $result2 = pg_query(
-              $conn,
-              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
+            $conn,
+            'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
           );
           $result3 = pg_query(
-              $conn,
-              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
+            $conn,
+            'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
           );
           $result4 = pg_query(
-              $conn,
-              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
+            $conn,
+            'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
           );
           $result5 = pg_query(
-              $conn,
-              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
+            $conn,
+            'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
           );
 
           while ($row = pg_fetch_array($result)) {
 
-              $row2 = pg_fetch_array($result2);
-              $row3 = pg_fetch_array($result3);
-              $row4 = pg_fetch_array($result4);
-              $row5 = pg_fetch_array($result5);
-              ?>
+            $row2 = pg_fetch_array($result2);
+            $row3 = pg_fetch_array($result3);
+            $row4 = pg_fetch_array($result4);
+            $row5 = pg_fetch_array($result5);
+          ?>
 
             <tr align="center">
               <td><?= $row['id_litmas'] ?></td>
@@ -252,15 +252,13 @@
               <td><?= $row3['nama_lapas'] ?></td>
               <td><?= $row4['jenis_kasus'] ?></td>
               <td><?= $row2['nama_pegawai'] ?></td>
-              <!-- <td><span class="badge rounded-pill bg-secondary"><?= $row5[
-                  'nama_status_litmas'
-              ] ?></span></td> -->
+              <!-- <td><span class="badge rounded-pill bg-secondary"><?= $row5['nama_status_litmas'] ?></span></td> -->
               <td>
                 <?php if (
-                    $row['id_status'] == 1
+                  $row['id_status'] == 1
                 ) { ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
                 <?php } elseif (
-                    $row['id_status'] == 2
+                  $row['id_status'] == 2
                 ) { ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
                 <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
                 <?php } ?>
@@ -268,7 +266,7 @@
 
               <td>
                 <div class="con">
-                <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
+                  <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
                   <i class="bi bi-trash-fill bg-icon-danger" style="color: tomato;" href="#" role="button"></i>
                 </div>
               </td>
@@ -315,7 +313,9 @@
 
 </body>
 
-<?php } else {echo 'maaf Anda belum login.';}
-  ?>
+<?php } else {
+    echo 'maaf Anda belum login.';
+  }
+?>
 
 </html>

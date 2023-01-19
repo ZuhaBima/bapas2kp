@@ -197,7 +197,7 @@ if ($_SESSION['status'] == 'login') { ?>
             </div>
           </div>
         </div>
-        <a class="btn btn-primary" href="../adminbps/bkd-dataklienpb.php" style="float: right;" role="button">+</a>
+        <a class="btn btn-primary" href="../adminbps/bkd-datakliencb.php" style="float: right;" role="button">+</a>
       </div>
       <br>
       <table class="table">
