@@ -226,6 +226,7 @@ if ($_SESSION['status'] == 'login') { ?>
             <th scope="col">PK</th>
             <th scope="col">Status</th>
             <th scope="col">Edit</th>
+            <th scope="col">Hapus</th>
 
           </tr>
         </thead>
@@ -283,8 +284,12 @@ if ($_SESSION['status'] == 'login') { ?>
               <td>
                 <div class="con">
                   <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
-                  <i class="bi bi-trash-fill bg-icon-danger" style="color: tomato;" href="#" role="button"></i>
                 </div>
+              </td>
+              <td>
+              <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/bka-hapuscmb.php?id_litmas=<?= $row[
+                  'id_litmas'
+              ] ?>"></a>
               </td>
             </tr>
           <?php
