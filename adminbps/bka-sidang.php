@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <?php include '../config.php'; ?>
+
 <html lang="en">
 
-<head><?php
+<head>
+<?php
 session_start();
 if ($_SESSION['status'] == 'login') { ?>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>BKD CB (ADMIN)- Bapas Pekanbaru</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+  <title>BKA AR (ADMIN) - Bapas Pekanbaru</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-    <!-- Favicons -->
-    <link href="../assets/img/bapas.png" rel="icon">
-    <link href="../assets/img/bapas.png" rel="Logoo">
+  <!-- Favicons -->
+  <link href="../assets/img/bapas.png" rel="icon">
+  <link href="../assets/img/bapas.png" rel="Logoo">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="../assets/css/style.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
 
-    <!-- =======================================================
+  <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
   * Author: BootstrapMade.com
@@ -43,9 +45,9 @@ if ($_SESSION['status'] == 'login') { ?>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
-
+  
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../adminbps/dashboard.php" class="logo d-flex align-items-center">
+<a href="../adminbps/dashboard.php" class="logo d-flex align-items-center">
         <img src="../assets/img/bapas.png" alt="">
         <img src="../assets/img/pemasyarakatan.png" alt="">
         <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -53,14 +55,13 @@ if ($_SESSION['status'] == 'login') { ?>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-
+  
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
-
-
-        <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
+  
+             
+    <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
   </header><!-- End Header -->
-
 
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
@@ -74,7 +75,7 @@ if ($_SESSION['status'] == 'login') { ?>
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+  </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -140,8 +141,9 @@ if ($_SESSION['status'] == 'login') { ?>
             </a>
           </li>
         </ul>
+      </li>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/jenisLitmas.php">
           <i class="bi bi-book"></i>
           <span>Jenis Litmas</span>
@@ -183,31 +185,34 @@ if ($_SESSION['status'] == 'login') { ?>
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Cuti Bersyarat</h1>
+      <h1>Sidang</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Home</a></li>
-          <li class="breadcrumb-item">BKD</li>
-          <li class="breadcrumb-item"><a href="../adminbps/bkd-cuti bersyarat.php">Cuti Bersyarat</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
+          <li class="breadcrumb-item">BKA</li>
+          <li class="breadcrumb-item"><a href="../adminbps/bka-asimilasi rumah.php">Sidang</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
     <div class="mainpage">
       <div class="container">
-
-        <div class="row height d-flex justify-content-center align-items-center">
-          <div class="col-md-6">
-            <div class="form">
-              <form class="search-form d-flex align-items-center" method="POST" action="#">
+  
+          <div class="row height d-flex justify-content-center align-items-center">
+            <div class="col-md-6">
+              <div class="form">
+                <form class="search-form d-flex align-items-center" method="POST" action="#">
                 <i class="fa fa-search"></i>
                 <input type="text" class="form-control form-input" placeholder="Search anything...">
                 <button type="submit" title="Search"><i class="bi bi-search"></i></button>
                 <span class="left-pan"><i class="fa fa"></i></span>
-              </form>
-            </div>
-          </div>
+                </form>
+              </div>
+            </div>        
         </div>
-        <a class="btn btn-primary" href="../adminbps/bkd-datakliencb.php" style="float: right;" role="button">+</a>
+      </div>
+      <br>
+      <div  style="float: right; margin-bottom: 5px;">
+        <a class="btn btn-primary" href="../adminbps/bka-datakliensidang.php" role="button">+</a>
       </div>
       <br>
       <table class="table">
@@ -227,23 +232,23 @@ if ($_SESSION['status'] == 'login') { ?>
           <?php
           $result = pg_query(
               $conn,
-              'SELECT * FROM litmas  WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
+              'SELECT * FROM litmas  WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
           );
           $result2 = pg_query(
               $conn,
-              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
+              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
           );
           $result3 = pg_query(
               $conn,
-              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
+              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
           );
           $result4 = pg_query(
               $conn,
-              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
+              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
           );
           $result5 = pg_query(
               $conn,
-              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
+              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
           );
 
           while ($row = pg_fetch_array($result)) {
@@ -276,8 +281,8 @@ if ($_SESSION['status'] == 'login') { ?>
 
               <td>
                 <div class="con">
-                  <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
-                  <i class="bi bi-trash-fill bg-icon-danger" style="color: tomato;" href="#" role="button"></i>
+                  <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom:5px; color:blue; width:200px" role="button"></i>
+                  <i class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="#" role="button"></i>
                 </div>
               </td>
             </tr>
@@ -288,8 +293,6 @@ if ($_SESSION['status'] == 'login') { ?>
         </tbody>
       </table>
     </div>
-
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -307,6 +310,7 @@ if ($_SESSION['status'] == 'login') { ?>
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -321,8 +325,7 @@ if ($_SESSION['status'] == 'login') { ?>
   <script src="../assets/js/main.js"></script>
 
 </body>
-
 <?php } else {echo 'maaf Anda belum login.';}
 ?>
-
+  
 </html>
