@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <?php include '../config.php'; ?>
+
 <html lang="en">
 
-<head><?php
-session_start();
-if ($_SESSION['status'] == 'login') { ?>
+<head>
+<?php
+  session_start();
+  if ($_SESSION['status'] == 'login') { ?>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>BKD CB (ADMIN)- Bapas Pekanbaru</title>
+    <title>Dashboard - Bapas Pekanbaru</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -71,10 +73,11 @@ if ($_SESSION['status'] == 'login') { ?>
       </li><!-- End Profile Page Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/dashboard.php">
-          <i class="bi bi-grid"></i>
+          <i class="bi bi-book"></i>
           <span>Beranda</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
+     <!-- End Dashboard Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -130,37 +133,38 @@ if ($_SESSION['status'] == 'login') { ?>
             </a>
           </li>
         </ul>
-
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/jenisLitmas.php">
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/jenisLitmas.html">
           <i class="bi bi-book"></i>
           <span>Jenis Litmas</span>
         </a>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/klien.php">
-          <i class="bi bi-person"></i>
-          <span>Klien</span>
-        </a>
+            <a class="nav-link collapsed" href="../adminbps/klien.php">
+              <i class="bi bi-person"></i>
+              <span>Klien</span>
+            </a>
+            
+        <li class="nav-item">
+            <a class="nav-link " href="../adminbps/status.php">
+                <i class="bi bi-activity"></i>
+                <span>Status</span>
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../adminbps/Lapas.php">
+              <i class="bi bi-file-code-fill"></i>
+              <span>Lapas</span>
+            </a>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/status.php">
-          <i class="bi bi-activity"></i>
-          <span>Status</span>
-        </a>
-
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/Lapas.php">
-          <i class="bi bi-file-code-fill"></i>
-          <span>Lapas</span>
-        </a>
-
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/kasus.php">
-          <i class="bi bi-book-half"></i>
-          <span>Kasus</span>
-        </a>
-
+            <a class="nav-link collapsed" href="../adminbps/kasus.html">
+              <i class="bi bi-book-half"></i>
+              <span>Kasus</span>
+            </a>
+          
       <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/userbapas.php">
           <i class="bi bi-people"></i>
@@ -173,112 +177,14 @@ if ($_SESSION['status'] == 'login') { ?>
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Cuti Bersyarat</h1>
+      <h1>Status</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Home</a></li>
-          <li class="breadcrumb-item">BKD</li>
-          <li class="breadcrumb-item"><a href="../adminbps/bkd-cuti bersyarat.php">Cuti Bersyarat</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/status.html">Status</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    <div class="mainpage">
-      <div class="container">
-
-        <div class="row height d-flex justify-content-center align-items-center">
-          <div class="col-md-6">
-            <div class="form">
-              <form class="search-form d-flex align-items-center" method="POST" action="#">
-                <i class="fa fa-search"></i>
-                <input type="text" class="form-control form-input" placeholder="Search anything...">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-                <span class="left-pan"><i class="fa fa"></i></span>
-              </form>
-            </div>
-          </div>
-        </div>
-        <a class="btn btn-primary" href="../adminbps/bkd-datakliencb.php" style="float: right;" role="button">+</a>
-      </div>
-      <br>
-      <table class="table">
-        <thead>
-          <tr align="center">
-            <th scope="col">Nomor Litmas</th>
-            <th scope="col">Nama Klien</th>
-            <th scope="col">Lapas Asal</th>
-            <th scope="col">Kasus</th>
-            <th scope="col">PK</th>
-            <th scope="col">Status</th>
-            <th scope="col">Edit</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-          $result = pg_query(
-              $conn,
-              'SELECT * FROM litmas  WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
-          );
-          $result2 = pg_query(
-              $conn,
-              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
-          );
-          $result3 = pg_query(
-              $conn,
-              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
-          );
-          $result4 = pg_query(
-              $conn,
-              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
-          );
-          $result5 = pg_query(
-              $conn,
-              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
-          );
-
-          while ($row = pg_fetch_array($result)) {
-
-              $row2 = pg_fetch_array($result2);
-              $row3 = pg_fetch_array($result3);
-              $row4 = pg_fetch_array($result4);
-              $row5 = pg_fetch_array($result5);
-              ?>
-
-            <tr align="center">
-              <td><?= $row['id_litmas'] ?></td>
-              <td><?= $row['nama_klien'] ?></td>
-              <td><?= $row3['nama_lapas'] ?></td>
-              <td><?= $row4['jenis_kasus'] ?></td>
-              <td><?= $row2['nama_pegawai'] ?></td>
-              <!-- <td><span class="badge rounded-pill bg-secondary"><?= $row5[
-                  'nama_status_litmas'
-              ] ?></span></td> -->
-              <td>
-                <?php if (
-                    $row['id_status'] == 1
-                ) { ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
-                <?php } elseif (
-                    $row['id_status'] == 2
-                ) { ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
-                <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
-                <?php } ?>
-              </td>
-
-              <td>
-                <div class="con">
-                  <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
-                  <i class="bi bi-trash-fill bg-icon-danger" style="color: tomato;" href="#" role="button"></i>
-                </div>
-              </td>
-            </tr>
-          <?php
-          }
-          ?>
-
-        </tbody>
-      </table>
-    </div>
-
 
   </main><!-- End #main -->
 
@@ -297,6 +203,7 @@ if ($_SESSION['status'] == 'login') { ?>
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -311,8 +218,6 @@ if ($_SESSION['status'] == 'login') { ?>
   <script src="../assets/js/main.js"></script>
 
 </body>
-
 <?php } else {echo 'maaf Anda belum login.';}
-?>
-
+  ?>
 </html>
