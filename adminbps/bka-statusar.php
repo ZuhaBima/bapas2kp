@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<?php include '../config.php'; ?>
+<?php
+include '../config.php';
+
+$id_litmas = $_GET['id_litmas'];
+$sql = pg_query($conn, "SELECT * from litmas where id_litmas='$id_litmas'");
+$row = pg_fetch_array($sql);
+?>
 
 <html lang="en">
 
 <head>
 <?php
-  session_start();
-  if ($_SESSION['status'] == 'login') { ?>
+session_start();
+if ($_SESSION['status'] == 'login') { ?>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -184,7 +190,6 @@
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
-
     <div class="pagetitle">
         <h1>Ubah Status Klien</h1>
         <nav>
@@ -209,91 +214,173 @@
               <div class="card-body">
                 <h5 class="card-title">Ubah Status Klien</h5>
   
-                <!-- General Form Elements -->
-                <form>
-                    <div class="row mb-6">
-                        <label for="inputText" class="col-sm-2 col-form-label">Nomor Litmas</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" readonly name="" value="199291003121" required>
-                        </div>
-                     </div>
-                     <br>
+               <!-- General Form Elements -->
+               <form method="POST">
                   <div class="row mb-6">
-                    <label for="inputText" class="col-sm-2 col-form-label">Nama Klien</label>
+                    <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="" value="Dewi Herlina Binti Afrizal" required>
+                    <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row[
+                        'id_litmas'
+                    ]; ?>" required>
                     </div>
                   </div>
                   <br>
                   <div class="row mb-6">
-                    <label for="inputText" class="col-sm-2 col-form-label">Lapas Asal</label>
+                    <label for="inputText" class="col-sm-2 col-form-label" required>Nama Klien</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="" value="Lapas Pekanbaru Kelas II" required>
-                  </div>
+                    <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row[
+                        'nama_klien'
+                    ]; ?>" required>
+                    </div>
                   </div>
                   <br>
                   <div class="row mb-6">
-                    <label for="inputText" class="col-sm-2 col-form-label">Nama PK</label>
+                    <label for="inputText" class="col-sm-2 col-form-label" required>Jenis Klien</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="" value="Syamsu" required>
-                  </div>
+                      <input type="text" class="form-control" value="BKA" readonly>
+                    </div>
                   </div>
                   <br>
                   <div class="row mb-6">
-                    <label for="inputText" class="col-sm-2 col-form-label">Jenis Kasus</label>
+                    <label for="inputText" class="col-sm-2 col-form-label" required>Jenis Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="" value="Narkotika" required>
+                      <input type="text" class="form-control" value="Asimilasi Rumah" readonly>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row mb-6">
+                    <label class="col-sm-2 col-form-label">Lapas Asal</label>
+                    <div class="col-sm-10">
+                      <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Lapas Asal" name="lapas" required>
+                        <option>Pilih Lapas Asal</option>
+                        <?php
+                        $lapas = pg_query(
+                            $conn,
+                            'SELECT * FROM lapas order by nama_lapas ASC'
+                        );
+                        while ($row = pg_fetch_assoc($lapas)) {
+                            echo "<option value='$row[id_lapas]'> $row[nama_lapas] </option>";
+                        }
+                        ?>
+                      </select>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row mb-6">
+                    <label class="col-sm-2 col-form-label">PK</label>
+                    <div class="col-sm-10">
+                      <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih PK Klien" name="pk" required>
+                        <option>Pilih PK</option>
+                        <?php
+                        $pk = pg_query(
+                            $conn,
+                            'SELECT * FROM pegawai order by jabatan ASC'
+                        );
+                        while ($row = pg_fetch_assoc($pk)) {
+                            echo "<option value='$row[nip]'>$row[jabatan] - $row[nama_pegawai] </option>";
+                        }
+                        ?>
+                      </select>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row mb-6">
+                    <label class="col-sm-2 col-form-label">Jenis Kasus</label>
+                    <div class="col-sm-10">
+                      <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Jenis Kasus" name="kasus" required>
+                        <option>Pilih Jenis Kasus</option>
+                        <?php
+                        $kasus = pg_query(
+                            $conn,
+                            'SELECT * FROM kasus order by jenis_kasus ASC'
+                        );
+                        while ($row = pg_fetch_assoc($kasus)) {
+                            echo "<option value='$row[id_kasus]'>$row[jenis_kasus] </option>";
+                        }
+                        ?>
+                      </select>
                     </div>
                   </div>
                   <br>
                   <div class="row mb-6">
                     <label class="col-sm-2 col-form-label">Status Klien</label>
                     <div class="col-sm-10">
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>Pilih</option>
-                        <option value="1">Diterima</option>
-                        <option value="2">Sedang Diproses</option>
-                        <option value="2">Selesai</option>
+                      <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Status Klien" name="status" required>
+                        <option>Pilih Status Saat Ini</option>
+                        <?php
+                        $status = pg_query(
+                            $conn,
+                            'SELECT * FROM status_litmas order by id_status ASC'
+                        );
+                        while ($row = pg_fetch_assoc($status)) {
+                            echo "<option value='$row[id_status]'>$row[nama_status_litmas] </option>";
+                        }
+                        ?>
                       </select>
                     </div>
-                  </div>
-                </form><!-- End General Form Elements -->
-          </div>
-      </section>
-    
+                    <!-- Button trigger modal -->
+                    <div class="container-fluid py-5">
+                    <div class="container">
+                    <div class="mx-auto" style="width: 200px;">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" style="width: 120px; float :right; margin-top :10px">
+                     Simpan
+                    </button>
 
-    <!-- Button trigger modal -->
-     <div class="container-fluid py-5">
-      <div class="container">
-        <div class="mx-auto" style="width: 200px;">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
-        Tambah
-      </button>
-      
       <!-- Modal -->
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLongTitle">Konfirmasi</h5>
-              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <button type="submit" class="close" data-bs-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              apakah anda yakin ingin mengubah status klien ini?
+              Apakah anda yakin ingin menambahkan data klien ini?
             </div>
             <div class="modal-footer ">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-              <button type="button" class="btn btn-primary">Iya</button>
+               <div>
+                      <input type="submit" name="simpan" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/dataklienar.php">
+              </div>
+              <div>
+                      <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
+              </div>
             </div>
           </div>
         </div>
       </div>
       </div>
     </div>
+                  </div>
+
+                </form><!-- End General Form Elements -->
+              </div>
+
+            </div>
+    </section>
+    <?php if (isset($_POST['simpan'])) {
+        $id_litmas = $_POST['id_litmas'];
+        $nama_klien = $_POST['nama_klien'];
+        $lapass = $_POST['lapas'];
+        $pkk = $_POST['pk'];
+        $kasuss = $_POST['kasus'];
+        $statuss = $_POST['status'];
+
+        $sql = pg_query($conn, "UPDATE litmas SET id_status='$statuss'");
+
+        if ($sql) {
+            echo "<script>alert('Data berhasil diedit');window.location='../adminbps/bka-asimilasi rumah.php';</script>";
+        } else {
+            echo pg_last_error($conn);
+        }
+    } ?>
+
+
   </div>
-  </main><!-- End #main -->
+  </main>
+  
+  <!-- End #main -->
 
 
   <!-- ======= Footer ======= -->
@@ -327,6 +414,6 @@
 
 </body>
 <?php } else {echo 'maaf Anda belum login.';}
-  ?>
+?>
   
 </html>

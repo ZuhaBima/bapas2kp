@@ -278,12 +278,10 @@ if ($_SESSION['status'] == 'login') { ?>
                 <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
                 <?php } ?>
               </td>
-
               <td>
-                <div class="con">
-                  <i class="bi bi-pencil-square bg-icon-primary" role="button" herf="../adminbps/bka-statusar.php?id_litmas=<?= $row[
+                  <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/bka-statusar.php?id_litmas=<?= $row[
                       'id_litmas'
-                  ] ?>"></i>
+                  ] ?>"></a>
                 </div>
               </td>
               <td>
