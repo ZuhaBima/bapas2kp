@@ -82,6 +82,16 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
+            <a href="../adminbps/bka-diversi.php">
+              <i class="bi bi-circle"></i><span>Diversi</span>
+            </a>
+          </li>
+          <li>
+            <a href="../adminbps/bka-sidang.php">
+              <i class="bi bi-circle"></i><span>Sidang</span>
+            </a>
+          </li>
+          <li>
             <a href="../adminbps/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
@@ -132,13 +142,13 @@
         </ul>
       </li>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/Lapas.php">
           <i class="bi bi-file-code-fill"></i>
           <span>Lapas</span>
         </a>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/kasus.php">
           <i class="bi bi-book-half"></i>
           <span>Kasus</span>

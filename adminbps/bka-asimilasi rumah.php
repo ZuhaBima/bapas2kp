@@ -82,6 +82,16 @@ if ($_SESSION['status'] == 'login') { ?>
           <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+              <a href="../adminbps/bka-diversi.php">
+                <i class="bi bi-circle"></i><span>Diversi</span>
+              </a>
+            </li>
+            <li>
+              <a href="../adminbps/bka-sidang.php">
+                <i class="bi bi-circle"></i><span>Sidang</span>
+              </a>
+            </li>
           <li>
             <a href="../adminbps/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
@@ -197,7 +207,7 @@ if ($_SESSION['status'] == 'login') { ?>
             <th scope="col">PK</th>
             <th scope="col">Status</th>
             <th scope="col">Edit</th>
-
+            <th scope="col">Hapus</th>
           </tr>
         </thead>
         <tbody>
@@ -250,12 +260,16 @@ if ($_SESSION['status'] == 'login') { ?>
                 <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
                 <?php } ?>
               </td>
-
               <td>
-                <div class="con">
-                  <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom:5px; color:blue; width:200px" role="button"></i>
-                  <i class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="#" role="button"></i>
+                  <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/bka-statusar.php?id_litmas=<?= $row[
+                      'id_litmas'
+                  ] ?>"></a>
                 </div>
+              </td>
+              <td>
+              <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/bka-hapusar.php?id_litmas=<?= $row[
+                  'id_litmas'
+              ] ?>"></a>
               </td>
             </tr>
           <?php

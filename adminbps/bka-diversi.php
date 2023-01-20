@@ -10,7 +10,7 @@ if ($_SESSION['status'] == 'login') { ?>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>USER BAPAS (ADMIN)- Bapas Pekanbaru</title>
+  <title>BKA AR (ADMIN) - Bapas Pekanbaru</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -63,7 +63,6 @@ if ($_SESSION['status'] == 'login') { ?>
     <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
   </header><!-- End Header -->
 
-
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
 
@@ -75,14 +74,15 @@ if ($_SESSION['status'] == 'login') { ?>
         <a class="nav-link collapsed" href="../adminbps/dashboard.php">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
-        </a><!-- End Dashboard Nav -->
+        </a>
+  </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
+           <li>
               <a href="../adminbps/bka-diversi.php">
                 <i class="bi bi-circle"></i><span>Diversi</span>
               </a>
@@ -143,6 +143,24 @@ if ($_SESSION['status'] == 'login') { ?>
         </ul>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/jenisLitmas.php">
+          <i class="bi bi-book"></i>
+          <span>Jenis Litmas</span>
+        </a>
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/klien.php">
+          <i class="bi bi-person"></i>
+          <span>Klien</span>
+        </a>
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/status.php">
+          <i class="bi bi-activity"></i>
+          <span>Status</span>
+        </a>
+
         <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/Lapas.php">
           <i class="bi bi-file-code-fill"></i>
@@ -155,80 +173,131 @@ if ($_SESSION['status'] == 'login') { ?>
           <span>Kasus</span>
         </a>
 
-        <li class="nav-item">
-            <a class="nav-link " href="../adminbps/userbapas.php">
-                <i class="bi bi-people"></i>
-                <span>User</span>
-            </a>
-        </li>
-       <!-- End Forms Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/userbapas.php">
+          <i class="bi bi-people"></i>
+          <span>User</span>
+        </a>
+      </li><!-- End Forms Nav -->
 
   </aside><!-- End Sidebar-->
-
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>User</h1>
+      <h1>Diversi</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
-          <li class="breadcrumb-item"><a href="../adminbps/userbapas.php">User</a></li>
+          <li class="breadcrumb-item">BKA</li>
+          <li class="breadcrumb-item"><a href="../adminbps/bka-asimilasi rumah.php">Diversi</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Anggota Bapas</h5>
-                <div  style="float: right; margin-bottom: 5px;">  
-                  <a class="btn btn-primary" href="../adminbps/userTambah.php" role="button">+</a>
-                </div>
-              <br>
-              <!-- Default Table -->
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">NIP</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Nama</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>199811122021011001</td>
-                    <td>Wahyu Ananda,S.Tr.Pas</td>
-                    <td>PK Pertama</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>199112112020121002</td>
-                    <td>Angga Desvirizon,S.E</td>
-                    <td>PK Pertama</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>198709122020121001</td>
-                    <td>Zainul Akmal,S.E</td>
-                    <td>PK Pertama</td>
-                  </tr>
-                  
-                </tbody>
-              </table>
-              <!-- End Default Table Example -->
-            </div>
-          </div>
+    <div class="mainpage">
+      <div class="container">
+  
+          <div class="row height d-flex justify-content-center align-items-center">
+            <div class="col-md-6">
+              <div class="form">
+                <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control form-input" placeholder="Search anything...">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                <span class="left-pan"><i class="fa fa"></i></span>
+                </form>
+              </div>
+            </div>        
         </div>
       </div>
-    </section>
+      <br>
+      <div  style="float: right; margin-bottom: 5px;">
+        <a class="btn btn-primary" href="../adminbps/bka-datakliendiversi.php" role="button">+</a>
+      </div>
+      <br>
+      <table class="table">
+        <thead>
+          <tr align="center">
+            <th scope="col">Nomor Litmas</th>
+            <th scope="col">Nama Klien</th>
+            <th scope="col">Lapas Asal</th>
+            <th scope="col">Kasus</th>
+            <th scope="col">PK</th>
+            <th scope="col">Status</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Hapus</th>
 
-  </main><!-- End #main -->
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          $result = pg_query(
+              $conn,
+              'SELECT * FROM litmas  WHERE id_jenis_litmas = 5 AND id_jenis_klien= 1'
+          );
+          $result2 = pg_query(
+              $conn,
+              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 5 AND id_jenis_klien= 1'
+          );
+          $result3 = pg_query(
+              $conn,
+              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 5 AND id_jenis_klien= 1'
+          );
+          $result4 = pg_query(
+              $conn,
+              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 5 AND id_jenis_klien= 1'
+          );
+          $result5 = pg_query(
+              $conn,
+              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 5 AND id_jenis_klien= 1'
+          );
 
+          while ($row = pg_fetch_array($result)) {
+
+              $row2 = pg_fetch_array($result2);
+              $row3 = pg_fetch_array($result3);
+              $row4 = pg_fetch_array($result4);
+              $row5 = pg_fetch_array($result5);
+              ?>
+
+            <tr align="center">
+              <td><?= $row['id_litmas'] ?></td>
+              <td><?= $row['nama_klien'] ?></td>
+              <td><?= $row3['nama_lapas'] ?></td>
+              <td><?= $row4['jenis_kasus'] ?></td>
+              <td><?= $row2['nama_pegawai'] ?></td>
+              <!-- <td><span class="badge rounded-pill bg-secondary"><?= $row5[
+                  'nama_status_litmas'
+              ] ?></span></td> -->
+              <td>
+                <?php if (
+                    $row['id_status'] == 1
+                ) { ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
+                <?php } elseif (
+                    $row['id_status'] == 2
+                ) { ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
+                <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
+                <?php } ?>
+              </td>
+
+              <td>
+                <div class="con">
+                  <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom:5px; color:blue; width:200px" role="button"></i>
+                </div>
+              </td>
+              <td>
+              <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/bka-hapusdiversi.php?id_litmas=<?= $row[
+                  'id_litmas'
+              ] ?>"></a>
+              </td>
+            </tr>
+          <?php
+          }
+          ?>
+
+        </tbody>
+      </table>
+    </div>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -263,5 +332,5 @@ if ($_SESSION['status'] == 'login') { ?>
 </body>
 <?php } else {echo 'maaf Anda belum login.';}
 ?>
-
+  
 </html>

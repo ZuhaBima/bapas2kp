@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<?php include '../config.php'; ?>
+<?php include '../config.php'; 
+
+$id_litmas = $_GET['id_litmas'];
+$sql = pg_query($conn, "SELECT * from litmas where id_litmas='$id_litmas'");
+$row = pg_fetch_array($sql);?>
 
 <html lang="en">
 
@@ -83,6 +87,16 @@
           <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+              <a href="../adminbps/bka-diversi.php">
+                <i class="bi bi-circle"></i><span>Diversi</span>
+              </a>
+            </li>
+            <li>
+              <a href="../adminbps/bka-sidang.php">
+                <i class="bi bi-circle"></i><span>Sidang</span>
+              </a>
+            </li>
           <li>
             <a href="../adminbps/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>

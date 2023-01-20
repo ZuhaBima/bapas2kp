@@ -5,35 +5,35 @@
 
 <head>
 <?php
-session_start();
-if ($_SESSION['status'] == 'login') { ?>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  session_start();
+  if ($_SESSION['status'] == 'login') { ?>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>USER BAPAS (ADMIN)- Bapas Pekanbaru</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <title>Dashboard - Bapas Pekanbaru</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="../assets/img/bapas.png" rel="icon">
-  <link href="../assets/img/bapas.png" rel="Logoo">
+    <!-- Favicons -->
+    <link href="../assets/img/bapas.png" rel="icon">
+    <link href="../assets/img/bapas.png" rel="Logoo">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="../assets/css/style.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
+    <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
   * Author: BootstrapMade.com
@@ -45,9 +45,9 @@ if ($_SESSION['status'] == 'login') { ?>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
-  
+
     <div class="d-flex align-items-center justify-content-between">
-<a href="../adminbps/dashboard.php" class="logo d-flex align-items-center">
+      <a href="../adminbps/dashboard.php" class="logo d-flex align-items-center">
         <img src="../assets/img/bapas.png" alt="">
         <img src="../assets/img/pemasyarakatan.png" alt="">
         <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -55,12 +55,12 @@ if ($_SESSION['status'] == 'login') { ?>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-  
+
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
-  
-             
-    <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
+
+
+        <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
   </header><!-- End Header -->
 
 
@@ -73,9 +73,11 @@ if ($_SESSION['status'] == 'login') { ?>
       </li><!-- End Profile Page Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/dashboard.php">
-          <i class="bi bi-grid"></i>
+          <i class="bi bi-book"></i>
           <span>Beranda</span>
-        </a><!-- End Dashboard Nav -->
+        </a>
+      </li>
+     <!-- End Dashboard Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -142,6 +144,24 @@ if ($_SESSION['status'] == 'login') { ?>
           </li>
         </ul>
       </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/jenisLitmas.php">
+          <i class="bi bi-book"></i>
+          <span>Jenis Litmas</span>
+        </a>
+
+        <li class="nav-item">
+            <a class="nav-link " href="../adminbps/klien.php">
+              <i class="bi bi-person"></i>
+              <span>Klien</span>
+            </a>
+          </li>
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/status.php">
+          <i class="bi bi-activity"></i>
+          <span>Status</span>
+        </a>
 
         <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/Lapas.php">
@@ -150,84 +170,31 @@ if ($_SESSION['status'] == 'login') { ?>
         </a>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/kasus.php">
-          <i class="bi bi-book-half"></i>
-          <span>Kasus</span>
-        </a>
-
-        <li class="nav-item">
-            <a class="nav-link " href="../adminbps/userbapas.php">
-                <i class="bi bi-people"></i>
-                <span>User</span>
+            <a class="nav-link collapsed" href="../adminbps/kasus.php">
+              <i class="bi bi-book-half"></i>
+              <span>Kasus</span>
             </a>
-        </li>
-       <!-- End Forms Nav -->
+          
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/userbapas.php">
+          <i class="bi bi-people"></i>
+          <span>User</span>
+        </a>
+      </li><!-- End Forms Nav -->
 
   </aside><!-- End Sidebar-->
-
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>User</h1>
+      <h1>Klien</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
-          <li class="breadcrumb-item"><a href="../adminbps/userbapas.php">User</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/klien.html">Klien</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Anggota Bapas</h5>
-                <div  style="float: right; margin-bottom: 5px;">  
-                  <a class="btn btn-primary" href="../adminbps/userTambah.php" role="button">+</a>
-                </div>
-              <br>
-              <!-- Default Table -->
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">NIP</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Nama</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>199811122021011001</td>
-                    <td>Wahyu Ananda,S.Tr.Pas</td>
-                    <td>PK Pertama</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>199112112020121002</td>
-                    <td>Angga Desvirizon,S.E</td>
-                    <td>PK Pertama</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>198709122020121001</td>
-                    <td>Zainul Akmal,S.E</td>
-                    <td>PK Pertama</td>
-                  </tr>
-                  
-                </tbody>
-              </table>
-              <!-- End Default Table Example -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main><!-- End #main -->
 
   </main><!-- End #main -->
 
@@ -262,6 +229,5 @@ if ($_SESSION['status'] == 'login') { ?>
 
 </body>
 <?php } else {echo 'maaf Anda belum login.';}
-?>
-
+  ?>
 </html>
