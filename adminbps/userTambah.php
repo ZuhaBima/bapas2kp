@@ -4,13 +4,13 @@
 <html lang="en">
 
 <head>
-<?php
+  <?php
   session_start();
   if ($_SESSION['status'] == 'login') { ?>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Dashboard - Bapas Pekanbaru</title>
+    <title>BKD DataklienPB (ADMIN)- Bapas Pekanbaru</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -73,11 +73,10 @@
       </li><!-- End Profile Page Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/dashboard.php">
-          <i class="bi bi-book"></i>
+          <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
-      </li>
-     <!-- End Dashboard Nav -->
+      </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -134,24 +133,6 @@
           </li>
         </ul>
       </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/jenisLitmas.php">
-          <i class="bi bi-book"></i>
-          <span>Jenis Litmas</span>
-        </a>
-
-        <li class="nav-item">
-            <a class="nav-link " href="../adminbps/klien.php">
-              <i class="bi bi-person"></i>
-              <span>Klien</span>
-            </a>
-          </li>
-
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/status.php">
-          <i class="bi bi-activity"></i>
-          <span>Status</span>
-        </a>
 
         <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/Lapas.php">
@@ -160,11 +141,11 @@
         </a>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="../adminbps/kasus.php">
-              <i class="bi bi-book-half"></i>
-              <span>Kasus</span>
-            </a>
-          
+        <a class="nav-link collapsed" href="../adminbps/kasus.php">
+          <i class="bi bi-book-half"></i>
+          <span>Kasus</span>
+        </a>
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/userbapas.php">
           <i class="bi bi-people"></i>
@@ -177,14 +158,68 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Klien</h1>
+      <h1>Tambah Data Pegawai</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
-          <li class="breadcrumb-item"><a href="../adminbps/klien.html">Klien</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/userbapas.php">User</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/userTambah.php">Tambah Pegawai</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+    <div class="mainpage">
+      <div class="container">
+
+      </div>
+      <!-- Button trigger modal -->
+      <section class="section">
+        <div class="row">
+          <div class="col-lg-12">
+
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Silahkan Masukkan Data Anggota Baru</h5>
+
+                <!-- General Form Elements -->
+                <form method="POST">
+                  <div class="row mb-6">
+                    <label for="inputText" class="col-sm-2 col-form-label" required>NIP</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="id_litmas">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row mb-6">
+                    <label for="inputText" class="col-sm-2 col-form-label" required>Nama Pegawai</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="nama_klien">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row mb-6">
+                    <label for="inputText" class="col-sm-2 col-form-label" required>Jabatan Pegawai</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="nama_klien">
+                    </div>
+                  </div>
+                    <div>
+                      <input type="submit" name="simpan" value="simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
+                    </div>
+
+                  </div>
+
+
+
+                </form><!-- End General Form Elements -->
+              </div>
+
+            </div>
+      </section>
+
+
+
+
+      <!-- Button trigger modal -->
 
   </main><!-- End #main -->
 
@@ -218,6 +253,9 @@
   <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {echo 'maaf Anda belum login.';}
-  ?>
+<?php } else {
+    echo 'maaf Anda belum login.';
+  }
+?>
+
 </html>
