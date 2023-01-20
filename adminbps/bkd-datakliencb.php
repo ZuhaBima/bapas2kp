@@ -83,16 +83,16 @@
           <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-              <a href="../adminbps/bka-diversi.php">
-                <i class="bi bi-circle"></i><span>Diversi</span>
-              </a>
-            </li>
-            <li>
-              <a href="../adminbps/bka-sidang.php">
-                <i class="bi bi-circle"></i><span>Sidang</span>
-              </a>
-            </li>
+          <li>
+            <a href="../adminbps/bka-diversi.php">
+              <i class="bi bi-circle"></i><span>Diversi</span>
+            </a>
+          </li>
+          <li>
+            <a href="../adminbps/bka-sidang.php">
+              <i class="bi bi-circle"></i><span>Sidang</span>
+            </a>
+          </li>
           <li>
             <a href="../adminbps/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
@@ -150,25 +150,25 @@
           <span>Jenis Litmas</span>
         </a>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/klien.php">
           <i class="bi bi-person"></i>
           <span>Klien</span>
         </a>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/status.php">
           <i class="bi bi-activity"></i>
           <span>Status</span>
         </a>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/Lapas.php">
           <i class="bi bi-file-code-fill"></i>
           <span>Lapas</span>
         </a>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/kasus.php">
           <i class="bi bi-book-half"></i>
           <span>Kasus</span>
@@ -297,14 +297,41 @@
                         ?>
                       </select>
                     </div>
+                    <!-- Button trigger modal -->
+                    <div class="container-fluid py-5">
+                      <div class="container">
+                        <div class="mx-auto" style="width: 200px;">
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" style="width: 120px; float :right; margin-top :10px">
+                            Tambah
+                          </button>
 
-                    <div>
-                      <input type="submit" name="simpan" value="simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
+                          <!-- Modal -->
+                          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLongTitle">Konfirmasi</h5>
+                                  <button type="submit" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  Apakah anda yakin ingin menambahkan data klien ini?
+                                </div>
+                                <div class="modal-footer ">
+                                  <div>
+                                    <input type="submit" name="simpan" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/dataklienar.php">
+                                  </div>
+                                  <div>
+                                    <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-
-                  </div>
-
-
 
                 </form><!-- End General Form Elements -->
               </div>

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<?php include '../config.php'; ?>
+<?php include '../config.php'; 
+
+$id_litmas = $_GET['id_litmas'];
+$sql = pg_query($conn, "SELECT * from litmas where id_litmas='$id_litmas'");
+$row = pg_fetch_array($sql);?>
 
 <html lang="en">
 

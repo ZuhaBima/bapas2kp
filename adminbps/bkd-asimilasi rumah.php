@@ -81,16 +81,16 @@
           <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-              <a href="../adminbps/bka-diversi.php">
-                <i class="bi bi-circle"></i><span>Diversi</span>
-              </a>
-            </li>
-            <li>
-              <a href="../adminbps/bka-sidang.php">
-                <i class="bi bi-circle"></i><span>Sidang</span>
-              </a>
-            </li>
+          <li>
+            <a href="../adminbps/bka-diversi.php">
+              <i class="bi bi-circle"></i><span>Diversi</span>
+            </a>
+          </li>
+          <li>
+            <a href="../adminbps/bka-sidang.php">
+              <i class="bi bi-circle"></i><span>Sidang</span>
+            </a>
+          </li>
           <li>
             <a href="../adminbps/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
@@ -148,25 +148,25 @@
           <span>Jenis Litmas</span>
         </a>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/klien.php">
           <i class="bi bi-person"></i>
           <span>Klien</span>
         </a>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/status.php">
           <i class="bi bi-activity"></i>
           <span>Status</span>
         </a>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/Lapas.php">
           <i class="bi bi-file-code-fill"></i>
           <span>Lapas</span>
         </a>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/kasus.php">
           <i class="bi bi-book-half"></i>
           <span>Kasus</span>
@@ -208,11 +208,10 @@
             </div>
           </div>
         </div>
-        <a class="btn btn-primary" href="../adminbps/bkd-dataklienar.php" style="float: right;" role="button">+</a>
       </div>
       <div class="mx-auto" style="float : right; margin-bottom:5px;">
-      <a class="btn btn-primary" href="../adminbps/bkd-dataklienar.php" role="button">+</a>
-    </div>
+        <a class="btn btn-primary" href="../adminbps/bkd-dataklienar.php" role="button">+</a>
+      </div>
       <br>
       <table class="table">
         <thead>
