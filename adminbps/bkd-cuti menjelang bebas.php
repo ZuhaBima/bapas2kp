@@ -276,7 +276,7 @@
 
               <td>
                 <div class="con">
-                  <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
+                <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/bkd-statuscmb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
                   <i class="bi bi-trash-fill bg-icon-danger" style="color: tomato;" href="#" role="button"></i>
                 </div>
               </td>
