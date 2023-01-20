@@ -73,7 +73,7 @@
       </li><!-- End Profile Page Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/dashboard.php">
-          <i class="bi bi-book"></i>
+          <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
       </li>
@@ -144,23 +144,6 @@
           </li>
         </ul>
       </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/jenisLitmas.php">
-          <i class="bi bi-book"></i>
-          <span>Jenis Litmas</span>
-        </a>
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="../adminbps/klien.php">
-              <i class="bi bi-person"></i>
-              <span>Klien</span>
-            </a>
-            
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/status.php">
-          <i class="bi bi-activity"></i>
-          <span>Status</span>
-        </a>
 
         <li class="nav-item">
         <a class="nav-link " href="../adminbps/Lapas.php">

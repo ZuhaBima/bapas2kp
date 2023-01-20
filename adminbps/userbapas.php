@@ -143,24 +143,6 @@ if ($_SESSION['status'] == 'login') { ?>
         </ul>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/jenisLitmas.php">
-          <i class="bi bi-book"></i>
-          <span>Jenis Litmas</span>
-        </a>
-
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/klien.php">
-          <i class="bi bi-person"></i>
-          <span>Klien</span>
-        </a>
-
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/status.php">
-          <i class="bi bi-activity"></i>
-          <span>Status</span>
-        </a>
-
         <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/Lapas.php">
           <i class="bi bi-file-code-fill"></i>
@@ -195,6 +177,57 @@ if ($_SESSION['status'] == 'login') { ?>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Anggota Bapas</h5>
+                <div  style="float: right; margin-bottom: 5px;">  
+                  <a class="btn btn-primary" href="../adminbps/userTambah.php" role="button">+</a>
+                </div>
+              <br>
+              <!-- Default Table -->
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">NIP</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Nama</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>199811122021011001</td>
+                    <td>Wahyu Ananda,S.Tr.Pas</td>
+                    <td>PK Pertama</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>199112112020121002</td>
+                    <td>Angga Desvirizon,S.E</td>
+                    <td>PK Pertama</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>198709122020121001</td>
+                    <td>Zainul Akmal,S.E</td>
+                    <td>PK Pertama</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+              <!-- End Default Table Example -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
 
   </main><!-- End #main -->
 

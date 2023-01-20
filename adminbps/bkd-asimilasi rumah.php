@@ -143,24 +143,6 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/jenisLitmas.php">
-          <i class="bi bi-book"></i>
-          <span>Jenis Litmas</span>
-        </a>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/klien.php">
-          <i class="bi bi-person"></i>
-          <span>Klien</span>
-        </a>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/status.php">
-          <i class="bi bi-activity"></i>
-          <span>Status</span>
-        </a>
-
-      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/Lapas.php">
           <i class="bi bi-file-code-fill"></i>
           <span>Lapas</span>
@@ -208,9 +190,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="mx-auto" style="float : right; margin-bottom:5px;">
-        <a class="btn btn-primary" href="../adminbps/bkd-dataklienar.php" role="button">+</a>
+
+        <a class="btn btn-primary" href="../adminbps/bkd-dataklienar.php" style="float: right;" role="button">+</a>
       </div>
       <br>
       <table class="table">

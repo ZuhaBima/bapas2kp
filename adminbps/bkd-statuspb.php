@@ -146,25 +146,7 @@ $row = pg_fetch_array($sql); ?>
             </a>
           </li>
         </ul>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/jenisLitmas.php">
-          <i class="bi bi-book"></i>
-          <span>Jenis Litmas</span>
-        </a>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/klien.php">
-          <i class="bi bi-person"></i>
-          <span>Klien</span>
-        </a>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/status.php">
-          <i class="bi bi-activity"></i>
-          <span>Status</span>
-        </a>
+        </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/Lapas.php">
