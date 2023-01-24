@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<?php include '../config.php'; ?>
-<html lang="en">
 <?php
 session_start();
 if ($_SESSION['status'] == 'login') { ?>
+
+  <!DOCTYPE html>
+  <html lang="en">
 
   <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>BKD PB (Pegawai) - Bapas Pekanbaru</title>
+    <title>Dashboard - Bapas Pekanbaru</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -38,6 +38,31 @@ if ($_SESSION['status'] == 'login') { ?>
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+<<<<<<< HEAD
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+   <header id="header" class="header fixed-top d-flex align-items-center">
+  
+    <div class="d-flex align-items-center justify-content-between">
+<a href="../pegawai/dashboard.html" class="logo d-flex align-items-center">
+        <img src="../assets/img/bapas.png" alt="">
+        <img src="../assets/img/pemasyarakatan.png" alt="">
+        <span class="d-none d-lg-block">Bapas Pekanbaru</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+  
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+  
+             
+    <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
+  </header><!-- End Header -->
+=======
   </head>
 
   <body>
@@ -48,19 +73,32 @@ if ($_SESSION['status'] == 'login') { ?>
       <div class="d-flex align-items-center justify-content-between">
         <a href="../pegawai/dashboard.php" class="logo d-flex align-items-center">
           <img src="../assets/img/bapas.png" alt="">
-          <img src="../assets/img/pemasyarakatan.png" alt="">
           <span class="d-none d-lg-block">Bapas Pekanbaru</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
       </div><!-- End Logo -->
 
+      <div class="search-bar">
+        <form class="search-form d-flex align-items-center" method="POST" action="#">
+          <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+        </form>
+      </div><!-- End Search Bar -->
 
       <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
 
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle " href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li><!-- End Search Icon-->
 
-          <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
+          <a class="btn btn-outline-light" style="margin-right: 10px" href="../logout.php">Logout</a>
+
+
     </header><!-- End Header -->
+
 
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
@@ -74,7 +112,8 @@ if ($_SESSION['status'] == 'login') { ?>
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
-        </li><!-- End Dashboard Nav -->
+        </li>
+     <!-- End Dashboard Nav -->
 
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -143,14 +182,13 @@ if ($_SESSION['status'] == 'login') { ?>
         </li><!-- End Forms Nav -->
 
         <li class="nav-heading">Pages</li>
-
         <li class="nav-item">
-          <a class="nav-link collapsed" href="../pegawai/layanan.php">
+          <a class="nav-link " href="../pegawai/layanan.php">
             <i class="bi bi-person"></i>
             <span>Layanan</span>
           </a>
-        </li><!-- End Profile Page Nav -->
-
+        </li>
+   
         <li class="nav-item">
           <a class="nav-link collapsed" href="../pegawai/tentang.php">
             <i class="bi bi-question-circle"></i>
@@ -162,97 +200,16 @@ if ($_SESSION['status'] == 'login') { ?>
 
     <main id="main" class="main">
 
-      <div class="pagetitle">
-        <h1>Pembebasan Bersyarat</h1>
-        <nav>
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../pegawai/dashboard.php">Beranda</a></li>
-            <li class="breadcrumb-item">BKD</li>
-            <li class="breadcrumb-item"><a href="../pegawai/bkd-pembebasan bersyarat.php">Pembebasan Bersyarat</a></li>
-          </ol>
-        </nav>
-      </div><!-- End Page Title -->
-
-      <a class="btn btn-primary" href="" style="float: right;" role="button">+</a>
-
-      <div>
-        <table class="table">
-          <thead>
-            <tr align="center">
-              <th scope="col">Nomor Litmas</th>
-              <th scope="col">Nama Klien</th>
-              <th scope="col">Lapas Asal</th>
-              <th scope="col">Kasus</th>
-              <th scope="col">PK</th>
-              <th scope="col">Status</th>
-              <th scope="col">Edit Status</th>
-
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            $result = pg_query(
-              $conn,
-              'SELECT * FROM litmas  WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2'
-            );
-            $result2 = pg_query(
-              $conn,
-              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2'
-            );
-            $result3 = pg_query(
-              $conn,
-              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2'
-            );
-            $result4 = pg_query(
-              $conn,
-              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2'
-            );
-            $result5 = pg_query(
-              $conn,
-              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2'
-            );
-
-            while ($row = pg_fetch_array($result)) {
-
-              $row2 = pg_fetch_array($result2);
-              $row3 = pg_fetch_array($result3);
-              $row4 = pg_fetch_array($result4);
-              $row5 = pg_fetch_array($result5);
-            ?>
-
-              <tr align="center">
-                <td><?= $row['id_litmas'] ?></td>
-                <td><?= $row['nama_klien'] ?></td>
-                <td><?= $row3['nama_lapas'] ?></td>
-                <td><?= $row4['jenis_kasus'] ?></td>
-                <td><?= $row2['nama_pegawai'] ?></td>
-                <!-- <td><span class="badge rounded-pill bg-secondary"><?= $row5['nama_status_litmas'] ?></span></td> -->
-                <td>
-                  <?php if (
-                    $row['id_status'] == 1
-                  ) { ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
-                  <?php } elseif (
-                    $row['id_status'] == 2
-                  ) { ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
-                  <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
-                  <?php } ?>
-                </td>
-
-                <td>
-
-                  <div class="con">
-                    <i class="bi bi-pencil-square bg-icon-primary " href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
-                  </div>
-                </td>
-              </tr>
-            <?php
-            }
-            ?>
-
-          </tbody>
-        </table>
-      </div>
-
+    <div class="pagetitle">
+      <h1>Layanan</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../pegawai/dashboard.php">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="../pegawai/layanan.php">Layanan</a></li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+    
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
@@ -285,9 +242,8 @@ if ($_SESSION['status'] == 'login') { ?>
     <script src="../assets/js/main.js"></script>
 
   </body>
-<?php } else {
-  echo 'maaf Anda belum login.';
-}
-?>
 
-</html>
+  </html>
+
+<?php } else {echo 'maaf Anda belum login.';}
+?>

@@ -145,14 +145,14 @@
         <li class="nav-heading">Pages</li>
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="users-profile.php">
+          <a class="nav-link collapsed" href="../pegawai/layanan.php">
             <i class="bi bi-person"></i>
             <span>Layanan</span>
           </a>
         </li><!-- End Profile Page Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.php">
+          <a class="nav-link collapsed" href="../pegawai/tentang.php">
             <i class="bi bi-question-circle"></i>
             <span>Tentang</span>
           </a>
