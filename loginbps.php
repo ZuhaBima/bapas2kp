@@ -81,7 +81,10 @@
                     </div>
                 </div>
                 <input type="submit" value="Login" class="btn btn-dark-outline" style="background-color:#e5e90a;">
+
                 </form>
+
+
                 <?php
                 //Fungsi untuk mencegah inputan karakter yang tidak sesuai
                 function input($username)
@@ -128,6 +131,9 @@
                 }
                 ?>
               </div>
+              <p class='mx-auto' style="color: aliceblue;">Tidak Punya Akun?
+                <a href="./public/Dashboard.php" style="color: cyan;">Keluar</a>
+              </p>
             </div>
       
             <div class="credits">

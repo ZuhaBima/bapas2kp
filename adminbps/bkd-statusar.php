@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<?php include '../config.php'; ?>
+<?php include '../config.php';
+$id_litmas = $_GET['id_litmas'];
+$sql = pg_query($conn, "SELECT * from litmas where id_litmas='$id_litmas'");
+$row = pg_fetch_array($sql);  ?>
 
 <html lang="en">
 
@@ -83,16 +86,16 @@
           <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-              <a href="../adminbps/bka-diversi.php">
-                <i class="bi bi-circle"></i><span>Diversi</span>
-              </a>
-            </li>
-            <li>
-              <a href="../adminbps/bka-sidang.php">
-                <i class="bi bi-circle"></i><span>Sidang</span>
-              </a>
-            </li>
+          <li>
+            <a href="../adminbps/bka-diversi.php">
+              <i class="bi bi-circle"></i><span>Diversi</span>
+            </a>
+          </li>
+          <li>
+            <a href="../adminbps/bka-sidang.php">
+              <i class="bi bi-circle"></i><span>Sidang</span>
+            </a>
+          </li>
           <li>
             <a href="../adminbps/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
@@ -144,13 +147,13 @@
         </ul>
       </li>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/Lapas.php">
           <i class="bi bi-file-code-fill"></i>
           <span>Lapas</span>
         </a>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/kasus.php">
           <i class="bi bi-book-half"></i>
           <span>Kasus</span>
@@ -192,90 +195,184 @@
                 <h5 class="card-title">Ubah Status Klien</h5>
 
                 <!-- General Form Elements -->
-                <form>
+                <form method="POST">
                   <div class="row mb-6">
-                    <label for="inputText" class="col-sm-2 col-form-label">Nomor Litmas</label>
+                    <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="" value="199291003121" required>
+                      <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row['id_litmas']; ?>" required>
                     </div>
                   </div>
                   <br>
                   <div class="row mb-6">
-                    <label for="inputText" class="col-sm-2 col-form-label">Nama Klien</label>
+                    <label for="inputText" class="col-sm-2 col-form-label" required>Nama Klien</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="" value="Dewi Herlina Binti Afrizal" required>
+                      <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row['nama_klien']; ?>" required>
                     </div>
                   </div>
                   <br>
                   <div class="row mb-6">
-                    <label for="inputText" class="col-sm-2 col-form-label">Lapas Asal</label>
+                    <label for="inputText" class="col-sm-2 col-form-label" required>Jenis Klien</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="" value="Lapas Pekanbaru Kelas II" required>
+                      <input type="text" class="form-control" value="BKD" readonly>
                     </div>
                   </div>
                   <br>
                   <div class="row mb-6">
-                    <label for="inputText" class="col-sm-2 col-form-label">Nama PK</label>
+                    <label for="inputText" class="col-sm-2 col-form-label" required>Jenis Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="" value="Syamsu" required>
+                      <input type="text" class="form-control" value="Pembebasan Bersyarat" readonly>
                     </div>
                   </div>
                   <br>
                   <div class="row mb-6">
-                    <label for="inputText" class="col-sm-2 col-form-label">Jenis Kasus</label>
+                    <label class="col-sm-2 col-form-label">Lapas Asal</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="" value="Narkotika" required>
+                      <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Lapas Asal" name="lapas" required>
+                        <option><?php $lapas2 = pg_query($conn, 'SELECT  nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas');
+                                $row1 = pg_fetch_assoc($lapas2);
+                                echo ($row1['nama_lapas']);
+                                ?></option>
+                        <?php
+                        $lapas = pg_query(
+                          $conn,
+                          'SELECT * FROM lapas order by nama_lapas ASC'
+                        );
+                        while ($row = pg_fetch_assoc($lapas)) {
+                          echo "<option value='$row[id_lapas]'> $row[nama_lapas] </option>";
+                        }
+                        ?>
+                      </select>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row mb-6">
+                    <label class="col-sm-2 col-form-label">PK</label>
+                    <div class="col-sm-10">
+                      <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih PK Klien" name="pk" required>
+                        <option>
+                          <?php $pegawai1 = pg_query($conn, 'SELECT  nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip');
+                          $row1 = pg_fetch_assoc($pegawai1);
+                          echo ($row1['nama_pegawai']);
+                          ?>
+                        </option>
+                        <?php
+                        $pk = pg_query(
+                          $conn,
+                          'SELECT * FROM pegawai order by jabatan ASC'
+                        );
+                        while ($row = pg_fetch_assoc($pk)) {
+                          echo "<option value='$row[nip]'>$row[jabatan] - $row[nama_pegawai] </option>";
+                        }
+                        ?>
+                      </select>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row mb-6">
+                    <label class="col-sm-2 col-form-label">Jenis Kasus</label>
+                    <div class="col-sm-10">
+                      <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Jenis Kasus" name="kasus" required>
+                        <option>
+                          <?php $kasus1 = pg_query($conn, 'SELECT  jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus');
+                          $row1 = pg_fetch_assoc($kasus1);
+                          echo ($row1['jenis_kasus']);
+                          ?>
+                        </option>
+                        <?php
+                        $kasus = pg_query(
+                          $conn,
+                          'SELECT * FROM kasus order by jenis_kasus ASC'
+                        );
+                        while ($row = pg_fetch_assoc($kasus)) {
+                          echo "<option value='$row[id_kasus]'>$row[jenis_kasus] </option>";
+                        }
+                        ?>
+                      </select>
                     </div>
                   </div>
                   <br>
                   <div class="row mb-6">
                     <label class="col-sm-2 col-form-label">Status Klien</label>
                     <div class="col-sm-10">
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>Pilih</option>
-                        <option value="1">Sedang Diproses</option>
-                        <option value="2">Sudah Dikirim</option>
-                        <option value="3">Ditolak</option>
+                      <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Status Klien" name="status" required>
+                        <option>
+                          <?php $status1 = pg_query($conn, 'SELECT  nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status');
+                          $row1 = pg_fetch_assoc($status1);
+                          echo ($row1['nama_status_litmas']);
+                          ?>
+                        </option>
+                        <?php
+                        $status = pg_query(
+                          $conn,
+                          'SELECT * FROM status_litmas order by id_status ASC'
+                        );
+                        while ($row = pg_fetch_assoc($status)) {
+                          echo "<option value='$row[id_status]'>$row[nama_status_litmas] </option>";
+                        }
+                        ?>
                       </select>
                     </div>
-                  </div>
+                    <!-- Button trigger modal -->
+                    <div class="container-fluid py-5">
+                      <div class="container">
+                        <div class="mx-auto" style="width: 200px;">
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" style="width: 120px; float :right; margin-top :10px">
+                            Simpan
+                          </button>
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLongTitle">Konfirmasi</h5>
+                                  <button type="submit" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  Apakah anda yakin ingin menambahkan data klien ini?
+                                </div>
+                                <div class="modal-footer ">
+                                  <div>
+                                    <input type="submit" name="simpan" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/dataklienar.php">
+                                  </div>
+                                  <div>
+                                    <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                 </form><!-- End General Form Elements -->
               </div>
-      </section>
 
-
-      <!-- Button trigger modal -->
-      <div class="container-fluid py-5">
-        <div class="container">
-          <div class="mx-auto" style="width: 200px;">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
-              Tambah
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Konfirmasi</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    apakah anda yakin ingin mengubah status klien ini?
-                  </div>
-                  <div class="modal-footer ">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                    <button type="button" class="btn btn-primary">Iya</button>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-  </main><!-- End #main -->
+      </section>
+      <?php if (isset($_POST['simpan'])) {
+        $id_litmas = $_POST['id_litmas'];
+        $nama_klien = $_POST['nama_klien'];
+        $lapass = $_POST['lapas'];
+        $pkk = $_POST['pk'];
+        $kasuss = $_POST['kasus'];
+        $statuss = $_POST['status'];
+
+        $sql = pg_query($conn, "UPDATE litmas SET nip='$pkk', id_kasus='$kasuss', id_lapas='$lapass', id_status='$statuss' WHERE id_litmas = '$id_litmas'");
+
+        if ($sql) {
+          echo "<script>alert('Data berhasil diedit');window.location='../adminbps/bkd-asimilasi rumah.php';</script>";
+        } else {
+          echo pg_last_error($conn);
+        }
+      } ?>
+
+
+    </div>
+  </main>
 
 
   <!-- ======= Footer ======= -->
