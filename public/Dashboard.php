@@ -171,135 +171,54 @@
       </nav>
     </div><!-- End Page Title -->
 
-  <div class="mainpage">
-      <div class="card text-center">
-        <div class="card-body">
-          <h5 class="card-title">INFORMASI LITMAS</h5>
-          <br>
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Diversi BKA</h5>
-        <p class="card-text">Total Diversi pada saat ini berjumlah 500</p>
-        <a class="btn btn-primary" href="../public/bka-diversi.php" role="button">Cek</a>
+   <div class="card" style="width: 900px; ">
+          <div class="row">
+            <div class="col-md-4 card-body">
+              <h5 class="card-title">Bagian Klien Anak</h5>
+              <p class="card-text">bagian (unit) dari Bapas yang memiliki tugas-tugas Bapas yang berkenaan dengan klien pemasyarakatan yang berusia anak yakni belum genap berusia 18 (delapan belas) Tahun di wilayah Pekanbaru
+            </div>
+              
+            <div class="col-md-4 card-body" style="padding: 20px; float: right;">
+              <span style="float: right; padding-top: 20px;">
+              <p class="text-center" style="color: navy;"><b>Total Litmas Klien Anak</b></p>
+                <div class="card" style="width: 18rem; ">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Diversi                 <span style="float: right;">230 kasus</span></li>
+                    <li class="list-group-item">Pengadilan              <span style="float: right;">230 kasus</span></li>
+                    <li class="list-group-item">Asimilasi Rumah         <span style="float: right;">230 kasus</span></li>
+                    <li class="list-group-item">Cuti Bersyarat          <span style="float: right;">230 kasus</span></li>
+                    <li class="list-group-item">Cuti Menjelang Bebas    <span style="float: right;">230 kasus</span></li>
+                    <li class="list-group-item">Pembebasan bersyarat    <span style="float: right;">230 kasus</span></li>
+                  </ul>
+                </div>
+              </span>
+            </div>
+        </div>
       </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Sidang BKA</h5>
-        <p class="card-text">Total Sidang Anak pada saat ini berjumlah 500</p>
-        <a class="btn btn-primary" href="../public/bka-sidang.php" role="button">Cek</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Asimilasi Rumah BKA</h5>
-        <p class="card-text">Total Asimilasi Rumah Anak pada saat ini berjumlah 500</p>
-        <a class="btn btn-primary" href="../public/bka-asimilasi rumah.php" role="button">Cek</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Cuti Bersyarat BKA</h5>
-        <p class="card-text">Total Cuti Bersyarat Anak pada saat ini berjumlah 500</p>
-        <a class="btn btn-primary" href="../public/bka-cuti bersyarat.php" role="button">Cek</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Cuti Menjelang Bebas BKA</h5>
-        <p class="card-text">Total Cuti Menjelang Bebas Anak pada saat ini berjumlah 500</p>
-        <a class="btn btn-primary" href="../public/bka-cuti menjelang bebas.php" role="button">Cek</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Pembebasan Bersyarat BKA</h5>
-        <p class="card-text">Total Pembebasan Bersyarat Anak pada saat ini berjumlah 500</p>
-        <a class="btn btn-primary" href="../public/bka-pembebasan bersyarat.php" role="button">Cek</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Asimilasi Rumah BKD</h5>
-        <p class="card-text">Total Asimilasi Rumah Dewasa pada saat ini berjumlah 500</p>
-        <a class="btn btn-primary" href="../public/bkd-asimilasi rumah.php" role="button">Cek</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Cuti Bersyarat</h5>
-        <p class="card-text">Total Cuti Bersyarat Dewasa pada saat ini berjumlah 500</p>
-        <a class="btn btn-primary" href="../public/bkd-cuti bersyarat.php" role="button">Cek</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Cuti Menjelang Bebas</h5>
-        <p class="card-text">Total Cuti Menjelang Bebas Dewasa pada saat ini berjumlah 500</p>
-        <a class="btn btn-primary" href="../public/bkd-cuti menjelang bebas.php" role="button">Cek</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Pembebasan Bersyarat</h5>
-        <p class="card-text">Total Pembebasan Bersyarat Dewasa pada saat ini berjumlah 500</p>
-        <a class="btn btn-primary" href="../public/bkd-pembebasan bersyarat" role="button">Cek</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  </div>
-</div>
-  </main><!-- End #main -->
+      <br>
+      <div class="card" style="width: 900px; ">
+        <div class="row">
+        <div class="col-md-4 card-body">
+          <h5 class="card-title">Bagian Klien Dewasa</h5>
+          <p class="card-text">Memberikan bimbingan kemasyarakatan dan pengentasan klien dewasa sesuai dengan peraturan perundang-undangan yang berlaku dari Pekanbaru. 
+        </div>
+            
+        <div class="col-md-4 card-body" style="padding: 20px; float: right;">
+          <span style="float: right; padding-top: 20px;">
+          <p class="text-center" style="color: navy;"><b>Total Litmas Klien Dewasa</b></p>
+            <div class="card" style="width: 18rem; ">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Asimilasi Rumah         <span style="float: right;">230 kasus</span></li>
+                <li class="list-group-item">Cuti Bersyarat          <span style="float: right;">230 kasus</span></li>
+                <li class="list-group-item">Cuti Menjelang Bebas    <span style="float: right;">230 kasus</span></li>
+                <li class="list-group-item">Pembebasan bersyarat    <span style="float: right;">230 kasus</span></li>
+              </ul>
+            </div>
+          </span>
+        </div>
+       </div>
+       </div>
+    </main>
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
