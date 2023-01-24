@@ -172,7 +172,44 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
-
+    <div class="mainpage">
+      <div class="container">
+  
+          <div class="row height d-flex justify-content-center align-items-center">
+            <div class="col-md-6">
+              <div class="form">
+                <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control form-input" placeholder="Search anything...">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                <span class="left-pan"><i class="fa fa"></i></span>
+                </form>
+              </div>
+            </div>        
+        </div>
+      </div>
+      <br>
+      <div  style="float: right; margin-bottom: 5px;">
+        <a class="btn btn-primary" href="../pegawai/bka-datakliencb.php" role="button">+</a>
+      </div>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nomor Litmas</th>
+            <th scope="col">Nama Klien</th>
+            <th scope="col">Lapas Asal</th>
+            <th scope="col">Kasus</th>
+            <th scope="col">PK</th>
+            <th scope="col">Status</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+      </table>
+    </div>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->

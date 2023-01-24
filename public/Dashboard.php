@@ -171,7 +171,7 @@
       </nav>
     </div><!-- End Page Title -->
 
-   <div class="card" style="width: 900px; ">
+    <div class="card" style="width: 900px; ">
           <div class="row">
             <div class="col-md-4 card-body">
               <h5 class="card-title">Bagian Klien Anak</h5>
@@ -183,12 +183,12 @@
               <p class="text-center" style="color: navy;"><b>Total Litmas Klien Anak</b></p>
                 <div class="card" style="width: 18rem; ">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Diversi                 <span style="float: right;">230 kasus</span></li>
-                    <li class="list-group-item">Pengadilan              <span style="float: right;">230 kasus</span></li>
-                    <li class="list-group-item">Asimilasi Rumah         <span style="float: right;">230 kasus</span></li>
-                    <li class="list-group-item">Cuti Bersyarat          <span style="float: right;">230 kasus</span></li>
-                    <li class="list-group-item">Cuti Menjelang Bebas    <span style="float: right;">230 kasus</span></li>
-                    <li class="list-group-item">Pembebasan bersyarat    <span style="float: right;">230 kasus</span></li>
+                    <li class="list-group-item list-group-item-secondary">Diversi                 <span style="float: right;" class="border">230 kasus</span></li>
+                    <li class="list-group-item list-group-item-secondary">Pengadilan              <span style="float: right;" class="border">230 kasus</span></li>
+                    <li class="list-group-item list-group-item-secondary">Asimilasi Rumah         <span style="float: right;" class="border">230 kasus </span></li>
+                    <li class="list-group-item list-group-item-secondary">Cuti Bersyarat          <span style="float: right;" class="border">230 kasus</span></li>
+                    <li class="list-group-item list-group-item-secondary">Cuti Menjelang Bebas    <span style="float: right;" class="border">230 kasus</span></li>
+                    <li class="list-group-item list-group-item-secondary">Pembebasan bersyarat    <span style="float: right;" class="border">230 kasus</span></li>
                   </ul>
                 </div>
               </span>
@@ -208,10 +208,10 @@
           <p class="text-center" style="color: navy;"><b>Total Litmas Klien Dewasa</b></p>
             <div class="card" style="width: 18rem; ">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Asimilasi Rumah         <span style="float: right;">230 kasus</span></li>
-                <li class="list-group-item">Cuti Bersyarat          <span style="float: right;">230 kasus</span></li>
-                <li class="list-group-item">Cuti Menjelang Bebas    <span style="float: right;">230 kasus</span></li>
-                <li class="list-group-item">Pembebasan bersyarat    <span style="float: right;">230 kasus</span></li>
+                <li class="list-group-item list-group-item-secondary">Asimilasi Rumah         <span style="float: right;" class="border">230 kasus</span></li>
+                <li class="list-group-item list-group-item-secondary">Cuti Bersyarat          <span style="float: right;" class="border">230 kasus</span></li>
+                <li class="list-group-item list-group-item-secondary">Cuti Menjelang Bebas    <span style="float: right;" class="border">230 kasus</span></li>
+                <li class="list-group-item list-group-item-secondary">Pembebasan bersyarat    <span style="float: right;" class="border">230 kasus</span></li>
               </ul>
             </div>
           </span>

@@ -173,7 +173,7 @@ if ($_SESSION['status'] == 'login') { ?>
         </nav>
       </div><!-- End Page Title -->
 
-      <a class="btn btn-primary" href="" style="float: right;" role="button">+</a>
+      <a class="btn btn-primary" href="../pegawai/bkd-dataklienpb.php" style="float: right;" role="button">+</a>
 
       <div>
         <table class="table">
