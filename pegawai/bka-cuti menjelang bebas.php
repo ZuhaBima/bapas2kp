@@ -45,7 +45,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
   
   <div class="d-flex align-items-center justify-content-between">
-<a href="../public/Dashboard.html" class="logo d-flex align-items-center">
+<a href="../pegawai/dashboard.php" class="logo d-flex align-items-center">
       <img src="../assets/img/bapas.png" alt="">
       <img src="../assets/img/pemasyarakatan.png" alt="">
       <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -80,6 +80,16 @@
     <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
   </a>
   <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+  <li>
+    <a href="../pegawai/bka-diversi.php">
+      <i class="bi bi-circle"></i><span>Diversi</span>
+    </a>
+  </li>
+  <li>
+    <a href="../pegawai/bka-sidang.php">
+      <i class="bi bi-circle"></i><span>Sidang</span>
+    </a>
+  </li>
     <li>
       <a href="../pegawai/bka-asimilasi rumah.php">
         <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
@@ -134,14 +144,14 @@
         <li class="nav-heading">Pages</li>
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="users-profile.html">
+          <a class="nav-link collapsed" href="users-profile.php">
             <i class="bi bi-person"></i>
             <span>Layanan</span>
           </a>
         </li><!-- End Profile Page Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.html">
+          <a class="nav-link collapsed" href="pages-faq.php">
             <i class="bi bi-question-circle"></i>
             <span>Tentang</span>
           </a>
@@ -155,9 +165,9 @@
       <h1>Cuti Menjelang Bebas</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../pegawai/dashboard.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="../pegawai/dashboard.php">Beranda</a></li>
           <li class="breadcrumb-item">BKA</li>
-          <li class="breadcrumb-item"><a href="../pegawai/bka-cuti menjelang bebas.html">Cuti Menjelang Bebas</a></li>
+          <li class="breadcrumb-item"><a href="../pegawai/bka-cuti menjelang bebas.php">Cuti Menjelang Bebas</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

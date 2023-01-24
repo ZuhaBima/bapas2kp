@@ -47,7 +47,7 @@ if ($_SESSION['status'] == 'login') { ?>
    <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-<a href="../public/Dashboard.html" class="logo d-flex align-items-center">
+<a href="../pegawai/dashboard.html" class="logo d-flex align-items-center">
         <img src="../assets/img/bapas.png" alt="">
         <img src="../assets/img/pemasyarakatan.png" alt="">
         <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -71,7 +71,7 @@ if ($_SESSION['status'] == 'login') { ?>
     <header id="header" class="header fixed-top d-flex align-items-center">
 
       <div class="d-flex align-items-center justify-content-between">
-        <a href="../pegawai/dashboard.html" class="logo d-flex align-items-center">
+        <a href="../pegawai/dashboard.php" class="logo d-flex align-items-center">
           <img src="../assets/img/bapas.png" alt="">
           <span class="d-none d-lg-block">Bapas Pekanbaru</span>
         </a>
@@ -119,6 +119,16 @@ if ($_SESSION['status'] == 'login') { ?>
             <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
           <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+              <a href="../pegawai/bka-diversi.php">
+                <i class="bi bi-circle"></i><span>Diversi</span>
+              </a>
+            </li>
+            <li>
+              <a href="../pegawai/bka-sidang.php">
+                <i class="bi bi-circle"></i><span>Sidang</span>
+              </a>
+            </li>
             <li>
               <a href="../pegawai/bka-asimilasi rumah.php">
                 <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
@@ -173,14 +183,14 @@ if ($_SESSION['status'] == 'login') { ?>
         <li class="nav-heading">Pages</li>
 
         <li class="nav-item">
-          <a class="nav-link collapsed" href="users-profile.html">
+          <a class="nav-link collapsed" href="users-profile.php">
             <i class="bi bi-person"></i>
             <span>Layanan</span>
           </a>
         </li><!-- End Profile Page Nav -->
 
         <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.html">
+          <a class="nav-link collapsed" href="pages-faq.php">
             <i class="bi bi-question-circle"></i>
             <span>Tentang</span>
           </a>
@@ -190,16 +200,29 @@ if ($_SESSION['status'] == 'login') { ?>
 
     <main id="main" class="main">
 
-      <div class="pagetitle">
-        <h1>Home</h1>
-        <nav>
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../pegawai/dashboard.html">Home</a></li>
-            <li class="breadcrumb-item">Dashboard</li>
-          </ol>
-        </nav>
-      </div><!-- End Page Title -->
-
+    <div class="pagetitle">
+      <h1>Beranda</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../pegawai/dashboard.php">Beranda</a></li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Kasus Klien Anak</h5>
+        <p class="card-text">1.400 Kasus</p>
+        <a href="#" class="btn btn-primary">Cek</a>
+      </div>
+    </div>
+    <br>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Kasus Klien Dewasa</h5>
+        <p class="card-text">2.970 Kasus</p>
+        <a href="#" class="btn btn-primary">Cek</a>
+      </div>
+    </div>
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
