@@ -173,6 +173,20 @@
           <li class="breadcrumb-item"><a href="../pegawai/bkd-cuti menjelang bebas.php">Cuti Menjelang Bebas</a></li>
         </ol>
       </nav>
+      <div class="row height d-flex justify-content-center align-items-center">
+            <div class="col-md-6">
+              <div class="form">
+                <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control form-input" placeholder="Search anything...">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                <span class="left-pan"><i class="fa fa"></i></span>
+                </form>
+              </div>
+            </div>        
+        </div>
+      </div>
+      <br>
     </div><!-- End Page Title -->
     <a class="btn btn-primary" href="../pegawai/bkd-datakliencmb.php" style="float: right;" role="button">+</a>
     <div>
