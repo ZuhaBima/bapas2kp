@@ -200,7 +200,7 @@ if ($_SESSION['status'] == 'login') { ?>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row[
+                      <input type="text" class="form-control" name="id_litmas" value="<?php echo $row[
                           'id_litmas'
                       ]; ?>" required>
                     </div>
@@ -209,7 +209,7 @@ if ($_SESSION['status'] == 'login') { ?>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nama Klien</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row[
+                      <input type="text" class="form-control" name="nama_klien" value="<?php echo $row[
                           'nama_klien'
                       ]; ?>" required>
                     </div>

@@ -202,7 +202,7 @@ if ($_SESSION['status'] == 'login') { ?>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row[
+                      <input type="text" class="form-control" name="id_litmas" value="<?php echo $row[
                           'id_litmas'
                       ]; ?>" required>
                     </div>
@@ -211,7 +211,7 @@ if ($_SESSION['status'] == 'login') { ?>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nama Klien</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row[
+                      <input type="text" class="form-control" name="nama_klien" value="<?php echo $row[
                           'nama_klien'
                       ]; ?>" required>
                     </div>
@@ -235,14 +235,7 @@ if ($_SESSION['status'] == 'login') { ?>
                     <label class="col-sm-2 col-form-label">Lapas Asal</label>
                     <div class="col-sm-10">
                       <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Lapas Asal" name="lapas" required>
-                        <option><?php
-                        $lapas2 = pg_query(
-                            $conn,
-                            'SELECT  nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas'
-                        );
-                        $row1 = pg_fetch_assoc($lapas2);
-                        echo $row1['nama_lapas'];
-                        ?></option>
+                      <option>Pilih Lapas Asal</option>
                         <?php
                         $lapas = pg_query(
                             $conn,
@@ -260,16 +253,7 @@ if ($_SESSION['status'] == 'login') { ?>
                     <label class="col-sm-2 col-form-label">PK</label>
                     <div class="col-sm-10">
                       <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih PK Klien" name="pk" required>
-                        <option>
-                          <?php
-                          $pegawai1 = pg_query(
-                              $conn,
-                              'SELECT  nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip'
-                          );
-                          $row1 = pg_fetch_assoc($pegawai1);
-                          echo $row1['nama_pegawai'];
-                          ?>
-                        </option>
+                      <option>Pilih PK</option>
                         <?php
                         $pk = pg_query(
                             $conn,
@@ -287,16 +271,7 @@ if ($_SESSION['status'] == 'login') { ?>
                     <label class="col-sm-2 col-form-label">Jenis Kasus</label>
                     <div class="col-sm-10">
                       <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Jenis Kasus" name="kasus" required>
-                        <option>
-                          <?php
-                          $kasus1 = pg_query(
-                              $conn,
-                              'SELECT  jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus'
-                          );
-                          $row1 = pg_fetch_assoc($kasus1);
-                          echo $row1['jenis_kasus'];
-                          ?>
-                        </option>
+                      <option>Pilih Jenis Kasus</option>
                         <?php
                         $kasus = pg_query(
                             $conn,
@@ -314,16 +289,7 @@ if ($_SESSION['status'] == 'login') { ?>
                     <label class="col-sm-2 col-form-label">Status Klien</label>
                     <div class="col-sm-10">
                       <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Status Klien" name="status" required>
-                        <option>
-                          <?php
-                          $status1 = pg_query(
-                              $conn,
-                              'SELECT  nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status'
-                          );
-                          $row1 = pg_fetch_assoc($status1);
-                          echo $row1['nama_status_litmas'];
-                          ?>
-                        </option>
+                      <option>Pilih Status</option>
                         <?php
                         $status = pg_query(
                             $conn,
