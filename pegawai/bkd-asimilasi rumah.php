@@ -173,19 +173,19 @@
         </ol>
       </nav>
       <div class="row height d-flex justify-content-center align-items-center">
-            <div class="col-md-6">
-              <div class="form">
-                <form class="search-form d-flex align-items-center" method="POST" action="#">
-                <i class="fa fa-search"></i>
-                <input type="text" class="form-control form-input" placeholder="Search anything...">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-                <span class="left-pan"><i class="fa fa"></i></span>
-                </form>
-              </div>
-            </div>        
+        <div class="col-md-6">
+          <div class="form">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+              <i class="fa fa-search"></i>
+              <input type="text" class="form-control form-input" placeholder="Search anything...">
+              <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+              <span class="left-pan"><i class="fa fa"></i></span>
+            </form>
+          </div>
         </div>
       </div>
-      <br>
+    </div>
+    <br>
     </div><!-- End Page Title -->
     <a class="btn btn-primary" href="../pegawai/bkd-dataklienar.php" style="float: right;" role="button">+</a>
     <div>
@@ -254,8 +254,7 @@
               <td>
 
                 <div class="con">
-                  <i class="bi bi-pencil-square bg-icon-primary " href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
-                  <i class="bi bi-trash-fill bg-icon-danger" style="color: tomato;" href="#" role="button"></i>
+                  <a class="bi bi-pencil-square bg-icon-primary " href="../pegawai/bkd-statusar.php?id_litmas=<?= $row['id_litmas'] ?>" style="margin-bottom: 5px; color :blue " role="button"></a>
                 </div>
               </td>
             </tr>
