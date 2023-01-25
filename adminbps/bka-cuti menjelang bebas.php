@@ -264,8 +264,9 @@ if ($_SESSION['status'] == 'login') { ?>
               </td>
 
               <td>
-                <div class="con">
-                  <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
+              <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/bka-statuscmb.php?id_litmas=<?= $row[
+                  'id_litmas'
+              ] ?>"></a>
                 </div>
               </td>
               <td>

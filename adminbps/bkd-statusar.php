@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<?php include '../config.php';
+<?php
+include '../config.php';
 $id_litmas = $_GET['id_litmas'];
 $sql = pg_query($conn, "SELECT * from litmas where id_litmas='$id_litmas'");
-$row = pg_fetch_array($sql);  ?>
+$row = pg_fetch_array($sql);
+?>
 
 <html lang="en">
 
@@ -199,14 +201,18 @@ $row = pg_fetch_array($sql);  ?>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row['id_litmas']; ?>" required>
+                      <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row[
+                          'id_litmas'
+                      ]; ?>" required>
                     </div>
                   </div>
                   <br>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nama Klien</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row['nama_klien']; ?>" required>
+                      <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row[
+                          'nama_klien'
+                      ]; ?>" required>
                     </div>
                   </div>
                   <br>
@@ -228,17 +234,21 @@ $row = pg_fetch_array($sql);  ?>
                     <label class="col-sm-2 col-form-label">Lapas Asal</label>
                     <div class="col-sm-10">
                       <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Lapas Asal" name="lapas" required>
-                        <option><?php $lapas2 = pg_query($conn, 'SELECT  nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas');
-                                $row1 = pg_fetch_assoc($lapas2);
-                                echo ($row1['nama_lapas']);
-                                ?></option>
+                        <option><?php
+                        $lapas2 = pg_query(
+                            $conn,
+                            'SELECT  nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas'
+                        );
+                        $row1 = pg_fetch_assoc($lapas2);
+                        echo $row1['nama_lapas'];
+                        ?></option>
                         <?php
                         $lapas = pg_query(
-                          $conn,
-                          'SELECT * FROM lapas order by nama_lapas ASC'
+                            $conn,
+                            'SELECT * FROM lapas order by nama_lapas ASC'
                         );
                         while ($row = pg_fetch_assoc($lapas)) {
-                          echo "<option value='$row[id_lapas]'> $row[nama_lapas] </option>";
+                            echo "<option value='$row[id_lapas]'> $row[nama_lapas] </option>";
                         }
                         ?>
                       </select>
@@ -250,18 +260,22 @@ $row = pg_fetch_array($sql);  ?>
                     <div class="col-sm-10">
                       <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih PK Klien" name="pk" required>
                         <option>
-                          <?php $pegawai1 = pg_query($conn, 'SELECT  nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip');
+                          <?php
+                          $pegawai1 = pg_query(
+                              $conn,
+                              'SELECT  nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip'
+                          );
                           $row1 = pg_fetch_assoc($pegawai1);
-                          echo ($row1['nama_pegawai']);
+                          echo $row1['nama_pegawai'];
                           ?>
                         </option>
                         <?php
                         $pk = pg_query(
-                          $conn,
-                          'SELECT * FROM pegawai order by jabatan ASC'
+                            $conn,
+                            'SELECT * FROM pegawai order by jabatan ASC'
                         );
                         while ($row = pg_fetch_assoc($pk)) {
-                          echo "<option value='$row[nip]'>$row[jabatan] - $row[nama_pegawai] </option>";
+                            echo "<option value='$row[nip]'>$row[jabatan] - $row[nama_pegawai] </option>";
                         }
                         ?>
                       </select>
@@ -273,18 +287,22 @@ $row = pg_fetch_array($sql);  ?>
                     <div class="col-sm-10">
                       <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Jenis Kasus" name="kasus" required>
                         <option>
-                          <?php $kasus1 = pg_query($conn, 'SELECT  jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus');
+                          <?php
+                          $kasus1 = pg_query(
+                              $conn,
+                              'SELECT  jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus'
+                          );
                           $row1 = pg_fetch_assoc($kasus1);
-                          echo ($row1['jenis_kasus']);
+                          echo $row1['jenis_kasus'];
                           ?>
                         </option>
                         <?php
                         $kasus = pg_query(
-                          $conn,
-                          'SELECT * FROM kasus order by jenis_kasus ASC'
+                            $conn,
+                            'SELECT * FROM kasus order by jenis_kasus ASC'
                         );
                         while ($row = pg_fetch_assoc($kasus)) {
-                          echo "<option value='$row[id_kasus]'>$row[jenis_kasus] </option>";
+                            echo "<option value='$row[id_kasus]'>$row[jenis_kasus] </option>";
                         }
                         ?>
                       </select>
@@ -296,18 +314,22 @@ $row = pg_fetch_array($sql);  ?>
                     <div class="col-sm-10">
                       <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Status Klien" name="status" required>
                         <option>
-                          <?php $status1 = pg_query($conn, 'SELECT  nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status');
+                          <?php
+                          $status1 = pg_query(
+                              $conn,
+                              'SELECT  nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status'
+                          );
                           $row1 = pg_fetch_assoc($status1);
-                          echo ($row1['nama_status_litmas']);
+                          echo $row1['nama_status_litmas'];
                           ?>
                         </option>
                         <?php
                         $status = pg_query(
-                          $conn,
-                          'SELECT * FROM status_litmas order by id_status ASC'
+                            $conn,
+                            'SELECT * FROM status_litmas order by id_status ASC'
                         );
                         while ($row = pg_fetch_assoc($status)) {
-                          echo "<option value='$row[id_status]'>$row[nama_status_litmas] </option>";
+                            echo "<option value='$row[id_status]'>$row[nama_status_litmas] </option>";
                         }
                         ?>
                       </select>
@@ -354,20 +376,23 @@ $row = pg_fetch_array($sql);  ?>
             </div>
       </section>
       <?php if (isset($_POST['simpan'])) {
-        $id_litmas = $_POST['id_litmas'];
-        $nama_klien = $_POST['nama_klien'];
-        $lapass = $_POST['lapas'];
-        $pkk = $_POST['pk'];
-        $kasuss = $_POST['kasus'];
-        $statuss = $_POST['status'];
+          $id_litmas = $_POST['id_litmas'];
+          $nama_klien = $_POST['nama_klien'];
+          $lapass = $_POST['lapas'];
+          $pkk = $_POST['pk'];
+          $kasuss = $_POST['kasus'];
+          $statuss = $_POST['status'];
 
-        $sql = pg_query($conn, "UPDATE litmas SET nip='$pkk', id_kasus='$kasuss', id_lapas='$lapass', id_status='$statuss' WHERE id_litmas = '$id_litmas'");
+          $sql = pg_query(
+              $conn,
+              "UPDATE litmas SET nip='$pkk', id_kasus='$kasuss', id_lapas='$lapass', id_status='$statuss' WHERE id_litmas = '$id_litmas'"
+          );
 
-        if ($sql) {
-          echo "<script>alert('Data berhasil diedit');window.location='../adminbps/bkd-asimilasi rumah.php';</script>";
-        } else {
-          echo pg_last_error($conn);
-        }
+          if ($sql) {
+              echo "<script>alert('Data berhasil diedit');window.location='../adminbps/bkd-asimilasi rumah.php';</script>";
+          } else {
+              echo pg_last_error($conn);
+          }
       } ?>
 
 
@@ -405,9 +430,7 @@ $row = pg_fetch_array($sql);  ?>
   <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {
-    echo 'maaf Anda belum login.';
-  }
-?>
+<?php } else {echo 'maaf Anda belum login.';}
+  ?>
 
 </html>
