@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include '../config.php'; ?>
 <html lang="en">
 
 <head>
@@ -169,47 +170,105 @@
           <li class="breadcrumb-item">BKA</li>
           <li class="breadcrumb-item"><a href="../pegawai/bka-cuti menjelang bebas.php">Cuti Menjelang Bebas</a></li>
         </ol>
-      </nav>
-    </div><!-- End Page Title -->
-    <div class="mainpage">
-      <div class="container">
-  
-          <div class="row height d-flex justify-content-center align-items-center">
-            <div class="col-md-6">
-              <div class="form">
-                <form class="search-form d-flex align-items-center" method="POST" action="#">
-                <i class="fa fa-search"></i>
-                <input type="text" class="form-control form-input" placeholder="Search anything...">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-                <span class="left-pan"><i class="fa fa"></i></span>
-                </form>
-              </div>
-            </div>        
+        </nav>
+      <div class="row height d-flex justify-content-center align-items-center">
+        <div class="col-md-6">
+          <div class="form">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+              <i class="fa fa-search"></i>
+              <input type="text" class="form-control form-input" placeholder="Search anything...">
+              <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+              <span class="left-pan"><i class="fa fa"></i></span>
+            </form>
+          </div>
         </div>
       </div>
-      <br>
-      <div  style="float: right; margin-bottom: 5px;">
-        <a class="btn btn-primary" href="../pegawai/bka-datakliencmb.php" role="button">+</a>
-      </div>
-      <br>
+    </div>
+    <br>
+    </div><!-- End Page Title -->
+    <a class="btn btn-primary" href="../pegawai/bka-datakliencmb.php" style="float: right;" role="button">+</a>
+    <div>
       <table class="table">
         <thead>
-          <tr>
+          <tr align="center">
             <th scope="col">Nomor Litmas</th>
             <th scope="col">Nama Klien</th>
             <th scope="col">Lapas Asal</th>
             <th scope="col">Kasus</th>
             <th scope="col">PK</th>
             <th scope="col">Status</th>
-            <th scope="col">Edit</th>
+            <th scope="col">Edit Status</th>
+
           </tr>
         </thead>
         <tbody>
-            
+
+          <?php
+          $result = pg_query(
+              $conn,
+              'SELECT * FROM litmas  WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+          );
+          $result2 = pg_query(
+              $conn,
+              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+          );
+          $result3 = pg_query(
+              $conn,
+              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+          );
+          $result4 = pg_query(
+              $conn,
+              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+          );
+          $result5 = pg_query(
+              $conn,
+              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+          );
+
+          while ($row = pg_fetch_array($result)) {
+
+              $row2 = pg_fetch_array($result2);
+              $row3 = pg_fetch_array($result3);
+              $row4 = pg_fetch_array($result4);
+              $row5 = pg_fetch_array($result5);
+              ?>
+
+            <tr align="center">
+              <td><?= $row['id_litmas'] ?></td>
+              <td><?= $row['nama_klien'] ?></td>
+              <td><?= $row3['nama_lapas'] ?></td>
+              <td><?= $row4['jenis_kasus'] ?></td>
+              <td><?= $row2['nama_pegawai'] ?></td>
+              <!-- <td><span class="badge rounded-pill bg-secondary"><?= $row5[
+                  'nama_status_litmas'
+              ] ?></span></td> -->
+              <td>
+                <?php if (
+                    $row['id_status'] == 1
+                ) { ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
+                <?php } elseif (
+                    $row['id_status'] == 2
+                ) { ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
+                <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
+                <?php } ?>
+              </td>
+
+              <td>
+
+                <div class="con">
+                  <a class="bi bi-pencil-square bg-icon-primary " href="../pegawai/bka-statuscmb.php?id_litmas=<?= $row[
+                      'id_litmas'
+                  ] ?>" style="margin-bottom: 5px; color :blue " role="button"></a>
+                </div>
+              </td>
+            </tr>
+          <?php
+          }
+          ?>
+
         </tbody>
       </table>
     </div>
-  </main><!-- End #main -->
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
