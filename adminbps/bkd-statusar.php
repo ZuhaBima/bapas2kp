@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<?php include '../config.php';
+<?php
+include '../config.php';
 $id_litmas = $_GET['id_litmas'];
 $sql = pg_query($conn, "SELECT * from litmas where id_litmas='$id_litmas'");
-$row = pg_fetch_array($sql);  ?>
+$row = pg_fetch_array($sql);
+?>
 
 <html lang="en">
 
@@ -199,14 +201,18 @@ $row = pg_fetch_array($sql);  ?>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row['id_litmas']; ?>" required>
+                      <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row[
+                          'id_litmas'
+                      ]; ?>" required>
                     </div>
                   </div>
                   <br>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nama Klien</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row['nama_klien']; ?>" required>
+                      <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row[
+                          'nama_klien'
+                      ]; ?>" required>
                     </div>
                   </div>
                   <br>
@@ -231,11 +237,11 @@ $row = pg_fetch_array($sql);  ?>
                         <option>Pilih Lapas Asal</option>
                         <?php
                         $lapas = pg_query(
-                          $conn,
-                          'SELECT * FROM lapas order by nama_lapas ASC'
+                            $conn,
+                            'SELECT * FROM lapas order by nama_lapas ASC'
                         );
                         while ($row = pg_fetch_assoc($lapas)) {
-                          echo "<option value='$row[id_lapas]'> $row[nama_lapas] </option>";
+                            echo "<option value='$row[id_lapas]'> $row[nama_lapas] </option>";
                         }
                         ?>
                       </select>
@@ -249,11 +255,11 @@ $row = pg_fetch_array($sql);  ?>
                         <option>Pilih PK</option>
                         <?php
                         $pk = pg_query(
-                          $conn,
-                          'SELECT * FROM pegawai order by jabatan ASC'
+                            $conn,
+                            'SELECT * FROM pegawai order by jabatan ASC'
                         );
                         while ($row = pg_fetch_assoc($pk)) {
-                          echo "<option value='$row[nip]'>$row[jabatan] - $row[nama_pegawai] </option>";
+                            echo "<option value='$row[nip]'>$row[jabatan] - $row[nama_pegawai] </option>";
                         }
                         ?>
                       </select>
@@ -267,11 +273,11 @@ $row = pg_fetch_array($sql);  ?>
                         <option>Pilih Jenis Kasus</option>
                         <?php
                         $kasus = pg_query(
-                          $conn,
-                          'SELECT * FROM kasus order by jenis_kasus ASC'
+                            $conn,
+                            'SELECT * FROM kasus order by jenis_kasus ASC'
                         );
                         while ($row = pg_fetch_assoc($kasus)) {
-                          echo "<option value='$row[id_kasus]'>$row[jenis_kasus] </option>";
+                            echo "<option value='$row[id_kasus]'>$row[jenis_kasus] </option>";
                         }
                         ?>
                       </select>
@@ -285,11 +291,11 @@ $row = pg_fetch_array($sql);  ?>
                         <option>Pilih Status</option>
                         <?php
                         $status = pg_query(
-                          $conn,
-                          'SELECT * FROM status_litmas order by id_status ASC'
+                            $conn,
+                            'SELECT * FROM status_litmas order by id_status ASC'
                         );
                         while ($row = pg_fetch_assoc($status)) {
-                          echo "<option value='$row[id_status]'>$row[nama_status_litmas] </option>";
+                            echo "<option value='$row[id_status]'>$row[nama_status_litmas] </option>";
                         }
                         ?>
                       </select>
@@ -336,20 +342,20 @@ $row = pg_fetch_array($sql);  ?>
             </div>
       </section>
       <?php if (isset($_POST['simpan'])) {
-        $id_litmas = $_POST['id_litmas'];
-        $nama_klien = $_POST['nama_klien'];
-        $lapass = $_POST['lapas'];
-        $pkk = $_POST['pk'];
-        $kasuss = $_POST['kasus'];
-        $statuss = $_POST['status'];
+          $id_litmas = $_POST['id_litmas'];
+          $nama_klien = $_POST['nama_klien'];
+          $lapass = $_POST['lapas'];
+          $pkk = $_POST['pk'];
+          $kasuss = $_POST['kasus'];
+          $statuss = $_POST['status'];
 
         $sql = pg_query($conn, "UPDATE litmas SET id_litmas = '$id_litmas', nama_klien = '$nama_klien', nip='$pkk', id_kasus='$kasuss', id_lapas='$lapass', id_status='$statuss' WHERE id_litmas = '$id_litmas'");
 
-        if ($sql) {
-          echo "<script>alert('Data berhasil diedit');window.location='../adminbps/bkd-asimilasi rumah.php';</script>";
-        } else {
-          echo pg_last_error($conn);
-        }
+          if ($sql) {
+              echo "<script>alert('Data berhasil diedit');window.location='../adminbps/bkd-asimilasi rumah.php';</script>";
+          } else {
+              echo pg_last_error($conn);
+          }
       } ?>
 
 
@@ -387,9 +393,7 @@ $row = pg_fetch_array($sql);  ?>
   <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {
-    echo 'maaf Anda belum login.';
-  }
-?>
+<?php } else {echo 'maaf Anda belum login.';}
+  ?>
 
 </html>

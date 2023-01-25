@@ -263,9 +263,10 @@ if ($_SESSION['status'] == 'login') { ?>
               </td>
 
               <td>
-                <div class="con">
-                  <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom:5px; color:blue;" class="edit" role="button"></i>
-                </div>
+              <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/bka-statuscb.php?id_litmas=<?= $row[
+                  'id_litmas'
+              ] ?>"></a>
+              </div>
               </td>
               <td>
               <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/bka-hapuscb.php?id_litmas=<?= $row[

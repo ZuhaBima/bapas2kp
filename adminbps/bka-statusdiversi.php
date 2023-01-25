@@ -6,6 +6,7 @@ $id_litmas = $_GET['id_litmas'];
 $sql = pg_query($conn, "SELECT * from litmas where id_litmas='$id_litmas'");
 $row = pg_fetch_array($sql);
 ?>
+
 <html lang="en">
 
 <head>
@@ -178,8 +179,8 @@ if ($_SESSION['status'] == 'login') { ?>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
             <li class="breadcrumb-item">BKA</li>
-            <li class="breadcrumb-item"><a href="../adminbps/bka-cuti bersyarat.php">Cuti Bersyarat</a></li>
-            <li class="breadcrumb-item"><a href="../adminbps/bka-statuscb.php">Ubah Status Klien</a></li>
+            <li class="breadcrumb-item"><a href="../adminbps/bka-diversi.php">Cuti Menjelang Bebas</a></li>
+            <li class="breadcrumb-item"><a href="../adminbps/bka-statusdiversi.php">Ubah Status Klien</a></li>
           </ol>
         </nav>
       </div><!-- End Page Title -->
@@ -196,8 +197,8 @@ if ($_SESSION['status'] == 'login') { ?>
               <div class="card-body">
                 <h5 class="card-title">Ubah Status Klien</h5>
 
-               <!-- General Form Elements -->
-               <form method="POST">
+                <!-- General Form Elements -->
+                <form method="POST">
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                     <div class="col-sm-10">
@@ -226,7 +227,7 @@ if ($_SESSION['status'] == 'login') { ?>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Jenis Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" value="Cuti Bersyarat" readonly>
+                      <input type="text" class="form-control" value="Diversi" readonly>
                     </div>
                   </div>
                   <br>
@@ -389,7 +390,7 @@ if ($_SESSION['status'] == 'login') { ?>
           );
 
           if ($sql) {
-              echo "<script>alert('Data berhasil diedit');window.location='../adminbps/bka-cuti bersyarat.php';</script>";
+              echo "<script>alert('Data berhasil diedit');window.location='../adminbps/bka-diversi.php';</script>";
           } else {
               echo pg_last_error($conn);
           }
@@ -400,6 +401,7 @@ if ($_SESSION['status'] == 'login') { ?>
   </main>
 
   <!-- End #main -->
+    
 
 
   <!-- ======= Footer ======= -->
@@ -434,5 +436,4 @@ if ($_SESSION['status'] == 'login') { ?>
 </body>
 <?php } else {echo 'maaf Anda belum login.';}
 ?>
-  
 </html>
