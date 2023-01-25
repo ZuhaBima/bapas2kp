@@ -143,24 +143,6 @@ if ($_SESSION['status'] == 'login') { ?>
         </ul>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/jenisLitmas.php">
-          <i class="bi bi-book"></i>
-          <span>Jenis Litmas</span>
-        </a>
-
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/klien.php">
-          <i class="bi bi-person"></i>
-          <span>Klien</span>
-        </a>
-
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/status.php">
-          <i class="bi bi-activity"></i>
-          <span>Status</span>
-        </a>
-
         <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/Lapas.php">
           <i class="bi bi-file-code-fill"></i>
@@ -190,7 +172,7 @@ if ($_SESSION['status'] == 'login') { ?>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
           <li class="breadcrumb-item">BKA</li>
-          <li class="breadcrumb-item"><a href="../adminbps/bka-asimilasi rumah.php">Sidang</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/bka-sidang.php">Sidang</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -281,8 +263,9 @@ if ($_SESSION['status'] == 'login') { ?>
               </td>
 
               <td>
-                <div class="con">
-                  <i class="bi bi-pencil-square bg-icon-primary" href="#" style="margin-bottom:5px; color:blue; width:200px" role="button"></i>
+              <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/bka-statussidang.php?id_litmas=<?= $row[
+                  'id_litmas'
+              ] ?>"></a>
                 </div>
               </td>
               <td>

@@ -83,16 +83,16 @@
           <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-              <a href="../adminbps/bka-diversi.php">
-                <i class="bi bi-circle"></i><span>Diversi</span>
-              </a>
-            </li>
-            <li>
-              <a href="../adminbps/bka-sidang.php">
-                <i class="bi bi-circle"></i><span>Sidang</span>
-              </a>
-            </li>
+          <li>
+            <a href="../adminbps/bka-diversi.php">
+              <i class="bi bi-circle"></i><span>Diversi</span>
+            </a>
+          </li>
+          <li>
+            <a href="../adminbps/bka-sidang.php">
+              <i class="bi bi-circle"></i><span>Sidang</span>
+            </a>
+          </li>
           <li>
             <a href="../adminbps/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
@@ -144,13 +144,13 @@
         </ul>
       </li>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/Lapas.php">
           <i class="bi bi-file-code-fill"></i>
           <span>Lapas</span>
         </a>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/kasus.php">
           <i class="bi bi-book-half"></i>
           <span>Kasus</span>
@@ -195,28 +195,58 @@
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>NIP</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="id_litmas">
+                      <input type="text" class="form-control" name="nip_pg">
                     </div>
                   </div>
                   <br>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nama Pegawai</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama_klien">
+                      <input type="text" class="form-control" name="nama_pg">
                     </div>
                   </div>
                   <br>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Jabatan Pegawai</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama_klien">
+                      <input type="text" class="form-control" name="jabatan_pg">
                     </div>
                   </div>
-                    <div>
-                      <input type="submit" name="simpan" value="simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
-                    </div>
+                  <div class="container-fluid py-5">
+                    <div class="container">
+                      <div class="mx-auto" style="width: 200px;">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" style="width: 120px; float :right; margin-top :10px">
+                          Tambah
+                        </button>
 
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Konfirmasi</h5>
+                                <button type="submit" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                Apakah anda yakin ingin menambahkan data pegawai ini?
+                              </div>
+                              <div class="modal-footer ">
+                                <div>
+                                  <input type="submit" name="simpan" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/dataklienar.php">
+                                </div>
+                                <div>
+                                  <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
 
 
 
@@ -225,6 +255,19 @@
 
             </div>
       </section>
+      <?php if (isset($_POST['simpan'])) {
+        $nip = $_POST['nip_pg'];
+        $nama_peg = $_POST['nama_pg'];
+        $jabatan = $_POST['jabatan_pg'];
+
+        $sql = pg_query($conn, "INSERT INTO pegawai (nip,nama_pegawai,jabatan) values ('$nip','$nama_peg', '$jabatan')");
+
+        if ($sql) {
+          echo "<script>alert('Data berhasil ditambah');window.location='../adminbps/userbapas.php';</script>";
+        } else {
+          echo pg_last_error($conn);
+        }
+      } ?>
 
 
 

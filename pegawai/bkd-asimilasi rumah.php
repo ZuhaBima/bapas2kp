@@ -82,16 +82,16 @@
           <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-              <a href="../pegawai/bka-diversi.php">
-                <i class="bi bi-circle"></i><span>Diversi</span>
-              </a>
-            </li>
-            <li>
-              <a href="../pegawai/bka-sidang.php">
-                <i class="bi bi-circle"></i><span>Sidang</span>
-              </a>
-            </li>
+          <li>
+            <a href="../pegawai/bka-diversi.php">
+              <i class="bi bi-circle"></i><span>Diversi</span>
+            </a>
+          </li>
+          <li>
+            <a href="../pegawai/bka-sidang.php">
+              <i class="bi bi-circle"></i><span>Sidang</span>
+            </a>
+          </li>
           <li>
             <a href="../pegawai/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
@@ -187,7 +187,7 @@
       </div>
       <br>
     </div><!-- End Page Title -->
-    <a class="btn btn-primary" href="../pegawai/bkd-dataklienasirum.php" style="float: right;" role="button">+</a>
+    <a class="btn btn-primary" href="../pegawai/bkd-dataklienar.php" style="float: right;" role="button">+</a>
     <div>
       <table class="table">
         <thead>
