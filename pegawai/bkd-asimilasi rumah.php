@@ -47,7 +47,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../public/Dashboard.php" class="logo d-flex align-items-center">
+      <a href="../pegawai/dashboard.php" class="logo d-flex align-items-center">
         <img src="../assets/img/bapas.png" alt="">
         <img src="../assets/img/pemasyarakatan.png" alt="">
         <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -82,6 +82,16 @@
           <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+              <a href="../pegawai/bka-diversi.php">
+                <i class="bi bi-circle"></i><span>Diversi</span>
+              </a>
+            </li>
+            <li>
+              <a href="../pegawai/bka-sidang.php">
+                <i class="bi bi-circle"></i><span>Sidang</span>
+              </a>
+            </li>
           <li>
             <a href="../pegawai/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
@@ -136,14 +146,14 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.php">
+        <a class="nav-link collapsed" href="../pegawai/layanan.php">
           <i class="bi bi-person"></i>
           <span>Layanan</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        <a class="nav-link collapsed" href="../pegawai/tentang.php">
           <i class="bi bi-question-circle"></i>
           <span>Tentang</span>
         </a>
@@ -157,13 +167,13 @@
       <h1>Asimilasi Rumah</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../pegawai/dashboard.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="../pegawai/dashboard.php">Beranda</a></li>
           <li class="breadcrumb-item">BKD</li>
           <li class="breadcrumb-item"><a href="../pegawai/bkd-asimilasi rumah.php">Asimilasi Rumah</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    <a class="btn btn-primary" href="" style="float: right;" role="button">+</a>
+    <a class="btn btn-primary" href="../pegawai/bkd-dataklienasirum.php" style="float: right;" role="button">+</a>
     <div>
       <table class="table">
         <thead>

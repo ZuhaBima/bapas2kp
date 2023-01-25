@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<?php include '../config.php'; ?>
-
 <html lang="en">
 
 <head>
@@ -10,7 +8,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Dashboard - Bapas Pekanbaru</title>
+    <title>BKA Diversi (Pegawai)- Bapas Pekanbaru</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -45,23 +43,23 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
-
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="../adminbps/dashboard.php" class="logo d-flex align-items-center">
-        <img src="../assets/img/bapas.png" alt="">
-        <img src="../assets/img/pemasyarakatan.png" alt="">
-        <span class="d-none d-lg-block">Bapas Pekanbaru</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
-
-
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
+  
+  <div class="d-flex align-items-center justify-content-between">
+<a href="../pegawai/dashboard.php" class="logo d-flex align-items-center">
+      <img src="../assets/img/bapas.png" alt="">
+      <img src="../assets/img/pemasyarakatan.png" alt="">
+      <span class="d-none d-lg-block">Bapas Pekanbaru</span>
+    </a>
+    <i class="bi bi-list toggle-sidebar-btn"></i>
+  </div><!-- End Logo -->
 
 
-        <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
-  </header><!-- End Header -->
+  <nav class="header-nav ms-auto">
+    <ul class="d-flex align-items-center">
+
+           
+  <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
+</header><!-- End Header -->
 
 
   <!-- ======= Sidebar ======= -->
@@ -72,7 +70,7 @@
       <li class="nav-heading">Main Menu</li>
       </li><!-- End Profile Page Nav -->
       <li class="nav-item">
-        <a class="nav-link " href="../adminbps/dashboard.php">
+        <a class="nav-link collapsed" href="../pegawai/dashboard.php">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
@@ -84,145 +82,135 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-              <a href="../adminbps/bka-diversi.php">
-                <i class="bi bi-circle"></i><span>Diversi</span>
-              </a>
-            </li>
-            <li>
-              <a href="../adminbps/bka-sidang.php">
-                <i class="bi bi-circle"></i><span>Sidang</span>
-              </a>
-            </li>
+          <a href="../pegawai/bka-diversi.php">
+            <i class="bi bi-circle"></i><span>Diversi</span>
+          </a>
+        </li>
+        <li>
+          <a href="../pegawai/bka-sidang.php">
+            <i class="bi bi-circle"></i><span>Sidang</span>
+          </a>
+        </li>
           <li>
-            <a href="../adminbps/bka-asimilasi rumah.php">
+            <a href="../pegawai/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-cuti bersyarat.php">
+            <a href="../pegawai/bka-cuti bersyarat.php">
               <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-cuti menjelang bebas.php">
+            <a href="../pegawai/bka-cuti menjelang bebas.php">
               <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bka-pembebasan bersyarat.php">
+            <a href="../pegawai/bka-pembebasan bersyarat.php">
               <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
             </a>
           </li>
         </ul>
       </li><!-- End Components Nav -->
-
+      
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-journal-text"></i><span>BKD</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../adminbps/bkd-asimilasi rumah.php">
+            <a href="../pegawai/bkd-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-cuti bersyarat.php">
+            <a href="../pegawai/bkd-cuti bersyarat.php">
               <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-cuti menjelang bebas.php">
+            <a href="../pegawai/bkd-cuti menjelang bebas.php">
               <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
             </a>
           </li>
           <li>
-            <a href="../adminbps/bkd-pembebasan bersyarat.php">
+            <a href="../pegawai/bkd-pembebasan bersyarat.php">
               <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
             </a>
           </li>
         </ul>
-      </li>
+      </li><!-- End Forms Nav -->
 
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/Lapas.php">
-          <i class="bi bi-file-code-fill"></i>
-          <span>Lapas</span>
-        </a>
-
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/kasus.php">
-          <i class="bi bi-book-half"></i>
-          <span>Kasus</span>
-        </a>
+      <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/userbapas.php">
-          <i class="bi bi-people"></i>
-          <span>User</span>
+        <a class="nav-link collapsed" href="../pegawai/layanan.php">
+          <i class="bi bi-person"></i>
+          <span>Layanan</span>
         </a>
-      </li><!-- End Forms Nav -->
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../pegawai/tentang.php">
+          <i class="bi bi-question-circle"></i>
+          <span>Tentang</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
 
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Beranda</h1>
+      <h1>Diversi</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="../pegawai/dashboard.php">Home</a></li>
+          <li class="breadcrumb-item">BKA</li>
+          <li class="breadcrumb-item"><a href="../pegawai/bka-diversi.php">Diversi</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    <div class="card" style="width: 900px; ">
-          <div class="row">
-            <div class="col-md-4 card-body">
-              <h5 class="card-title">Bagian Klien Anak</h5>
-              <p class="card-text">bagian (unit) dari Bapas yang memiliki tugas-tugas Bapas yang berkenaan dengan klien pemasyarakatan yang berusia anak yakni belum genap berusia 18 (delapan belas) Tahun di wilayah Pekanbaru
-            </div>
-              
-            <div class="col-md-4 card-body" style="padding: 20px; float: right;">
-              <span style="float: right; padding-top: 20px;">
-              <p class="text-center" style="color: navy;"><b>Total Litmas Klien Anak</b></p>
-                <div class="card" style="width: 18rem; ">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item list-group-item-secondary">Diversi                 <span style="float: right;" class="border">230 kasus</span></li>
-                    <li class="list-group-item list-group-item-secondary">Pengadilan              <span style="float: right;" class="border">230 kasus</span></li>
-                    <li class="list-group-item list-group-item-secondary">Asimilasi Rumah         <span style="float: right;" class="border">230 kasus </span></li>
-                    <li class="list-group-item list-group-item-secondary">Cuti Bersyarat          <span style="float: right;" class="border">230 kasus</span></li>
-                    <li class="list-group-item list-group-item-secondary">Cuti Menjelang Bebas    <span style="float: right;" class="border">230 kasus</span></li>
-                    <li class="list-group-item list-group-item-secondary">Pembebasan bersyarat    <span style="float: right;" class="border">230 kasus</span></li>
-                  </ul>
-                </div>
-              </span>
-            </div>
+    <div class="mainpage">
+      <div class="container">
+  
+          <div class="row height d-flex justify-content-center align-items-center">
+            <div class="col-md-6">
+              <div class="form">
+                <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control form-input" placeholder="Search anything...">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                <span class="left-pan"><i class="fa fa"></i></span>
+                </form>
+              </div>
+            </div>        
         </div>
       </div>
       <br>
-      <div class="card" style="width: 900px; ">
-        <div class="row">
-        <div class="col-md-4 card-body">
-          <h5 class="card-title">Bagian Klien Dewasa</h5>
-          <p class="card-text">Memberikan bimbingan kemasyarakatan dan pengentasan klien dewasa sesuai dengan peraturan perundang-undangan yang berlaku dari Pekanbaru. 
-        </div>
+      <div  style="float: right; margin-bottom: 5px;">
+        <a class="btn btn-primary" href="../pegawai/bka-datakliendiversi.php" role="button">+</a>
+      </div>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nomor Litmas</th>
+            <th scope="col">Nama Klien</th>
+            <th scope="col">Lapas Asal</th>
+            <th scope="col">Kasus</th>
+            <th scope="col">PK</th>
+            <th scope="col">Status</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
             
-        <div class="col-md-4 card-body" style="padding: 20px; float: right;">
-          <span style="float: right; padding-top: 20px;">
-          <p class="text-center" style="color: navy;"><b>Total Litmas Klien Dewasa</b></p>
-            <div class="card" style="width: 18rem; ">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item list-group-item-secondary">Asimilasi Rumah         <span style="float: right;" class="border">230 kasus</span></li>
-                <li class="list-group-item list-group-item-secondary">Cuti Bersyarat          <span style="float: right;" class="border">230 kasus</span></li>
-                <li class="list-group-item list-group-item-secondary">Cuti Menjelang Bebas    <span style="float: right;" class="border">230 kasus</span></li>
-                <li class="list-group-item list-group-item-secondary">Pembebasan bersyarat    <span style="float: right;" class="border">230 kasus</span></li>
-              </ul>
-            </div>
-          </span>
-        </div>
-       </div>
-       </div>
-    </main>
+        </tbody>
+      </table>
+    </div>
+  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -254,6 +242,7 @@
   <script src="../assets/js/main.js"></script>
 
 </body>
+
 <?php } else {echo 'maaf Anda belum login.';}
   ?>
 

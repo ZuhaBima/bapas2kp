@@ -108,11 +108,11 @@ if ($_SESSION['status'] == 'login') { ?>
         <li class="nav-heading">Main Menu</li>
         </li><!-- End Profile Page Nav -->
         <li class="nav-item">
-          <a class="nav-link " href="../pegawai/dashboard.php">
+          <a class="nav-link collapsed" href="../pegawai/dashboard.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
-        </li><!-- End Dashboard Nav -->
+        </li>
 
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -183,14 +183,13 @@ if ($_SESSION['status'] == 'login') { ?>
         <li class="nav-heading">Pages</li>
 
         <li class="nav-item">
-          <a class="nav-link collapsed" href="../pegawai/tentang.php">
+          <a class="nav-link collapsed" href="../pegawai/layanan.php">
             <i class="bi bi-person"></i>
             <span>Layanan</span>
           </a>
         </li><!-- End Profile Page Nav -->
-
         <li class="nav-item">
-          <a class="nav-link collapsed" href="../pegawai/tentang.php">
+          <a class="nav-link " href="../pegawai/tentang.php">
             <i class="bi bi-question-circle"></i>
             <span>Tentang</span>
           </a>
@@ -201,60 +200,15 @@ if ($_SESSION['status'] == 'login') { ?>
     <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Beranda</h1>
+      <h1>Tentang</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../pegawai/dashboard.php">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="../pegawai/tentang.php">Tentang</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    <div class="card" style="width: 900px; ">
-          <div class="row">
-            <div class="col-md-4 card-body">
-              <h5 class="card-title">Bagian Klien Anak</h5>
-              <p class="card-text">bagian (unit) dari Bapas yang memiliki tugas-tugas Bapas yang berkenaan dengan klien pemasyarakatan yang berusia anak yakni belum genap berusia 18 (delapan belas) Tahun di wilayah Pekanbaru
-            </div>
-              
-            <div class="col-md-4 card-body" style="padding: 20px; float: right;">
-              <span style="float: right; padding-top: 20px;">
-              <p class="text-center" style="color: navy;"><b>Total Litmas Klien Anak</b></p>
-                <div class="card" style="width: 18rem; ">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item list-group-item-secondary">Diversi                 <span style="float: right;" class="border">230 kasus</span></li>
-                    <li class="list-group-item list-group-item-secondary">Pengadilan              <span style="float: right;" class="border">230 kasus</span></li>
-                    <li class="list-group-item list-group-item-secondary">Asimilasi Rumah         <span style="float: right;" class="border">230 kasus </span></li>
-                    <li class="list-group-item list-group-item-secondary">Cuti Bersyarat          <span style="float: right;" class="border">230 kasus</span></li>
-                    <li class="list-group-item list-group-item-secondary">Cuti Menjelang Bebas    <span style="float: right;" class="border">230 kasus</span></li>
-                    <li class="list-group-item list-group-item-secondary">Pembebasan bersyarat    <span style="float: right;" class="border">230 kasus</span></li>
-                  </ul>
-                </div>
-              </span>
-            </div>
-        </div>
-      </div>
-      <br>
-      <div class="card" style="width: 900px; ">
-        <div class="row">
-        <div class="col-md-4 card-body">
-          <h5 class="card-title">Bagian Klien Dewasa</h5>
-          <p class="card-text">Memberikan bimbingan kemasyarakatan dan pengentasan klien dewasa sesuai dengan peraturan perundang-undangan yang berlaku dari Pekanbaru. 
-        </div>
-            
-        <div class="col-md-4 card-body" style="padding: 20px; float: right;">
-          <span style="float: right; padding-top: 20px;">
-          <p class="text-center" style="color: navy;"><b>Total Litmas Klien Dewasa</b></p>
-            <div class="card" style="width: 18rem; ">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item list-group-item-secondary">Asimilasi Rumah         <span style="float: right;" class="border">230 kasus</span></li>
-                <li class="list-group-item list-group-item-secondary">Cuti Bersyarat          <span style="float: right;" class="border">230 kasus</span></li>
-                <li class="list-group-item list-group-item-secondary">Cuti Menjelang Bebas    <span style="float: right;" class="border">230 kasus</span></li>
-                <li class="list-group-item list-group-item-secondary">Pembebasan bersyarat    <span style="float: right;" class="border">230 kasus</span></li>
-              </ul>
-            </div>
-          </span>
-        </div>
-       </div>
-       </div>
+   
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->

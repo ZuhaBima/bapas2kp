@@ -135,7 +135,7 @@
                 <a href="./public/Dashboard.php" style="color: cyan;">Keluar</a>
               </p>
             </div>
-
+      
             <div class="credits">
               <!-- All the links in the footer should remain intact. -->
               <!-- You can delete the links only if you purchased the pro version. -->
@@ -146,11 +146,11 @@
           </div>
         </div>
     </div>
-
     </section>
 
     </div>
   </main><!-- End #main -->
+  
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
