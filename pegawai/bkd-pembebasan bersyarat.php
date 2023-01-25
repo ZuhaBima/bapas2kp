@@ -81,7 +81,7 @@ if ($_SESSION['status'] == 'login') { ?>
             <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
           <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
+            <li>
               <a href="../pegawai/bka-diversi.php">
                 <i class="bi bi-circle"></i><span>Diversi</span>
               </a>
@@ -241,7 +241,7 @@ if ($_SESSION['status'] == 'login') { ?>
                 <td>
 
                   <div class="con">
-                    <i class="bi bi-pencil-square bg-icon-primary " href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
+                    <a class="bi bi-pencil-square bg-icon-primary " href="../pegawai/bkd-statuspb.php?id_litmas=<?= $row['id_litmas'] ?>" style="margin-bottom: 5px; color :blue " role="button"></a>
                   </div>
                 </td>
               </tr>
