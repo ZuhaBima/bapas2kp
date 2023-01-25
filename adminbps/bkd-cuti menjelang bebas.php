@@ -259,8 +259,7 @@
               <td>
                 <div class="con">
                   <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/bkd-statuscmb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
-              <td>
-                <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/bkd-hapuscmb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
+                  <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/bkd-hapuscmb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
               </td>
     </div>
     </td>

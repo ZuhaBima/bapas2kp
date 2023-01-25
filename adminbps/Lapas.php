@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-<?php
+  <?php
   session_start();
   if ($_SESSION['status'] == 'login') { ?>
     <meta charset="utf-8">
@@ -77,23 +77,23 @@
           <span>Beranda</span>
         </a>
       </li>
-     <!-- End Dashboard Nav -->
+      <!-- End Dashboard Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-              <a href="../adminbps/bka-diversi.php">
-                <i class="bi bi-circle"></i><span>Diversi</span>
-              </a>
-            </li>
-            <li>
-              <a href="../adminbps/bka-sidang.php">
-                <i class="bi bi-circle"></i><span>Sidang</span>
-              </a>
-            </li>
+          <li>
+            <a href="../adminbps/bka-diversi.php">
+              <i class="bi bi-circle"></i><span>Diversi</span>
+            </a>
+          </li>
+          <li>
+            <a href="../adminbps/bka-sidang.php">
+              <i class="bi bi-circle"></i><span>Sidang</span>
+            </a>
+          </li>
           <li>
             <a href="../adminbps/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
@@ -145,19 +145,19 @@
         </ul>
       </li>
 
-        <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link " href="../adminbps/Lapas.php">
           <i class="bi bi-file-code-fill"></i>
           <span>Lapas</span>
         </a>
-        </li>
+      </li>
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="../adminbps/kasus.php">
-              <i class="bi bi-book-half"></i>
-              <span>Kasus</span>
-            </a>
-          
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../adminbps/kasus.php">
+          <i class="bi bi-book-half"></i>
+          <span>Kasus</span>
+        </a>
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/userbapas.php">
           <i class="bi bi-people"></i>
@@ -178,6 +178,59 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Lapas</h5>
+              <div style="float: right; margin-bottom: 5px;">
+                <a class="btn btn-primary" href="../adminbps/lapasTambah.php" role="button">+</a>
+              </div>
+              <br>
+              <!-- Default Table -->
+              <table class="table table-bordered">
+                <thead>
+                  <tr align="center">
+                    <th scope="col">ID Tempat Asal</th>
+                    <th scope="col">Nama Tempat Asal </th>
+                    <th scope="col">Alamat Asal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                  $result = pg_query(
+                    $conn,
+                    'SELECT * FROM lapas '
+                  );
+
+                  while ($row = pg_fetch_array($result)) {
+                  ?>
+
+                    <tr align="center">
+                      <td><?= $row['id_lapas'] ?></td>
+                      <td><?= $row['nama_lapas'] ?></td>
+                      <td><?= $row['alamat'] ?></td>
+                      <td>
+                        <div class="con">
+                          <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/editLapas.php?id_lapas=<?= $row['id_lapas'] ?>"></a>
+                          <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/hapusLapas.php?id_lapas=<?= $row['id_lapas'] ?>"></a>
+                      </td>
+            </div>
+            </td>
+            </tr>
+          <?php
+                  }
+          ?>
+          </tbody>
+          </table>
+          <!-- End Default Table Example -->
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
 
   </main><!-- End #main -->
 
@@ -211,6 +264,9 @@
   <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {echo 'maaf Anda belum login.';}
-  ?>
+<?php } else {
+    echo 'maaf Anda belum login.';
+  }
+?>
+
 </html>
