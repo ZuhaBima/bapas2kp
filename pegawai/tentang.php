@@ -38,65 +38,28 @@ if ($_SESSION['status'] == 'login') { ?>
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-<<<<<<< HEAD
+
 </head>
 
 <body>
-
-  <!-- ======= Header ======= -->
-   <header id="header" class="header fixed-top d-flex align-items-center">
-  
-    <div class="d-flex align-items-center justify-content-between">
-<a href="../pegawai/dashboard.html" class="logo d-flex align-items-center">
-        <img src="../assets/img/bapas.png" alt="">
-        <img src="../assets/img/pemasyarakatan.png" alt="">
-        <span class="d-none d-lg-block">Bapas Pekanbaru</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
-
-  
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
-  
-             
-    <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
-  </header><!-- End Header -->
-=======
-  </head>
-
-  <body>
-
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
-      <div class="d-flex align-items-center justify-content-between">
-        <a href="../pegawai/dashboard.php" class="logo d-flex align-items-center">
-          <img src="../assets/img/bapas.png" alt="">
-          <span class="d-none d-lg-block">Bapas Pekanbaru</span>
-        </a>
-        <i class="bi bi-list toggle-sidebar-btn"></i>
-      </div><!-- End Logo -->
-
-      <div class="search-bar">
-        <form class="search-form d-flex align-items-center" method="POST" action="#">
-          <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-        </form>
-      </div><!-- End Search Bar -->
-
-      <nav class="header-nav ms-auto">
-        <ul class="d-flex align-items-center">
-
-          <li class="nav-item d-block d-lg-none">
-            <a class="nav-link nav-icon search-bar-toggle " href="#">
-              <i class="bi bi-search"></i>
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="../pegawai/dashboard.php" class="logo d-flex align-items-center">
+                <img src="../assets/img/bapas.png" alt="">
+                <img src="../assets/img/pemasyarakatan.png" alt="">
+                <span class="d-none d-lg-block">Bapas Pekanbaru</span>
             </a>
-          </li><!-- End Search Icon-->
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
 
-          <a class="btn btn-outline-light" style="margin-right: 10px" href="../logout.php">Logout</a>
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
 
 
+                <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
     </header><!-- End Header -->
 
 
@@ -208,7 +171,56 @@ if ($_SESSION['status'] == 'login') { ?>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-   
+    <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <strong>Tentang Bapas</strong>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      Bapas atau Balai Pemasyarakatan adalah tempat memberikan bimbingan kemasyarakatan dan pengentasan anak sesuai dengan peraturan perundang-undangan yang berlaku. Bapas melayani klien pemasyarakatan baik dewasa maupun anak yang berhadapan dengan hukum. <strong>Tugas Bapas Adalah</strong> Membantu memperlancar tugas Penyidik, Penuntut Umum, dan Hakim dalam Perkara Anak Nakal, baik di dalam maupun di luar sidang. Membantu melengkapi data Warga Binaan Pemasyarakatan dalam pembinaan, yang bersifat mencari pendekatan dan kontak antara Warga Binaan Pemasyarakatan yang bersangkutan dengan masyarakat.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <strong>Pengertian Bapas</strong>
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+         Bapas menurut Pasal satu angka 4 Undang-undang Nomor 12 Tahun 1995 Tentang Pemasyarakatan memberikan pengertian bahwa Balai Pemasyarakatan yang selanjutnya disebut BAPAS adalah pranata untuk melaksanakan bimbingan Klien Pemasyarakatan.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <strong>Jam Kerja Bapas</strong>
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+         Senin - Kamis Jam 8.00 - 16.00.<strong>Jumat 8.00 - 16.30</strong>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        <strong>Alamat Bapas</strong>
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      <strong>Jalan Chandra Dimuka No. 01, Delima, Kec. Tampan, Kota Pekanbaru, Riau 28294</strong>
+      </div>
+    </div>
+  </div>
+</div>
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->

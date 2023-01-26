@@ -82,83 +82,83 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../public/bka-diversi.php">
-              <i class="bi bi-circle"></i><span>Diversi</span>
-            </a>
-          </li>
-          <li>
-            <a href="../public/bka-sidang.php">
-              <i class="bi bi-circle"></i><span>Sidang</span>
-            </a>
-          </li>
-          <li>
-            <a href="../public/bka-asimilasi rumah.php">
-              <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
-            </a>
-          </li>
-          <li>
-            <a href="../public/bka-cuti bersyarat.php">
-              <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
-            </a>
-          </li>
-          <li>
-            <a href="../public/bka-cuti menjelang bebas.php">
-              <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
-            </a>
-          </li>
-          <li>
-            <a href="../public/bka-pembebasan bersyarat.php">
-              <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Components Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>BKD</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="../public/bkd-asimilasi rumah.php">
-              <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
-            </a>
-          </li>
-          <li>
-            <a href="../public/bkd-cuti bersyarat.php">
-              <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
-            </a>
-          </li>
-          <li>
-            <a href="../public/bkd-cuti menjelang bebas.php">
-              <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
-            </a>
-          </li>
-          <li>
-            <a href="../public/bkd-pembebasan bersyarat.php">
-              <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
-
-      <li class="nav-heading">Pages</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.php">
-          <i class="bi bi-person"></i>
-          <span>Layanan</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.php">
-          <i class="bi bi-question-circle"></i>
-          <span>Tentang</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
-
-  </aside><!-- End Sidebar-->
+              <a href="../public/bka-diversi.php">
+                <i class="bi bi-circle"></i><span>Diversi</span>
+              </a>
+            </li>
+            <li>
+              <a href="../public/bka-sidang.php">
+                <i class="bi bi-circle"></i><span>Sidang</span>
+              </a>
+            </li>
+            <li>
+              <a href="../public/bka-asimilasi rumah.php">
+                <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
+              </a>
+            </li>
+            <li>
+              <a href="../public/bka-cuti bersyarat.php">
+                <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
+              </a>
+            </li>
+            <li>
+              <a href="../public/bka-cuti menjelang bebas.php">
+                <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
+              </a>
+            </li>
+            <li>
+              <a href="../public/bka-pembebasan bersyarat.php">
+                <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
+              </a>
+            </li>
+          </ul>
+        </li><!-- End Components Nav -->
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span>BKD</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a href="../public/bkd-asimilasi rumah.php">
+                <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
+              </a>
+            </li>
+            <li>
+              <a href="../public/bkd-cuti bersyarat.php">
+                <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
+              </a>
+            </li>
+            <li>
+              <a href="../public/bkd-cuti menjelang bebas.php">
+                <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
+              </a>
+            </li>
+            <li>
+              <a href="../public/bkd-pembebasan bersyarat.php">
+                <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
+              </a>
+            </li>
+          </ul>
+        </li><!-- End Forms Nav -->
+    
+        <li class="nav-heading">Pages</li>
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../public/layanan.php">
+            <i class="bi bi-person"></i>
+            <span>Layanan</span>
+          </a>
+        </li><!-- End Profile Page Nav -->
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../public/Tentang.php">
+            <i class="bi bi-question-circle"></i>
+            <span>Tentang</span>
+          </a>
+        </li><!-- End F.A.Q Page Nav -->
+  
+    </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 

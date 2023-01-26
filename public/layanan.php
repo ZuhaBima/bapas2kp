@@ -47,7 +47,7 @@ if ($_SESSION['status'] == 'login') { ?>
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="../pegawai/dashboard.php" class="logo d-flex align-items-center">
+            <a href="../public/Dashboard.php" class="logo d-flex align-items-center">
                 <img src="../assets/img/bapas.png" alt="">
                 <img src="../assets/img/pemasyarakatan.png" alt="">
                 <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -71,7 +71,7 @@ if ($_SESSION['status'] == 'login') { ?>
         <li class="nav-heading">Main Menu</li>
         </li><!-- End Profile Page Nav -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="../pegawai/dashboard.php">
+          <a class="nav-link collapsed" href="../public/Dashboard.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
@@ -84,32 +84,32 @@ if ($_SESSION['status'] == 'login') { ?>
           </a>
           <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-              <a href="../pegawai/bka-diversi.php">
+              <a href="../public/bka-diversi.php">
                 <i class="bi bi-circle"></i><span>Diversi</span>
               </a>
             </li>
             <li>
-              <a href="../pegawai/bka-sidang.php">
+              <a href="../public/bka-sidang.php">
                 <i class="bi bi-circle"></i><span>Sidang</span>
               </a>
             </li>
             <li>
-              <a href="../pegawai/bka-asimilasi rumah.php">
+              <a href="../public/bka-asimilasi rumah.php">
                 <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
               </a>
             </li>
             <li>
-              <a href="../pegawai/bka-cuti bersyarat.php">
+              <a href="../public/bka-cuti bersyarat.php">
                 <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
               </a>
             </li>
             <li>
-              <a href="../pegawai/bka-cuti menjelang bebas.php">
+              <a href="../public/bka-cuti menjelang bebas.php">
                 <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
               </a>
             </li>
             <li>
-              <a href="../pegawai/bka-pembebasan bersyarat.php">
+              <a href="../public/bka-pembebasan bersyarat.php">
                 <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
               </a>
             </li>
@@ -122,22 +122,22 @@ if ($_SESSION['status'] == 'login') { ?>
           </a>
           <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
-              <a href="../pegawai/bkd-asimilasi rumah.php">
+              <a href="../public/bkd-asimilasi rumah.php">
                 <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
               </a>
             </li>
             <li>
-              <a href="../pegawai/bkd-cuti bersyarat.php">
+              <a href="../public/bkd-cuti bersyarat.php">
                 <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
               </a>
             </li>
             <li>
-              <a href="../pegawai/bkd-cuti menjelang bebas.php">
+              <a href="../public/bkd-cuti menjelang bebas.php">
                 <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
               </a>
             </li>
             <li>
-              <a href="../pegawai/bkd-pembebasan bersyarat.php">
+              <a href="../public/bkd-pembebasan bersyarat.php">
                 <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
               </a>
             </li>
@@ -146,14 +146,14 @@ if ($_SESSION['status'] == 'login') { ?>
 
         <li class="nav-heading">Pages</li>
         <li class="nav-item">
-          <a class="nav-link " href="../pegawai/layanan.php">
+          <a class="nav-link " href="../public/layanan.php">
             <i class="bi bi-person"></i>
             <span>Layanan</span>
           </a>
         </li>
    
         <li class="nav-item">
-          <a class="nav-link collapsed" href="../pegawai/tentang.php">
+          <a class="nav-link collapsed" href="../public/tentang.php">
             <i class="bi bi-question-circle"></i>
             <span>Tentang</span>
           </a>
@@ -167,8 +167,8 @@ if ($_SESSION['status'] == 'login') { ?>
       <h1>Layanan</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../pegawai/dashboard.php">Beranda</a></li>
-          <li class="breadcrumb-item"><a href="../pegawai/layanan.php">Layanan</a></li>
+          <li class="breadcrumb-item"><a href="../public/Dashboard.php">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="../public/layanan.php">Layanan</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
