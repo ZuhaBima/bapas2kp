@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<?php include '../config.php';
-include '../search.php'; ?>
+<?php
+include '../config.php';
+include '../search.php';
+?>
 
 <html lang="en">
 
@@ -192,7 +194,6 @@ include '../search.php'; ?>
       <table class="table" id='table'>
         <thead>
           <tr align="center">
-            <th scope="col">Nomor Litmas</th>
             <th scope="col">Nama Klien</th>
             <th scope="col">Lapas Asal</th>
             <th scope="col">Kasus</th>
@@ -203,41 +204,40 @@ include '../search.php'; ?>
         <tbody>
           <?php
           $result = pg_query(
-            $conn,
-            'SELECT * FROM litmas  WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
+              $conn,
+              'SELECT * FROM litmas  WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1 ORDER BY id_litmas ASC'
           );
           $result2 = pg_query(
-            $conn,
-            'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
+              $conn,
+              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1 ORDER BY id_litmas ASC'
           );
           $result3 = pg_query(
-            $conn,
-            'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
+              $conn,
+              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1 ORDER BY id_litmas ASC'
           );
           $result4 = pg_query(
-            $conn,
-            'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
+              $conn,
+              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1 ORDER BY id_litmas ASC'
           );
 
           while ($row = pg_fetch_array($result)) {
 
-            $row2 = pg_fetch_array($result2);
-            $row3 = pg_fetch_array($result3);
-            $row4 = pg_fetch_array($result4);
-          ?>
+              $row2 = pg_fetch_array($result2);
+              $row3 = pg_fetch_array($result3);
+              $row4 = pg_fetch_array($result4);
+              ?>
 
             <tr>
-              <td align="center"><?= $row['id_litmas'] ?></td>
               <td align="center"><?= $row['nama_klien'] ?></td>
               <td align="center"><?= $row3['nama_lapas'] ?></td>
               <td align="center"><?= $row4['jenis_kasus'] ?></td>
               <td align="center"><?= $row2['nama_pegawai'] ?></td>
-              <td>
+              <td align="center">
                 <?php if (
-                  $row['id_status'] == 1
+                    $row['id_status'] == 1
                 ) { ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
                 <?php } elseif (
-                  $row['id_status'] == 2
+                    $row['id_status'] == 2
                 ) { ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
                 <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
                 <?php } ?>

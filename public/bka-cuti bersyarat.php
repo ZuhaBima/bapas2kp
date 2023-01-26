@@ -191,7 +191,6 @@ include '../search.php'; ?>
       <table class="table" id="table">
         <thead>
           <tr align="center">
-            <th scope="col">Nomor Litmas</th>
             <th scope="col">Nama Klien</th>
             <th scope="col">Lapas Asal</th>
             <th scope="col">Kasus</th>
@@ -203,7 +202,7 @@ include '../search.php'; ?>
           <?php
           $result = pg_query(
             $conn,
-            'SELECT * FROM litmas  WHERE id_jenis_litmas = 1 AND id_jenis_klien= 1'
+            'SELECT * FROM litmas  WHERE id_jenis_litmas = 1 AND id_jenis_klien= 1 ORDER BY id_litmas ASC'
           );
           $result2 = pg_query(
             $conn,
