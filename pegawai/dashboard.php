@@ -184,7 +184,7 @@ if ($_SESSION['status'] == 'login') { ?>
         <li class="nav-heading">Pages</li>
 
         <li class="nav-item">
-          <a class="nav-link collapsed" href="../pegawai/tentang.php">
+          <a class="nav-link collapsed" href="../pegawai/layanan.php">
             <i class="bi bi-person"></i>
             <span>Layanan</span>
           </a>
