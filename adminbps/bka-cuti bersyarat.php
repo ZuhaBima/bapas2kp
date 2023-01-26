@@ -244,7 +244,6 @@ if ($_SESSION['status'] == 'login') { ?>
               ?>
 
             <tr align="center">
-              <td><?= $row['id_litmas'] ?></td>
               <td><?= $row['nama_klien'] ?></td>
               <td><?= $row3['nama_lapas'] ?></td>
               <td><?= $row4['jenis_kasus'] ?></td>

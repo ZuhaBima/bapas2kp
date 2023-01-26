@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<?php include '../config.php';
-include '../search.php'; ?>
+<?php
+include '../config.php';
+include '../search.php';
+?>
 <html lang="en">
 
 <head>
@@ -234,7 +236,6 @@ include '../search.php'; ?>
               ?>
 
             <tr align="center">
-              <td><?= $row['id_litmas'] ?></td>
               <td><?= $row['nama_klien'] ?></td>
               <td><?= $row3['nama_lapas'] ?></td>
               <td><?= $row4['jenis_kasus'] ?></td>
