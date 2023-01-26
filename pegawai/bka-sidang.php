@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<?php include '../config.php';
-include '../search.php'; ?>
+<?php
+include '../config.php';
+include '../search.php';
+?>
 <html lang="en">
 
 <head>
@@ -192,7 +194,6 @@ include '../search.php'; ?>
       <table class="table" id="table">
         <thead>
           <tr align="center">
-            <th scope="col">Nomor Litmas</th>
             <th scope="col">Nama Klien</th>
             <th scope="col">Lapas Asal</th>
             <th scope="col">Kasus</th>
@@ -207,23 +208,23 @@ include '../search.php'; ?>
           <?php
           $result = pg_query(
               $conn,
-              'SELECT * FROM litmas  WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
+              'SELECT * FROM litmas  WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1 ORDER BY id_litmas ASC'
           );
           $result2 = pg_query(
               $conn,
-              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
+              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1 ORDER BY id_litmas ASC'
           );
           $result3 = pg_query(
               $conn,
-              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
+              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1 ORDER BY id_litmas ASC'
           );
           $result4 = pg_query(
               $conn,
-              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
+              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1 ORDER BY id_litmas ASC'
           );
           $result5 = pg_query(
               $conn,
-              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
+              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1 ORDER BY id_litmas ASC'
           );
 
           while ($row = pg_fetch_array($result)) {
