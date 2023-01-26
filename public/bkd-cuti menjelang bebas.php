@@ -142,20 +142,20 @@ include '../search.php'; ?>
       </li><!-- End Forms Nav -->
 
       <li class="nav-heading">Pages</li>
-  
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="../public/layanan.php">
-      <i class="bi bi-person"></i>
-      <span>Layanan</span>
-    </a>
-  </li><!-- End Profile Page Nav -->
 
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="../public/Tentang.php">
-      <i class="bi bi-question-circle"></i>
-      <span>Tentang</span>
-    </a>
-  </li><!-- End F.A.Q Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../public/layanan.php">
+          <i class="bi bi-person"></i>
+          <span>Layanan</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../public/Tentang.php">
+          <i class="bi bi-question-circle"></i>
+          <span>Tentang</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
 
   </aside><!-- End Sidebar-->
 
@@ -190,7 +190,6 @@ include '../search.php'; ?>
       <table class="table" id="table">
         <thead>
           <tr align="center">
-            <th scope="col">Nomor Litmas</th>
             <th scope="col">Nama Klien</th>
             <th scope="col">Lapas Asal</th>
             <th scope="col">Kasus</th>
@@ -202,23 +201,23 @@ include '../search.php'; ?>
           <?php
           $result = pg_query(
             $conn,
-            'SELECT * FROM litmas  WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
+            'SELECT * FROM litmas  WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
           $result2 = pg_query(
             $conn,
-            'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
+            'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
           $result3 = pg_query(
             $conn,
-            'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
+            'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
           $result4 = pg_query(
             $conn,
-            'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
+            'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
           $result5 = pg_query(
             $conn,
-            'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
+            'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
 
           while ($row = pg_fetch_array($result)) {
@@ -230,7 +229,6 @@ include '../search.php'; ?>
           ?>
 
             <tr>
-              <td align="center"><?= $row['id_litmas'] ?></td>
               <td align="center"><?= $row['nama_klien'] ?></td>
               <td align="center"><?= $row3['nama_lapas'] ?></td>
               <td align="center"><?= $row4['jenis_kasus'] ?></td>

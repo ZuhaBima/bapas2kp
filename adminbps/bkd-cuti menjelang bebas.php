@@ -197,7 +197,6 @@ include '../search.php'; ?>
       <table class="table" id="table">
         <thead>
           <tr align="center">
-            <th scope="col">Nomor Litmas</th>
             <th scope="col">Nama Klien</th>
             <th scope="col">Lapas Asal</th>
             <th scope="col">Kasus</th>
@@ -216,19 +215,19 @@ include '../search.php'; ?>
           );
           $result2 = pg_query(
             $conn,
-            'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2  ORDER BY id_litmas ASC'
+            'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
           $result3 = pg_query(
             $conn,
-            'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2  ORDER BY id_litmas ASC'
+            'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
           $result4 = pg_query(
             $conn,
-            'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2  ORDER BY id_litmas ASC'
+            'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
           $result5 = pg_query(
             $conn,
-            'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2  ORDER BY id_litmas ASC'
+            'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
 
           while ($row = pg_fetch_array($result)) {
@@ -240,7 +239,6 @@ include '../search.php'; ?>
           ?>
 
             <tr align="center">
-              <td><?= $row['id_litmas'] ?></td>
               <td><?= $row['nama_klien'] ?></td>
               <td><?= $row3['nama_lapas'] ?></td>
               <td><?= $row4['jenis_kasus'] ?></td>
@@ -258,11 +256,12 @@ include '../search.php'; ?>
               </td>
 
               <td>
+
                 <div class="con">
-                  <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/bkd-statuscmb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
+                  <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/bkd-statuspb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
               </td>
               <td>
-                <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/bkd-hapuscmb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
+                <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/bkd-hapuspb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
               </td>
     </div>
     </td>
