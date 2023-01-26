@@ -148,26 +148,23 @@ $row = pg_fetch_array($sql);
                         </a>
                     </li>
                 </ul>
-            </li>
+    </li><!-- End Forms Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../pegawai/Lapas.php">
-                    <i class="bi bi-file-code-fill"></i>
-                    <span>Lapas</span>
-                </a>
+<li class="nav-heading">Pages</li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../pegawai/kasus.php">
-                    <i class="bi bi-book-half"></i>
-                    <span>Kasus</span>
-                </a>
+<li class="nav-item">
+  <a class="nav-link collapsed" href="../pegawai/layanan.php">
+    <i class="bi bi-person"></i>
+    <span>Layanan</span>
+  </a>
+</li><!-- End Profile Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../pegawai/userbapas.php">
-                    <i class="bi bi-people"></i>
-                    <span>User</span>
-                </a>
-            </li><!-- End Forms Nav -->
+<li class="nav-item">
+  <a class="nav-link collapsed" href="../pegawai/tentang.php">
+    <i class="bi bi-question-circle"></i>
+    <span>Tentang</span>
+  </a>
+</li><!-- End F.A.Q Page Nav -->
 
     </aside><!-- End Sidebar-->
 
