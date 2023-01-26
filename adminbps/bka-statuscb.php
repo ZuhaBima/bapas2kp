@@ -201,18 +201,14 @@ $row = pg_fetch_array($sql);
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="id_litmas" value="<?php echo $row[
-                          'id_litmas'
-                      ]; ?>" required>
+                      <input type="text" class="form-control" name="id_litmas" value="<?php echo $row['id_litmas']; ?>" readonly required>
                     </div>
                   </div>
                   <br>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nama Klien</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama_klien" value="<?php echo $row[
-                          'nama_klien'
-                      ]; ?>" required>
+                      <input type="text" class="form-control" name="nama_klien" value="<?php echo $row['nama_klien']; ?>" required>
                     </div>
                   </div>
                   <br>
@@ -238,17 +234,15 @@ $row = pg_fetch_array($sql);
                         <?php
                         include '../connect.php';
                         $lapas = pg_query(
-                            $conn,
-                            'SELECT * FROM lapas ORDER BY nama_lapas ASC'
+                          $conn,
+                          'SELECT * FROM lapas ORDER BY nama_lapas ASC'
                         );
                         while ($row2 = pg_fetch_assoc($lapas)) { ?>
-                          <option value="<?php echo $row2[
-                              'id_lapas'
-                          ]; ?>" <?php if (
-    $row['id_lapas'] == $row2['id_lapas']
-) {
-    echo 'selected';
-} ?>>
+                          <option value="<?php echo $row2['id_lapas']; ?>" <?php if (
+                                    $row['id_lapas'] == $row2['id_lapas']
+                                  ) {
+                                    echo 'selected';
+                                  } ?>>
                             <?php echo $row2['nama_lapas']; ?>
                           </option>
                         <?php }
@@ -265,15 +259,15 @@ $row = pg_fetch_array($sql);
                         <?php
                         include '../connect.php';
                         $nip = pg_query(
-                            $conn,
-                            'select * from pegawai order by nama_pegawai ASC'
+                          $conn,
+                          'select * from pegawai order by nama_pegawai ASC'
                         );
                         while ($row2 = pg_fetch_assoc($nip)) { ?>
                           <option value="<?php echo $row2['nip']; ?>" <?php if (
-    $row['nip'] == $row2['nip']
-) {
-    echo 'selected';
-} ?>>
+                                                                        $row['nip'] == $row2['nip']
+                                                                      ) {
+                                                                        echo 'selected';
+                                                                      } ?>>
                             <?php echo $row2['nama_pegawai']; ?>
                           </option>
                         <?php }
@@ -290,17 +284,15 @@ $row = pg_fetch_array($sql);
                         <?php
                         include '../connect.php';
                         $kasus = pg_query(
-                            $conn,
-                            'select * from kasus order by jenis_kasus ASC'
+                          $conn,
+                          'select * from kasus order by jenis_kasus ASC'
                         );
                         while ($row2 = pg_fetch_assoc($kasus)) { ?>
-                          <option value="<?php echo $row2[
-                              'id_kasus'
-                          ]; ?>" <?php if (
-    $row['id_kasus'] == $row2['id_kasus']
-) {
-    echo 'selected';
-} ?>>
+                          <option value="<?php echo $row2['id_kasus']; ?>" <?php if (
+                                    $row['id_kasus'] == $row2['id_kasus']
+                                  ) {
+                                    echo 'selected';
+                                  } ?>>
                             <?php echo $row2['jenis_kasus']; ?>
                           </option>
                         <?php }
@@ -317,17 +309,15 @@ $row = pg_fetch_array($sql);
                         <?php
                         include '../connect.php';
                         $status = pg_query(
-                            $conn,
-                            'select * from status_litmas order by id_status ASC'
+                          $conn,
+                          'select * from status_litmas order by id_status ASC'
                         );
                         while ($row2 = pg_fetch_assoc($status)) { ?>
-                          <option value="<?php echo $row2[
-                              'id_status'
-                          ]; ?>" <?php if (
-    $row['id_status'] == $row2['id_status']
-) {
-    echo 'selected';
-} ?>>
+                          <option value="<?php echo $row2['id_status']; ?>" <?php if (
+                                    $row['id_status'] == $row2['id_status']
+                                  ) {
+                                    echo 'selected';
+                                  } ?>>
                             <?php echo $row2['nama_status_litmas']; ?>
                           </option>
                         <?php }
@@ -376,23 +366,23 @@ $row = pg_fetch_array($sql);
             </div>
       </section>
       <?php if (isset($_POST['simpan'])) {
-          $id_litmas = $_POST['id_litmas'];
-          $nama_klien = $_POST['nama_klien'];
-          $lapass = $_POST['lapas'];
-          $pkk = $_POST['pk'];
-          $kasuss = $_POST['kasus'];
-          $statuss = $_POST['status'];
+        $id_litmas = $_POST['id_litmas'];
+        $nama_klien = $_POST['nama_klien'];
+        $lapass = $_POST['lapas'];
+        $pkk = $_POST['pk'];
+        $kasuss = $_POST['kasus'];
+        $statuss = $_POST['status'];
 
-          $sql = pg_query(
-              $conn,
-              "UPDATE litmas SET id_litmas = '$id_litmas', nama_klien = '$nama_klien', nip='$pkk', id_kasus='$kasuss', id_lapas='$lapass', id_status='$statuss' WHERE id_litmas = '$id_litmas'"
-          );
+        $sql = pg_query(
+          $conn,
+          "UPDATE litmas SET id_litmas = '$id_litmas', nama_klien = '$nama_klien', nip='$pkk', id_kasus='$kasuss', id_lapas='$lapass', id_status='$statuss' WHERE id_litmas = '$id_litmas'"
+        );
 
-          if ($sql) {
-              echo "<script>alert('Data berhasil diedit');window.location='../adminbps/bka-cuti bersyarat.php';</script>";
-          } else {
-              echo pg_last_error($conn);
-          }
+        if ($sql) {
+          echo "<script>alert('Data berhasil diedit');window.location='../adminbps/bka-cuti bersyarat.php';</script>";
+        } else {
+          echo pg_last_error($conn);
+        }
       } ?>
 
 
@@ -433,7 +423,9 @@ $row = pg_fetch_array($sql);
   <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {echo 'maaf Anda belum login.';}
-  ?>
+<?php } else {
+    echo 'maaf Anda belum login.';
+  }
+?>
 
 </html>

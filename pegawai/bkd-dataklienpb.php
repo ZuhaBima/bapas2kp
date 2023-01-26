@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<?php include '../config.php'; ?>
+<?php include '../config.php';
+$query = pg_query($conn, "SELECT max (id_litmas) as id_litmas FROM litmas");
+$row = pg_fetch_array($query);
+$kode = $row['id_litmas'];
+$id = $kode + 1; ?>
 
 <html lang="en">
 
@@ -142,23 +146,23 @@
             </a>
           </li>
         </ul>
-        </li><!-- End Forms Nav -->
+      </li><!-- End Forms Nav -->
 
-<li class="nav-heading">Pages</li>
+      <li class="nav-heading">Pages</li>
 
-<li class="nav-item">
-  <a class="nav-link collapsed" href="../pegawai/layanan.php">
-    <i class="bi bi-person"></i>
-    <span>Layanan</span>
-  </a>
-</li><!-- End Profile Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../pegawai/layanan.php">
+          <i class="bi bi-person"></i>
+          <span>Layanan</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
 
-<li class="nav-item">
-  <a class="nav-link collapsed" href="../pegawai/tentang.php">
-    <i class="bi bi-question-circle"></i>
-    <span>Tentang</span>
-  </a>
-</li><!-- End F.A.Q Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../pegawai/tentang.php">
+          <i class="bi bi-question-circle"></i>
+          <span>Tentang</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
 
   </aside><!-- End Sidebar-->
 
@@ -186,7 +190,7 @@
                 <div class="row mb-6">
                   <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="id_litmas">
+                    <input type="text" class="form-control" name="id_litmas" value="<?php echo $id ?>" readonly>
                   </div>
                 </div>
                 <br>
@@ -218,11 +222,11 @@
                       <option>Pilih Lapas Asal</option>
                       <?php
                       $lapas = pg_query(
-                          $conn,
-                          'SELECT * FROM lapas order by nama_lapas ASC'
+                        $conn,
+                        'SELECT * FROM lapas order by nama_lapas ASC'
                       );
                       while ($row = pg_fetch_assoc($lapas)) {
-                          echo "<option value='$row[id_lapas]'>$row[nama_lapas] </option>";
+                        echo "<option value='$row[id_lapas]'>$row[nama_lapas] </option>";
                       }
                       ?>
                     </select>
@@ -236,11 +240,11 @@
                       <option>Pilih PK</option>
                       <?php
                       $pk = pg_query(
-                          $conn,
-                          'SELECT * FROM pegawai order by jabatan ASC'
+                        $conn,
+                        'SELECT * FROM pegawai order by jabatan ASC'
                       );
                       while ($row = pg_fetch_assoc($pk)) {
-                          echo "<option value='$row[nip]'>$row[jabatan] - $row[nama_pegawai] </option>";
+                        echo "<option value='$row[nip]'>$row[jabatan] - $row[nama_pegawai] </option>";
                       }
                       ?>
                     </select>
@@ -254,11 +258,11 @@
                       <option>Pilih Jenis Kasus</option>
                       <?php
                       $kasus = pg_query(
-                          $conn,
-                          'SELECT * FROM kasus order by jenis_kasus ASC'
+                        $conn,
+                        'SELECT * FROM kasus order by jenis_kasus ASC'
                       );
                       while ($row = pg_fetch_assoc($kasus)) {
-                          echo "<option value='$row[id_kasus]'>$row[jenis_kasus] </option>";
+                        echo "<option value='$row[id_kasus]'>$row[jenis_kasus] </option>";
                       }
                       ?>
                     </select>
@@ -272,11 +276,11 @@
                       <option>Pilih Status Saat Ini</option>
                       <?php
                       $status = pg_query(
-                          $conn,
-                          'SELECT * FROM status_litmas order by id_status ASC'
+                        $conn,
+                        'SELECT * FROM status_litmas order by id_status ASC'
                       );
                       while ($row = pg_fetch_assoc($status)) {
-                          echo "<option value='$row[id_status]'>$row[nama_status_litmas] </option>";
+                        echo "<option value='$row[id_status]'>$row[nama_status_litmas] </option>";
                       }
                       ?>
                     </select>
@@ -322,12 +326,12 @@
 
           </div>
           <?php if (isset($_POST['simpan'])) {
-              $id_litmas = $_POST['id_litmas'];
-              $nama_klien = $_POST['nama_klien'];
-              $lapass = $_POST['lapas'];
-              $pkk = $_POST['pk'];
-              $kasuss = $_POST['kasus'];
-              $statuss = $_POST['status'];
+            $id_litmas = $_POST['id_litmas'];
+            $nama_klien = $_POST['nama_klien'];
+            $lapass = $_POST['lapas'];
+            $pkk = $_POST['pk'];
+            $kasuss = $_POST['kasus'];
+            $statuss = $_POST['status'];
 
             $sql = pg_query($conn, "insert into litmas (id_litmas,id_jenis_litmas,nip,id_jenis_klien,id_status,id_lapas,id_kasus,nama_klien) values ('$id_litmas', 2 ,'$pkk', 2 , '$statuss', '$lapass', '$kasuss', '$nama_klien')");
             if ($sql) {
@@ -379,7 +383,9 @@
   <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {echo 'maaf Anda belum login.';}
-  ?>
+<?php } else {
+    echo 'maaf Anda belum login.';
+  }
+?>
 
 </html>

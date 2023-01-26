@@ -201,7 +201,7 @@ $row = pg_fetch_array($sql);
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="id_litmas" value="<?php echo $row['id_litmas']; ?>" required>
+                      <input type="text" class="form-control" name="id_litmas" value="<?php echo $row['id_litmas']; ?>" readonly required>
                     </div>
                   </div>
                   <br>

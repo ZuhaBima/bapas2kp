@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<?php include '../config.php'; ?>
+<?php include '../config.php'; 
+$query = pg_query($conn, "SELECT max (id_litmas) as id_litmas FROM litmas");
+$row = pg_fetch_array($query);
+$kode = $row['id_litmas'];
+$id = $kode + 1;?>
 
 <html lang="en">
 
@@ -197,7 +201,7 @@ if ($_SESSION['status'] == 'login') { ?>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="id_litmas">
+                      <input type="text" class="form-control" name="id_litmas" value="<?php echo $id ?>" readonly>
                     </div>
                   </div>
                   <br>
@@ -343,7 +347,7 @@ if ($_SESSION['status'] == 'login') { ?>
 
         $sql = pg_query(
             $conn,
-            "insert into litmas (id_litmas,id_jenis_litmas,nip,id_jenis_klien,id_status,id_lapas,id_kasus,nama_klien,tanggal) values ('$id_litmas', 2 ,'$pkk', 1 , '$statuss', '$lapass', '$kasuss', '$nama_klien','24/03/2023')"
+            "insert into litmas (id_litmas,id_jenis_litmas,nip,id_jenis_klien,id_status,id_lapas,id_kasus,nama_klien) values ('$id_litmas', 2 ,'$pkk', 1 , '$statuss', '$lapass', '$kasuss', '$nama_klien')"
         );
         if ($sql) { ?>
                 echo "<script>

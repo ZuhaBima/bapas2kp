@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<?php include '../config.php'; ?>
+<?php include '../config.php';
+$query = pg_query($conn, "SELECT max (id_litmas) as id_litmas FROM litmas");
+$row = pg_fetch_array($query);
+$kode = $row['id_litmas'];
+$id = $kode + 1; ?>
 
 <html lang="en">
 
@@ -190,7 +194,7 @@
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="id_litmas">
+                      <input type="text" class="form-control" name="id_litmas" value="<?php echo $id ?>" readonly>
                     </div>
                   </div>
                   <br>
