@@ -220,7 +220,7 @@ $row = pg_fetch_array($sql); ?>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Jenis Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" value="Pembebasan Bersyarat" readonly>
+                      <input type="text" class="form-control" value="Cuti Menjelang Bebas" readonly>
                     </div>
                   </div>
                   <br>
