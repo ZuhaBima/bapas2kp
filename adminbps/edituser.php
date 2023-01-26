@@ -198,7 +198,7 @@ $row = pg_fetch_array($sql); ?>
                                     <div class="row mb-6">
                                         <label for="inputText" class="col-sm-2 col-form-label" required>NIP</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="nip_pg" value="<?php echo $row['nip']; ?>">
+                                            <input type="text" class="form-control" name="nip" value="<?php echo $row['nip']; ?>">
                                         </div>
                                     </div>
                                     <br>
@@ -259,7 +259,7 @@ $row = pg_fetch_array($sql); ?>
                         </div>
             </section>
             <?php if (isset($_POST['simpan'])) {
-                $nip = $_POST['nip_pg'];
+                $nip = $_POST['nip'];
                 $nama_peg = $_POST['nama_pg'];
                 $jabatan = $_POST['jabatan_pg'];
 

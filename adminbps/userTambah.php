@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<?php include '../config.php'; ?>
+<?php include '../config.php';
+$query = pg_query($conn, "SELECT max (nip) as nip FROM pegawai");
+$row = pg_fetch_array($query);
+$kode = $row['nip'];
+$id = $kode + 1; ?>
 
 <html lang="en">
 
@@ -193,9 +197,9 @@
                 <!-- General Form Elements -->
                 <form method="POST">
                   <div class="row mb-6">
-                    <label for="inputText" class="col-sm-2 col-form-label" required>NIP</label>
+                    <label for="inputText" class="col-sm-2 col-form-label" required>Id Pegawai</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nip_pg">
+                      <input type="text" class="form-control" name="nip_pg" value="<?php echo $id ?>" readonly>
                     </div>
                   </div>
                   <br>

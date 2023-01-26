@@ -4,7 +4,7 @@ $host = 'localhost';
 $dbuser = 'postgres';
 $dbpass = '12345';
 $port = '5432';
-$dbname = 'bapas2kp';
+$dbname = 'bapasfixedd';
 
 // script koneksi php postgree
 $conn = pg_connect(
