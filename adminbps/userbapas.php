@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>USER BAPAS (ADMIN)- Bapas Pekanbaru</title>
+    <title>PEGAWAI BAPAS (ADMIN)- Bapas Pekanbaru</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -158,7 +158,7 @@
       <li class="nav-item">
         <a class="nav-link " href="../adminbps/userbapas.php">
           <i class="bi bi-people"></i>
-          <span>User</span>
+          <span>Pegawai</span>
         </a>
       </li>
       <!-- End Forms Nav -->
@@ -169,11 +169,11 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>User</h1>
+      <h1>Pegawai</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
-          <li class="breadcrumb-item"><a href="../adminbps/userbapas.php">User</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/userbapas.php">Pegawai</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

@@ -159,7 +159,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/userbapas.php">
           <i class="bi bi-people"></i>
-          <span>User</span>
+          <span>Pegawai</span>
         </a>
       </li><!-- End Forms Nav -->
 
@@ -172,7 +172,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
-          <li class="breadcrumb-item"><a href="../adminbps/userbapas.php">User</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/userbapas.php">Pegawai</a></li>
           <li class="breadcrumb-item"><a href="../adminbps/userTambah.php">Tambah Pegawai</a></li>
         </ol>
       </nav>

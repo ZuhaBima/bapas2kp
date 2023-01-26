@@ -162,7 +162,7 @@ $row = pg_fetch_array($sql); ?>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../adminbps/userbapas.php">
                     <i class="bi bi-people"></i>
-                    <span>User</span>
+                    <span>Pegawai</span>
                 </a>
             </li><!-- End Forms Nav -->
 
