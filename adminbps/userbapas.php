@@ -195,6 +195,8 @@
                     <th scope="col">NIP</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Jabatan</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Hapus</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -214,7 +216,9 @@
                       <td>
                         <div class="con">
                           <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/edituser.php?nip=<?= $row['nip'] ?>"></a>
-                          <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/deleteuser.php?nip=<?= $row['nip'] ?>"></a>
+                      </td>
+                      <td>
+                        <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/deleteuser.php?nip=<?= $row['nip'] ?>"></a>
                       </td>
             </div>
             </td>

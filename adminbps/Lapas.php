@@ -174,7 +174,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
-          <li class="breadcrumb-item"><a href="../adminbps/Lapas.html">Lapas</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/Lapas.php">Lapas</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -196,6 +196,8 @@
                     <th scope="col">ID Tempat Asal</th>
                     <th scope="col">Nama Tempat Asal </th>
                     <th scope="col">Alamat Asal</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Hapus</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -215,7 +217,9 @@
                       <td>
                         <div class="con">
                           <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/editLapas.php?id_lapas=<?= $row['id_lapas'] ?>"></a>
-                          <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/hapusLapas.php?id_lapas=<?= $row['id_lapas'] ?>"></a>
+                      </td>
+                      <td>
+                        <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/hapusLapas.php?id_lapas=<?= $row['id_lapas'] ?>"></a>
                       </td>
             </div>
             </td>
