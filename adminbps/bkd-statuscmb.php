@@ -220,7 +220,7 @@ $row = pg_fetch_array($sql); ?>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Jenis Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" value="Pembebasan Bersyarat" readonly>
+                      <input type="text" class="form-control" value="Cuti Menjelang Bebas" readonly>
                     </div>
                   </div>
                   <br>
@@ -333,7 +333,7 @@ $row = pg_fetch_array($sql); ?>
                                 </div>
                                 <div class="modal-footer ">
                                   <div>
-                                    <input type="submit" name="simpan" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/dataklienar.php">
+                                    <input type="submit" name="tolak" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/dataklienar.php">
                                   </div>
                                   <div>
                                     <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">

@@ -174,7 +174,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
-          <li class="breadcrumb-item"><a href="../adminbps/kasus.html">Kasus</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/kasus.php">Kasus</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -195,6 +195,8 @@
                   <tr align="center">
                     <th scope="col">ID Kasus</th>
                     <th scope="col">Jenis Kasus</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Hapus</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -213,7 +215,9 @@
                       <td>
                         <div class="con">
                           <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/editKasus.php?id_kasus=<?= $row['id_kasus'] ?>"></a>
-                          <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/hapusKasus.php?id_kasus=<?= $row['id_kasus'] ?>"></a>
+                      </td>
+                      <td>
+                        <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/hapusKasus.php?id_kasus=<?= $row['id_kasus'] ?>"></a>
                       </td>
             </div>
             </td>

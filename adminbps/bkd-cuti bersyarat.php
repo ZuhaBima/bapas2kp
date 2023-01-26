@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?php include '../config.php'; ?>
+<?php include '../config.php';
+include '../search.php'; ?>
 <html lang="en">
 
 <head><?php
@@ -180,19 +181,18 @@
         <div class="row height d-flex justify-content-center align-items-center">
           <div class="col-md-6">
             <div class="form">
-              <form class="search-form d-flex align-items-center" method="POST" action="#">
-                <i class="fa fa-search"></i>
-                <input type="text" class="form-control form-input" placeholder="Search anything...">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-                <span class="left-pan"><i class="fa fa"></i></span>
-              </form>
+            <form class="search-form d-flex align-items-center" method="GET" action="">
+              <i class="fa fa-search"></i>
+              <input type="search" id="search" value="" class="form-control" placeholder="Search anything...">
+              <span class="left-pan"><i class="fa fa"></i></span>
+            </form>
             </div>
           </div>
         </div>
         <a class="btn btn-primary" href="../adminbps/bkd-datakliencb.php" style="float: right;" role="button">+</a>
       </div>
       <br>
-      <table class="table">
+      <table class="table" id="table">
         <thead>
           <tr align="center">
             <th scope="col">Nomor Litmas</th>
@@ -202,6 +202,7 @@
             <th scope="col">PK</th>
             <th scope="col">Status</th>
             <th scope="col">Edit</th>
+            <th scope="col">Hapus</th>
 
           </tr>
         </thead>
@@ -257,7 +258,9 @@
               <td>
                 <div class="con">
                   <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/bkd-statuscb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
-                  <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/bkd-hapuscb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
+              </td>
+              <td>
+                <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/bkd-hapuscb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
               </td>
     </div>
     </td>

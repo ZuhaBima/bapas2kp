@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?php include '../config.php'; ?>
+<?php include '../config.php';
+include '../search.php'; ?>
 
 <html lang="en">
 
@@ -14,11 +15,11 @@
   <!-- Favicons -->
   <link href="../assets/img/bapas.png" rel="icon">
   <link href="../assets/img/bapas.png" rel="Logoo">
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  
+
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -26,25 +27,25 @@
   <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
-  
+
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
-  
+
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  </head>
-  
-  <body>
-  
+</head>
+
+<body>
+
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
-  
+
     <div class="d-flex align-items-center justify-content-between">
-<a href="../public/Dashboard.php" class="logo d-flex align-items-center">
+      <a href="../public/Dashboard.php" class="logo d-flex align-items-center">
         <img src="../assets/img/bapas.png" alt="">
         <img src="../assets/img/pemasyarakatan.png" alt="">
         <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -52,34 +53,34 @@
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-  
+
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
-  
-             
-    <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Login</a>
+
+
+        <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Login</a>
   </header><!-- End Header -->
-  
-  
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
-  
-      <ul class="sidebar-nav" id="sidebar-nav">
-            <li class="nav-item">
-        <li class="nav-heading">Main Menu</li>
-        </li><!-- End Profile Page Nav -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="../public/Dashboard.php">
-            <i class="bi bi-grid"></i>
-            <span>Beranda</span>
-          </a>
-    </li><!-- End Dashboard Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-item">
+      <li class="nav-heading">Main Menu</li>
+      </li><!-- End Profile Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../public/Dashboard.php">
+          <i class="bi bi-grid"></i>
+          <span>Beranda</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
               <a href="../public/bka-diversi.php">
                 <i class="bi bi-circle"></i><span>Diversi</span>
@@ -174,22 +175,21 @@
 
     <div class="mainpage">
       <div class="container">
-  
-          <div class="row height d-flex justify-content-center align-items-center">
-            <div class="col-md-6">
-              <div class="form">
-                <form class="search-form d-flex align-items-center" method="POST" action="#">
-                <i class="fa fa-search"></i>
-                <input type="text" class="form-control form-input" placeholder="Search anything...">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-                <span class="left-pan"><i class="fa fa"></i></span>
-                </form>
-              </div>
-            </div>        
+
+        <div class="row height d-flex justify-content-center align-items-center">
+          <div class="col-md-6">
+            <div class="form">
+            <form class="search-form d-flex align-items-center" method="GET" action="">
+              <i class="fa fa-search"></i>
+              <input type="search" id="search" value="" class="form-control" placeholder="Search anything...">
+              <span class="left-pan"><i class="fa fa"></i></span>
+            </form>
+            </div>
+          </div>
         </div>
       </div>
       <br>
-      <table class="table">
+      <table class="table" id="table">
         <thead>
           <tr align="center">
             <th scope="col">Nomor Litmas</th>
@@ -203,28 +203,28 @@
         <tbody>
           <?php
           $result = pg_query(
-              $conn,
-              'SELECT * FROM litmas  WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+            $conn,
+            'SELECT * FROM litmas  WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
           );
           $result2 = pg_query(
-              $conn,
-              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+            $conn,
+            'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
           );
           $result3 = pg_query(
-              $conn,
-              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+            $conn,
+            'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
           );
           $result4 = pg_query(
-              $conn,
-              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+            $conn,
+            'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
           );
 
           while ($row = pg_fetch_array($result)) {
 
-              $row2 = pg_fetch_array($result2);
-              $row3 = pg_fetch_array($result3);
-              $row4 = pg_fetch_array($result4);
-              ?>
+            $row2 = pg_fetch_array($result2);
+            $row3 = pg_fetch_array($result3);
+            $row4 = pg_fetch_array($result4);
+          ?>
 
             <tr>
               <td align="center"><?= $row['id_litmas'] ?></td>
@@ -234,10 +234,10 @@
               <td align="center"><?= $row2['nama_pegawai'] ?></td>
               <td align="center">
                 <?php if (
-                    $row['id_status'] == 1
+                  $row['id_status'] == 1
                 ) { ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
                 <?php } elseif (
-                    $row['id_status'] == 2
+                  $row['id_status'] == 2
                 ) { ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
                 <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
                 <?php } ?>
@@ -248,7 +248,7 @@
           ?>
       </table>
     </div>
-    </main> <!-- End #main -->
+  </main> <!-- End #main -->
 
   </main><!-- End #main -->
 

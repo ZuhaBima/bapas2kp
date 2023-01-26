@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<?php include '../config.php';
+<?php
+include '../config.php';
 
 $id_litmas = $_GET['id_litmas'];
 $sql = pg_query($conn, "SELECT * from litmas where id_litmas='$id_litmas'");
-$row = pg_fetch_array($sql); ?>
+$row = pg_fetch_array($sql);
+?>
 
 <html lang="en">
 
@@ -146,27 +148,23 @@ $row = pg_fetch_array($sql); ?>
                         </a>
                     </li>
                 </ul>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../pegawai/Lapas.php">
-                    <i class="bi bi-file-code-fill"></i>
-                    <span>Lapas</span>
-                </a>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../pegawai/kasus.php">
-                    <i class="bi bi-book-half"></i>
-                    <span>Kasus</span>
-                </a>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../pegawai/userbapas.php">
-                    <i class="bi bi-people"></i>
-                    <span>User</span>
-                </a>
             </li><!-- End Forms Nav -->
 
+<li class="nav-heading">Pages</li>
+
+<li class="nav-item">
+  <a class="nav-link collapsed" href="../pegawai/layanan.php">
+    <i class="bi bi-person"></i>
+    <span>Layanan</span>
+  </a>
+</li><!-- End Profile Page Nav -->
+
+<li class="nav-item">
+  <a class="nav-link collapsed" href="../pegawai/tentang.php">
+    <i class="bi bi-question-circle"></i>
+    <span>Tentang</span>
+  </a>
+</li><!-- End F.A.Q Page Nav -->
     </aside><!-- End Sidebar-->
 
     <main id="main" class="main">
@@ -200,14 +198,18 @@ $row = pg_fetch_array($sql); ?>
                                     <div class="row mb-6">
                                         <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row['id_litmas']; ?>" required>
+                                            <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row[
+                                                'id_litmas'
+                                            ]; ?>" required>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row mb-6">
                                         <label for="inputText" class="col-sm-2 col-form-label" required>Nama Klien</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row['nama_klien']; ?>" required>
+                                            <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row[
+                                                'nama_klien'
+                                            ]; ?>" required>
                                         </div>
                                     </div>
                                     <br>
@@ -233,16 +235,27 @@ $row = pg_fetch_array($sql); ?>
                                                 <option>Pilih Status Saat ini</option>
                                                 <?php
                                                 include '../connect.php';
-                                                $status = pg_query($conn, "select * from status_litmas order by id_status ASC");
-                                                while ($row2 = pg_fetch_assoc($status)) {
-                                                ?>
-                                                    <option value="<?php echo $row2['id_status'] ?>" <?php if ($row['id_status'] == $row2['id_status']) {
-                                                                                                            echo 'selected';
-                                                                                                        } ?>>
-                                                        <?php echo $row2['nama_status_litmas'] ?>
+                                                $status = pg_query(
+                                                    $conn,
+                                                    'select * from status_litmas order by id_status ASC'
+                                                );
+                                                while (
+                                                    $row2 = pg_fetch_assoc(
+                                                        $status
+                                                    )
+                                                ) { ?>
+                                                    <option value="<?php echo $row2[
+                                                        'id_status'
+                                                    ]; ?>" <?php if (
+    $row['id_status'] == $row2['id_status']
+) {
+    echo 'selected';
+} ?>>
+                                                        <?php echo $row2[
+                                                            'nama_status_litmas'
+                                                        ]; ?>
                                                     </option>
-                                                <?php
-                                                }
+                                                <?php }
                                                 ?>
                                             </select>
                                         </div>
@@ -269,7 +282,7 @@ $row = pg_fetch_array($sql); ?>
                                                                 </div>
                                                                 <div class="modal-footer ">
                                                                     <div>
-                                                                        <input type="submit" name="simpan" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../pegawai/dataklienar.php">
+                                                                        <input type="submit" name="tolak" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../pegawai/dataklienar.php">
                                                                     </div>
                                                                     <div>
                                                                         <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
@@ -290,7 +303,10 @@ $row = pg_fetch_array($sql); ?>
             <?php if (isset($_POST['simpan'])) {
                 $statuss = $_POST['status'];
 
-                $sql = pg_query($conn, "UPDATE litmas SET id_status='$statuss' WHERE id_litmas = '$id_litmas'");
+                $sql = pg_query(
+                    $conn,
+                    "UPDATE litmas SET id_status='$statuss' WHERE id_litmas = '$id_litmas'"
+                );
 
                 if ($sql) {
                     echo "<script>alert('Data berhasil diedit');window.location='../pegawai/bkd-cuti bersyarat.php';</script>";
@@ -334,9 +350,7 @@ $row = pg_fetch_array($sql); ?>
     <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {
-        echo 'maaf Anda belum login.';
-    }
-?>
+<?php } else {echo 'maaf Anda belum login.';}
+    ?>
 
 </html>

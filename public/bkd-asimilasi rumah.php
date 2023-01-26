@@ -25,6 +25,8 @@
   <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
@@ -79,16 +81,16 @@
           <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-              <a href="../public/bka-diversi.php">
-                <i class="bi bi-circle"></i><span>Diversi</span>
-              </a>
-            </li>
-            <li>
-              <a href="../public/bka-sidang.php">
-                <i class="bi bi-circle"></i><span>Sidang</span>
-              </a>
-            </li>
+          <li>
+            <a href="../public/bka-diversi.php">
+              <i class="bi bi-circle"></i><span>Diversi</span>
+            </a>
+          </li>
+          <li>
+            <a href="../public/bka-sidang.php">
+              <i class="bi bi-circle"></i><span>Sidang</span>
+            </a>
+          </li>
           <li>
             <a href="../public/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
@@ -178,10 +180,9 @@
         <div class="row height d-flex justify-content-center align-items-center">
           <div class="col-md-6">
             <div class="form">
-              <form class="search-form d-flex align-items-center" method="POST" action="#">
+              <form class="search-form d-flex align-items-center" method="GET" action="">
                 <i class="fa fa-search"></i>
-                <input type="text" class="form-control form-input" placeholder="Search anything...">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                <input type="search" id="search" value="" class="form-control" placeholder="Search anything...">
                 <span class="left-pan"><i class="fa fa"></i></span>
               </form>
             </div>
@@ -189,7 +190,7 @@
         </div>
       </div>
       <br>
-      <table class="table">
+      <table class="table" id="table">
         <thead>
           <tr align="center">
             <th scope="col">Nomor Litmas</th>
@@ -203,33 +204,33 @@
         <tbody>
           <?php
           $result = pg_query(
-              $conn,
-              'SELECT * FROM litmas  WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2'
+            $conn,
+            'SELECT * FROM litmas  WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2'
           );
           $result2 = pg_query(
-              $conn,
-              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2'
+            $conn,
+            'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2'
           );
           $result3 = pg_query(
-              $conn,
-              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2'
+            $conn,
+            'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2'
           );
           $result4 = pg_query(
-              $conn,
-              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2'
+            $conn,
+            'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2'
           );
           $result5 = pg_query(
-              $conn,
-              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2'
+            $conn,
+            'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2'
           );
 
           while ($row = pg_fetch_array($result)) {
 
-              $row2 = pg_fetch_array($result2);
-              $row3 = pg_fetch_array($result3);
-              $row4 = pg_fetch_array($result4);
-              $row5 = pg_fetch_array($result5);
-              ?>
+            $row2 = pg_fetch_array($result2);
+            $row3 = pg_fetch_array($result3);
+            $row4 = pg_fetch_array($result4);
+            $row5 = pg_fetch_array($result5);
+          ?>
 
             <tr>
               <td align="center"><?= $row['id_litmas'] ?></td>
@@ -239,10 +240,10 @@
               <td align="center"><?= $row2['nama_pegawai'] ?></td>
               <td align="center">
                 <?php if (
-                    $row['id_status'] == 1
+                  $row['id_status'] == 1
                 ) { ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
                 <?php } elseif (
-                    $row['id_status'] == 2
+                  $row['id_status'] == 2
                 ) { ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
                 <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
                 <?php } ?>
@@ -255,9 +256,11 @@
           }
           ?>
 
+
         </tbody>
       </table>
     </div>
+
   </main> <!-- End #main -->
 
   </main><!-- End #main -->
@@ -290,7 +293,32 @@
 
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
+  <script src="//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js"></script>
+
+
 
 </body>
+
+<script>
+  $(function() {
+    $('#table').searchable({
+      striped: true,
+      searchType: 'fuzzy'
+    });
+
+    $('#searchable-container').searchable({
+      searchField: '#container-search',
+      selector: '.row',
+      childSelector: '.col-xs-4',
+      show: function(elem) {
+        elem.slideDown(100);
+      },
+      hide: function(elem) {
+        elem.slideUp(100);
+      }
+    })
+  });
+</script>
+
 
 </html>
