@@ -172,16 +172,16 @@ if ($_SESSION['status'] == 'login') { ?>
           </ol>
         </nav>
         <div class="row height d-flex justify-content-center align-items-center">
-            <div class="col-md-6">
-              <div class="form">
-                <form class="search-form d-flex align-items-center" method="POST" action="#">
+          <div class="col-md-6">
+            <div class="form">
+              <form class="search-form d-flex align-items-center" method="POST" action="#">
                 <i class="fa fa-search"></i>
                 <input type="text" class="form-control form-input" placeholder="Search anything...">
                 <button type="submit" title="Search"><i class="bi bi-search"></i></button>
                 <span class="left-pan"><i class="fa fa"></i></span>
-                </form>
-              </div>
-            </div>        
+              </form>
+            </div>
+          </div>
         </div>
       </div>
       <br>
@@ -200,6 +200,7 @@ if ($_SESSION['status'] == 'login') { ?>
               <th scope="col">PK</th>
               <th scope="col">Status</th>
               <th scope="col">Edit Status</th>
+
 
             </tr>
           </thead>

@@ -295,7 +295,7 @@
                               </div>
                               <div class="modal-footer ">
                                 <div>
-                                  <input type="submit" name="simpan" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/dataklienar.php">
+                                  <input type="submit" name="tolak" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/dataklienar.php">
                                 </div>
                                 <div>
                                   <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
@@ -321,7 +321,7 @@
             $kasuss = $_POST['kasus'];
             $statuss = $_POST['status'];
 
-            $sql = pg_query($conn, "insert into litmas (id_litmas,id_jenis_litmas,nip,id_jenis_klien,id_status,id_lapas,id_kasus,nama_klien,tanggal) values ('$id_litmas', 2 ,'$pkk', 2 , '$statuss', '$lapass', '$kasuss', '$nama_klien','24/03/2023')");
+            $sql = pg_query($conn, "insert into litmas (id_litmas,id_jenis_litmas,nip,id_jenis_klien,id_status,id_lapas,id_kasus,nama_klien) values ('$id_litmas', 2 ,'$pkk', 2 , '$statuss', '$lapass', '$kasuss', '$nama_klien')");
             if ($sql) {
           ?>
               echo "<script>

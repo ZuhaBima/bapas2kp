@@ -204,6 +204,7 @@
             <th scope="col">PK</th>
             <th scope="col">Status</th>
             <th scope="col">Edit</th>
+            <th scope="col">Hapus</th>
 
           </tr>
         </thead>
@@ -260,7 +261,9 @@
 
                 <div class="con">
                   <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/bkd-statuspb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
-                  <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/bkd-hapuspb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
+              </td>
+              <td>
+                <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/bkd-hapuspb.php?id_litmas=<?= $row['id_litmas'] ?>"></a>
               </td>
     </div>
     </td>
