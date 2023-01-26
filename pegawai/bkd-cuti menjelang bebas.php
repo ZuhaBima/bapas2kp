@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?php include '../config.php'; ?>
+<?php include '../config.php';
+include '../search.php'; ?>
 <html lang="en">
 
 
@@ -176,10 +177,9 @@
       <div class="row height d-flex justify-content-center align-items-center">
         <div class="col-md-6">
           <div class="form">
-            <form class="search-form d-flex align-items-center" method="POST" action="#">
+            <form class="search-form d-flex align-items-center" method="GET" action="">
               <i class="fa fa-search"></i>
-              <input type="text" class="form-control form-input" placeholder="Search anything...">
-              <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+              <input type="search" id="search" value="" class="form-control" placeholder="Search anything...">
               <span class="left-pan"><i class="fa fa"></i></span>
             </form>
           </div>
@@ -190,7 +190,7 @@
     </div><!-- End Page Title -->
     <a class="btn btn-primary" href="../pegawai/bkd-datakliencmb.php" style="float: right;" role="button">+</a>
     <div>
-      <table class="table">
+      <table class="table" id="table">
         <thead>
           <tr align="center">
             <th scope="col">Nomor Litmas</th>

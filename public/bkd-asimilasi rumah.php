@@ -25,6 +25,8 @@
   <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
@@ -180,8 +182,7 @@
             <div class="form">
               <form class="search-form d-flex align-items-center" method="GET" action="">
                 <i class="fa fa-search"></i>
-                <input type="text" name="search" class="form-control form-input" placeholder="Search anything...">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                <input type="search" id="search" value="" class="form-control" placeholder="Search anything...">
                 <span class="left-pan"><i class="fa fa"></i></span>
               </form>
             </div>
@@ -189,7 +190,7 @@
         </div>
       </div>
       <br>
-      <table class="table">
+      <table class="table" id="table">
         <thead>
           <tr align="center">
             <th scope="col">Nomor Litmas</th>
@@ -292,9 +293,32 @@
 
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
+  <script src="//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js"></script>
 
 
 
 </body>
+
+<script>
+  $(function() {
+    $('#table').searchable({
+      striped: true,
+      searchType: 'fuzzy'
+    });
+
+    $('#searchable-container').searchable({
+      searchField: '#container-search',
+      selector: '.row',
+      childSelector: '.col-xs-4',
+      show: function(elem) {
+        elem.slideDown(100);
+      },
+      hide: function(elem) {
+        elem.slideUp(100);
+      }
+    })
+  });
+</script>
+
 
 </html>
