@@ -177,8 +177,8 @@ $row = pg_fetch_array($sql); ?>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../pegawai/dashboard.php">Beranda</a></li>
                     <li class="breadcrumb-item">BKD</li>
-                    <li class="breadcrumb-item"><a href="../pegawai/bkd-pembebasan bersyarat.php">Pembebasan Bersyarat</a></li>
-                    <li class="breadcrumb-item"><a href="../pegawai/bkd-statuspb.php">Ubah Status Klien</a></li>
+                    <li class="breadcrumb-item"><a href="../pegawai/bkd-asimilasi rumah.php">Asimilasi rumah</a></li>
+                    <li class="breadcrumb-item"><a href="../pegawai/bkd-statusar.php">Ubah Status Klien</a></li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -221,7 +221,7 @@ $row = pg_fetch_array($sql); ?>
                                     <div class="row mb-6">
                                         <label for="inputText" class="col-sm-2 col-form-label" required>Jenis Litmas</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" value="Pembebasan Bersyarat" readonly>
+                                            <input type="text" class="form-control" value="Cuti Bersyarat" readonly>
                                         </div>
                                     </div>
 
@@ -265,7 +265,7 @@ $row = pg_fetch_array($sql); ?>
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    Apakah anda yakin ingin menambahkan data klien ini?
+                                                                    Apakah anda yakin ingin menyimpan data klien ini?
                                                                 </div>
                                                                 <div class="modal-footer ">
                                                                     <div>
@@ -293,7 +293,7 @@ $row = pg_fetch_array($sql); ?>
                 $sql = pg_query($conn, "UPDATE litmas SET id_status='$statuss' WHERE id_litmas = '$id_litmas'");
 
                 if ($sql) {
-                    echo "<script>alert('Data berhasil diedit');window.location='../pegawai/bkd-pembebasan bersyarat.php';</script>";
+                    echo "<script>alert('Data berhasil diedit');window.location='../pegawai/bkd-asimilasi rumah.php';</script>";
                 } else {
                     echo pg_last_error($conn);
                 }

@@ -81,16 +81,16 @@
           <i class="bi bi-menu-button-wide"></i><span>BKA</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-              <a href="../pegawai/bka-diversi.php">
-                <i class="bi bi-circle"></i><span>Diversi</span>
-              </a>
-            </li>
-            <li>
-              <a href="../pegawai/bka-sidang.php">
-                <i class="bi bi-circle"></i><span>Sidang</span>
-              </a>
-            </li>
+          <li>
+            <a href="../pegawai/bka-diversi.php">
+              <i class="bi bi-circle"></i><span>Diversi</span>
+            </a>
+          </li>
+          <li>
+            <a href="../pegawai/bka-sidang.php">
+              <i class="bi bi-circle"></i><span>Sidang</span>
+            </a>
+          </li>
           <li>
             <a href="../pegawai/bka-asimilasi rumah.php">
               <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
@@ -172,19 +172,19 @@
         </ol>
       </nav>
       <div class="row height d-flex justify-content-center align-items-center">
-            <div class="col-md-6">
-              <div class="form">
-                <form class="search-form d-flex align-items-center" method="POST" action="#">
-                <i class="fa fa-search"></i>
-                <input type="text" class="form-control form-input" placeholder="Search anything...">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-                <span class="left-pan"><i class="fa fa"></i></span>
-                </form>
-              </div>
-            </div>        
+        <div class="col-md-6">
+          <div class="form">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+              <i class="fa fa-search"></i>
+              <input type="text" class="form-control form-input" placeholder="Search anything...">
+              <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+              <span class="left-pan"><i class="fa fa"></i></span>
+            </form>
+          </div>
         </div>
       </div>
-      <br>
+    </div>
+    <br>
     </div><!-- End Page Title -->
     <a class="btn btn-primary" href="../pegawai/bkd-datakliencb.php" style="float: right;" role="button">+</a>
     <div>
@@ -253,7 +253,7 @@
               <td>
 
                 <div class="con">
-                  <i class="bi bi-pencil-square bg-icon-primary " href="#" style="margin-bottom: 5px; color :blue " role="button"></i>
+                  <a class="bi bi-pencil-square bg-icon-primary " href="../pegawai/bkd-statuscb.php?id_litmas=<?= $row['id_litmas'] ?>" style="margin-bottom: 5px; color :blue " role="button"></a>
                 </div>
               </td>
             </tr>

@@ -200,14 +200,14 @@ $row = pg_fetch_array($sql); ?>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row['id_litmas']; ?>" required>
+                      <input type="text" class="form-control" name="id_litmas" value="<?php echo $row['id_litmas']; ?>" required>
                     </div>
                   </div>
                   <br>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nama Klien</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row['nama_klien']; ?>" required>
+                      <input type="text" class="form-control" name="nama_klien" value="<?php echo $row['nama_klien']; ?>" required>
                     </div>
                   </div>
                   <br>
@@ -231,12 +231,16 @@ $row = pg_fetch_array($sql); ?>
                       <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Lapas Asal" name="lapas" required>
                         <option>Pilih Lapas Asal</option>
                         <?php
-                        $lapas = pg_query(
-                          $conn,
-                          'SELECT * FROM lapas order by nama_lapas ASC'
-                        );
-                        while ($row = pg_fetch_assoc($lapas)) {
-                          echo "<option value='$row[id_lapas]'> $row[nama_lapas] </option>";
+                        include '../connect.php';
+                        $lapas = pg_query($conn, "SELECT * FROM lapas ORDER BY nama_lapas ASC");
+                        while ($row2 = pg_fetch_assoc($lapas)) {
+                        ?>
+                          <option value="<?php echo $row2['id_lapas'] ?>" <?php if ($row['id_lapas'] == $row2['id_lapas']) {
+                                                                            echo 'selected';
+                                                                          } ?>>
+                            <?php echo $row2['nama_lapas'] ?>
+                          </option>
+                        <?php
                         }
                         ?>
                       </select>
@@ -247,16 +251,18 @@ $row = pg_fetch_array($sql); ?>
                     <label class="col-sm-2 col-form-label">PK</label>
                     <div class="col-sm-10">
                       <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih PK Klien" name="pk" required>
-                        <option>
-                          Pilih PK
-                        </option>
+                        <option>Pilih PK</option>
                         <?php
-                        $pk = pg_query(
-                          $conn,
-                          'SELECT * FROM pegawai order by jabatan ASC'
-                        );
-                        while ($row = pg_fetch_assoc($pk)) {
-                          echo "<option value='$row[nip]'>$row[jabatan] - $row[nama_pegawai] </option>";
+                        include '../connect.php';
+                        $nip = pg_query($conn, "select * from pegawai order by nama_pegawai ASC");
+                        while ($row2 = pg_fetch_assoc($nip)) {
+                        ?>
+                          <option value="<?php echo $row2['nip'] ?>" <?php if ($row['nip'] == $row2['nip']) {
+                                                                        echo 'selected';
+                                                                      } ?>>
+                            <?php echo $row2['nama_pegawai'] ?>
+                          </option>
+                        <?php
                         }
                         ?>
                       </select>
@@ -267,16 +273,18 @@ $row = pg_fetch_array($sql); ?>
                     <label class="col-sm-2 col-form-label">Jenis Kasus</label>
                     <div class="col-sm-10">
                       <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Jenis Kasus" name="kasus" required>
-                        <option>
-                          Pilih Jenis Kasus
-                        </option>
+                        <option>Pilih Jenis Kasus</option>
                         <?php
-                        $kasus = pg_query(
-                          $conn,
-                          'SELECT * FROM kasus order by jenis_kasus ASC'
-                        );
-                        while ($row = pg_fetch_assoc($kasus)) {
-                          echo "<option value='$row[id_kasus]'>$row[jenis_kasus] </option>";
+                        include '../connect.php';
+                        $kasus = pg_query($conn, "select * from kasus order by jenis_kasus ASC");
+                        while ($row2 = pg_fetch_assoc($kasus)) {
+                        ?>
+                          <option value="<?php echo $row2['id_kasus'] ?>" <?php if ($row['id_kasus'] == $row2['id_kasus']) {
+                                                                            echo 'selected';
+                                                                          } ?>>
+                            <?php echo $row2['jenis_kasus'] ?>
+                          </option>
+                        <?php
                         }
                         ?>
                       </select>
@@ -287,16 +295,18 @@ $row = pg_fetch_array($sql); ?>
                     <label class="col-sm-2 col-form-label">Status Klien</label>
                     <div class="col-sm-10">
                       <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Status Klien" name="status" required>
-                        <option>
-                          Pilih Status Saat Ini
-                        </option>
+                        <option>Pilih Status Saat ini</option>
                         <?php
-                        $status = pg_query(
-                          $conn,
-                          'SELECT * FROM status_litmas order by id_status ASC'
-                        );
-                        while ($row = pg_fetch_assoc($status)) {
-                          echo "<option value='$row[id_status]'>$row[nama_status_litmas] </option>";
+                        include '../connect.php';
+                        $status = pg_query($conn, "select * from status_litmas order by id_status ASC");
+                        while ($row2 = pg_fetch_assoc($status)) {
+                        ?>
+                          <option value="<?php echo $row2['id_status'] ?>" <?php if ($row['id_status'] == $row2['id_status']) {
+                                                                              echo 'selected';
+                                                                            } ?>>
+                            <?php echo $row2['nama_status_litmas'] ?>
+                          </option>
+                        <?php
                         }
                         ?>
                       </select>
