@@ -161,6 +161,69 @@
 
   <main id="main" class="main">
 
+  <?php
+  $resultbka_diversi = pg_query(
+      $conn,
+      'SELECT count(*) as diversi FROM litmas  WHERE id_jenis_litmas = 5 AND id_jenis_klien= 1'
+  );
+
+  $resultbka_sidang = pg_query(
+      $conn,
+      'SELECT count(*) as sidang FROM litmas  WHERE id_jenis_litmas = 6 AND id_jenis_klien= 1'
+  );
+
+  $resultbka_asirum = pg_query(
+      $conn,
+      'SELECT count(*) as asirum FROM litmas  WHERE id_jenis_litmas = 4 AND id_jenis_klien= 1'
+  );
+
+  $resultbka_cb = pg_query(
+      $conn,
+      'SELECT count(*) as cb FROM litmas  WHERE id_jenis_litmas = 1 AND id_jenis_klien= 1'
+  );
+
+  $resultbka_cmb = pg_query(
+      $conn,
+      'SELECT count(*) as cmb FROM litmas  WHERE id_jenis_litmas = 2 AND id_jenis_klien= 1'
+  );
+
+  $resultbka_pb = pg_query(
+      $conn,
+      'SELECT count(*) as pb FROM litmas  WHERE id_jenis_litmas = 3 AND id_jenis_klien= 1'
+  );
+
+  $resultbkd_asirum = pg_query(
+      $conn,
+      'SELECT count(*) as asirum FROM litmas  WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2'
+  );
+
+  $resultbkd_cb = pg_query(
+      $conn,
+      'SELECT count(*) as cb FROM litmas  WHERE id_jenis_litmas = 1 AND id_jenis_klien= 2'
+  );
+
+  $resultbkd_cmb = pg_query(
+      $conn,
+      'SELECT count(*) as cmb FROM litmas  WHERE id_jenis_litmas = 3 AND id_jenis_klien= 2'
+  );
+
+  $resultbkd_pb = pg_query(
+      $conn,
+      'SELECT count(*) as pb FROM litmas  WHERE id_jenis_litmas = 2 AND id_jenis_klien= 2'
+  );
+
+  $jumlahbka_diversi = pg_fetch_array($resultbka_diversi);
+  $jumlahbka_sidang = pg_fetch_array($resultbka_sidang);
+  $jumlahbka_asirum = pg_fetch_array($resultbka_asirum);
+  $jumlahbka_cb = pg_fetch_array($resultbka_cb);
+  $jumlahbka_cmb = pg_fetch_array($resultbka_cmb);
+  $jumlahbka_pb = pg_fetch_array($resultbka_pb);
+  $jumlahbkd_asirum = pg_fetch_array($resultbkd_asirum);
+  $jumlahbkd_cb = pg_fetch_array($resultbkd_cb);
+  $jumlahbkd_cmb = pg_fetch_array($resultbkd_cmb);
+  $jumlahbkd_pb = pg_fetch_array($resultbkd_pb);
+  ?>
+
     <div class="pagetitle">
       <h1>Dashboard</h1>
       <nav>
@@ -183,12 +246,24 @@
               <p class="text-center" style="color: navy;"><b>Total Litmas Klien Anak</b></p>
                 <div class="card" style="width: 18rem; ">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item list-group-item-secondary">Diversi                 <span style="float: right;" class="border">230 kasus</span></li>
-                    <li class="list-group-item list-group-item-secondary">Pengadilan              <span style="float: right;" class="border">230 kasus</span></li>
-                    <li class="list-group-item list-group-item-secondary">Asimilasi Rumah         <span style="float: right;" class="border">230 kasus </span></li>
-                    <li class="list-group-item list-group-item-secondary">Cuti Bersyarat          <span style="float: right;" class="border">230 kasus</span></li>
-                    <li class="list-group-item list-group-item-secondary">Cuti Menjelang Bebas    <span style="float: right;" class="border">230 kasus</span></li>
-                    <li class="list-group-item list-group-item-secondary">Pembebasan bersyarat    <span style="float: right;" class="border">230 kasus</span></li>
+                     <li class="list-group-item">Diversi<span style="float: right;"><?= $jumlahbka_diversi[
+                         'diversi'
+                     ] ?> Kasus</span></li>
+                  <li class="list-group-item">Sidang<span style="float: right;"><?= $jumlahbka_sidang[
+                      'sidang'
+                  ] ?> Kasus</span></li>
+                  <li class="list-group-item">Asimilasi Rumah<span style="float: right;"><?= $jumlahbka_asirum[
+                      'asirum'
+                  ] ?> Kasus</span></li>
+                  <li class="list-group-item">Cuti Bersyarat<span style="float: right;"><?= $jumlahbka_cb[
+                      'cb'
+                  ] ?> Kasus</span></li>
+                  <li class="list-group-item">Cuti Menjelang Bebas<span style="float: right;"><?= $jumlahbka_cmb[
+                      'cmb'
+                  ] ?> Kasus</span></li>
+                  <li class="list-group-item">Pembebasan Bersyarat<span style="float: right;"><?= $jumlahbka_pb[
+                      'pb'
+                  ] ?> Kasus</span></li>
                   </ul>
                 </div>
               </span>
@@ -208,16 +283,25 @@
           <p class="text-center" style="color: navy;"><b>Total Litmas Klien Dewasa</b></p>
             <div class="card" style="width: 18rem; ">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item list-group-item-secondary">Asimilasi Rumah         <span style="float: right;" class="border">230 kasus</span></li>
-                <li class="list-group-item list-group-item-secondary">Cuti Bersyarat          <span style="float: right;" class="border">230 kasus</span></li>
-                <li class="list-group-item list-group-item-secondary">Cuti Menjelang Bebas    <span style="float: right;" class="border">230 kasus</span></li>
-                <li class="list-group-item list-group-item-secondary">Pembebasan bersyarat    <span style="float: right;" class="border">230 kasus</span></li>
-              </ul>
+                  <li class="list-group-item">Asimilasi Rumah<span style="float: right;"><?= $jumlahbkd_asirum[
+                      'asirum'
+                  ] ?> Kasus</span></li>
+                  <li class="list-group-item">Cuti Bersyarat<span style="float: right;"><?= $jumlahbkd_cb[
+                      'cb'
+                  ] ?> Kasus</span></li>
+                  <li class="list-group-item">Cuti Menjelang Bebas<span style="float: right;"><?= $jumlahbkd_cmb[
+                      'cmb'
+                  ] ?> Kasus</span></li>
+                  <li class="list-group-item">Pembebasan Bersyarat<span style="float: right;"><?= $jumlahbkd_pb[
+                      'pb'
+                  ] ?> Kasus</span></li>
+                  </ul>
+                </div>
+              </span>
             </div>
-          </span>
         </div>
-       </div>
-       </div>
+      </div>
+      <br>
     </main>
 
   <!-- ======= Footer ======= -->

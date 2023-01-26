@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<?php include '../config.php';
-$id_lapas = $_GET['id_lapas'];
-$sql = pg_query($conn, "SELECT * from lapas where id_lapas='$id_lapas'");
-$row = pg_fetch_array($sql); ?>
+<?php
+include '../config.php';
+
+$id_litmas = $_GET['id_litmas'];
+$sql = pg_query($conn, "SELECT * from litmas where id_litmas='$id_litmas'");
+$row = pg_fetch_array($sql);
+?>
 
 <html lang="en">
 
@@ -50,7 +53,7 @@ $row = pg_fetch_array($sql); ?>
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="../adminbps/dashboard.php" class="logo d-flex align-items-center">
+            <a href="../pegawai/dashboard.php" class="logo d-flex align-items-center">
                 <img src="../assets/img/bapas.png" alt="">
                 <img src="../assets/img/pemasyarakatan.png" alt="">
                 <span class="d-none d-lg-block">Bapas Pekanbaru</span>
@@ -75,7 +78,7 @@ $row = pg_fetch_array($sql); ?>
             <li class="nav-heading">Main Menu</li>
             </li><!-- End Profile Page Nav -->
             <li class="nav-item">
-                <a class="nav-link " href="../adminbps/dashboard.php">
+                <a class="nav-link " href="../pegawai/dashboard.php">
                     <i class="bi bi-grid"></i>
                     <span>Beranda</span>
                 </a>
@@ -87,32 +90,32 @@ $row = pg_fetch_array($sql); ?>
                 </a>
                 <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="../adminbps/bka-diversi.php">
+                        <a href="../pegawai/bka-diversi.php">
                             <i class="bi bi-circle"></i><span>Diversi</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../adminbps/bka-sidang.php">
+                        <a href="../pegawai/bka-sidang.php">
                             <i class="bi bi-circle"></i><span>Sidang</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../adminbps/bka-asimilasi rumah.php">
+                        <a href="../pegawai/bka-asimilasi rumah.php">
                             <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../adminbps/bka-cuti bersyarat.php">
+                        <a href="../pegawai/bka-cuti bersyarat.php">
                             <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../adminbps/bka-cuti menjelang bebas.php">
+                        <a href="../pegawai/bka-cuti menjelang bebas.php">
                             <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../adminbps/bka-pembebasan bersyarat.php">
+                        <a href="../pegawai/bka-pembebasan bersyarat.php">
                             <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
                         </a>
                     </li>
@@ -125,46 +128,43 @@ $row = pg_fetch_array($sql); ?>
                 </a>
                 <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="../adminbps/bkd-asimilasi rumah.php">
+                        <a href="../pegawai/bkd-asimilasi rumah.php">
                             <i class="bi bi-circle"></i><span>Asimilasi Rumah</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../adminbps/bkd-cuti bersyarat.php">
+                        <a href="../pegawai/bkd-cuti bersyarat.php">
                             <i class="bi bi-circle"></i><span>Cuti Bersyarat</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../adminbps/bkd-cuti menjelang bebas.php">
+                        <a href="../pegawai/bkd-cuti menjelang bebas.php">
                             <i class="bi bi-circle"></i><span>Cuti Menjelang Bebas</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../adminbps/bkd-pembebasan bersyarat.php">
+                        <a href="../pegawai/bkd-pembebasan bersyarat.php">
                             <i class="bi bi-circle"></i><span>Pembebasan Bersyarat</span>
                         </a>
                     </li>
                 </ul>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../adminbps/Lapas.php">
-                    <i class="bi bi-file-code-fill"></i>
-                    <span>Lapas</span>
-                </a>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../adminbps/kasus.php">
-                    <i class="bi bi-book-half"></i>
-                    <span>Kasus</span>
-                </a>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../adminbps/userbapas.php">
-                    <i class="bi bi-people"></i>
-                    <span>Pegawai</span>
-                </a>
             </li><!-- End Forms Nav -->
+
+<li class="nav-heading">Pages</li>
+
+<li class="nav-item">
+  <a class="nav-link collapsed" href="../pegawai/layanan.php">
+    <i class="bi bi-person"></i>
+    <span>Layanan</span>
+  </a>
+</li><!-- End Profile Page Nav -->
+
+<li class="nav-item">
+  <a class="nav-link collapsed" href="../pegawai/tentang.php">
+    <i class="bi bi-question-circle"></i>
+    <span>Tentang</span>
+  </a>
+</li><!-- End F.A.Q Page Nav -->
 
     </aside><!-- End Sidebar-->
 
@@ -174,9 +174,10 @@ $row = pg_fetch_array($sql); ?>
             <h1>Ubah Status Klien</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
-                    <li class="breadcrumb-item"><a href="../adminbps/lapas.php">Lapas</a></li>
-                    <li class="breadcrumb-item"><a href="../adminbps/editLapas.php">Edit Data Lapas</a></li>
+                    <li class="breadcrumb-item"><a href="../pegawai/dashboard.php">Beranda</a></li>
+                    <li class="breadcrumb-item">BKA</li>
+                    <li class="breadcrumb-item"><a href="../pegawai/bka-diversi.php">Diversi</a></li>
+                    <li class="breadcrumb-item"><a href="../pegawai/bka-statusdiversi.php">Ubah Status Klien</a></li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -191,56 +192,102 @@ $row = pg_fetch_array($sql); ?>
 
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Edit Data Pegawai</h5>
+                                <h5 class="card-title">Ubah Status Klien</h5>
 
                                 <!-- General Form Elements -->
                                 <form method="POST">
                                     <div class="row mb-6">
-                                        <label for="inputText" class="col-sm-2 col-form-label" required>Id Tempat Asal</label>
+                                        <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="id_lapas" value="<?php echo $row['id_lapas']; ?>" readonly>
+                                            <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row[
+                                                'id_litmas'
+                                            ]; ?>" required>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row mb-6">
-                                        <label for="inputText" class="col-sm-2 col-form-label" required>Nama Tempat Asal</label>
+                                        <label for="inputText" class="col-sm-2 col-form-label" required>Nama Klien</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="nama_lapas" value="<?php echo $row['nama_lapas']; ?>">
+                                            <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row[
+                                                'nama_klien'
+                                            ]; ?>" required>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row mb-6">
-                                        <label for="inputText" class="col-sm-2 col-form-label" required>Alamat</label>
+                                        <label for="inputText" class="col-sm-2 col-form-label" required>Jenis Klien</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="alamat" value="<?php echo $row['alamat']; ?>">
+                                            <input type="text" class="form-control" value="BKA" readonly>
                                         </div>
                                     </div>
-                                    <div class="container-fluid py-5">
-                                        <div class="container">
-                                            <div class="mx-auto" style="width: 200px;">
-                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" style="width: 120px; float :right; margin-top :10px">
-                                                    Save
-                                                </button>
+                                    <br>
+                                    <div class="row mb-6">
+                                        <label for="inputText" class="col-sm-2 col-form-label" required>Jenis Litmas</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="Diversi" readonly>
+                                        </div>
+                                    </div>
 
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLongTitle">Konfirmasi</h5>
-                                                                <button type="submit" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                Apakah anda yakin ingin Mengedit data pegawai ini?
-                                                            </div>
-                                                            <div class="modal-footer ">
-                                                                <div>
-                                                                    <input type="submit" name="simpan" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/dataklienar.php">
+                                    <br>
+                                    <div class="row mb-6">
+                                        <label class="col-sm-2 col-form-label">Status Klien</label>
+                                        <div class="col-sm-10">
+                                            <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Status Klien" name="status" required>
+                                                <option>Pilih Status Saat ini</option>
+                                                <?php
+                                                include '../connect.php';
+                                                $status = pg_query(
+                                                    $conn,
+                                                    'select * from status_litmas order by id_status ASC'
+                                                );
+                                                while (
+                                                    $row2 = pg_fetch_assoc(
+                                                        $status
+                                                    )
+                                                ) { ?>
+                                                    <option value="<?php echo $row2[
+                                                        'id_status'
+                                                    ]; ?>" <?php if (
+    $row['id_status'] == $row2['id_status']
+) {
+    echo 'selected';
+} ?>>
+                                                        <?php echo $row2[
+                                                            'nama_status_litmas'
+                                                        ]; ?>
+                                                    </option>
+                                                <?php }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <!-- Button trigger modal -->
+                                        <div class="container-fluid py-5">
+                                            <div class="container">
+                                                <div class="mx-auto" style="width: 200px;">
+                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" style="width: 120px; float :right; margin-top :10px">
+                                                        Simpan
+                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLongTitle">Konfirmasi</h5>
+                                                                    <button type="submit" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
                                                                 </div>
-                                                                <div>
-                                                                    <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
+                                                                <div class="modal-body">
+                                                                    Apakah anda yakin ingin menyimpan data klien ini?
+                                                                </div>
+                                                                <div class="modal-footer ">
+                                                                    <div>
+                                                                        <input type="submit" name="tolak" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../pegawai/dataklienar.php">
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -248,10 +295,6 @@ $row = pg_fetch_array($sql); ?>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-
-
-
 
                                 </form><!-- End General Form Elements -->
                             </div>
@@ -259,14 +302,15 @@ $row = pg_fetch_array($sql); ?>
                         </div>
             </section>
             <?php if (isset($_POST['simpan'])) {
-                $id_lapas = $_POST['id_lapas'];
-                $nama_lapas = $_POST['nama_lapas'];
-                $alamat = $_POST['alamat'];
+                $statuss = $_POST['status'];
 
-                $sql = pg_query($conn, "UPDATE lapas SET id_lapas='$id_lapas', nama_lapas='$nama_lapas', alamat='$alamat' WHERE id_lapas = '$id_lapas'");
+                $sql = pg_query(
+                    $conn,
+                    "UPDATE litmas SET id_status='$statuss' WHERE id_litmas = '$id_litmas'"
+                );
 
                 if ($sql) {
-                    echo "<script>alert('Data berhasil diedit');window.location='../adminbps/lapas.php';</script>";
+                    echo "<script>alert('Data berhasil diedit');window.location='../pegawai/bka-diversi.php';</script>";
                 } else {
                     echo pg_last_error($conn);
                 }
@@ -307,9 +351,7 @@ $row = pg_fetch_array($sql); ?>
     <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {
-        echo 'maaf Anda belum login.';
-    }
-?>
+<?php } else {echo 'maaf Anda belum login.';}
+    ?>
 
 </html>
