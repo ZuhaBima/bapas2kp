@@ -192,7 +192,7 @@
               <table class="table table-bordered">
                 <thead>
                   <tr align="center">
-                    <th scope="col">Id Pegawai</th>
+                    <th scope="col">NIP</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Jabatan</th>
                     <th scope="col">Edit</th>
