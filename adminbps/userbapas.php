@@ -192,7 +192,7 @@
               <table class="table table-bordered">
                 <thead>
                   <tr align="center">
-                    <th scope="col">Id Pegawai</th>
+                    <th scope="col">NIP</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Jabatan</th>
                     <th scope="col">Edit</th>
@@ -201,13 +201,9 @@
                 </thead>
                 <tbody>
                   <?php
-                  $result = pg_query(
-                    $conn,
-                    'SELECT * FROM pegawai '
-                  );
+                  $result = pg_query($conn, 'SELECT * FROM pegawai ');
 
-                  while ($row = pg_fetch_array($result)) {
-                  ?>
+                  while ($row = pg_fetch_array($result)) { ?>
 
                     <tr align="center">
                       <td><?= $row['nip'] ?></td>
@@ -215,17 +211,20 @@
                       <td><?= $row['jabatan'] ?></td>
                       <td>
                         <div class="con">
-                          <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/edituser.php?nip=<?= $row['nip'] ?>"></a>
+                          <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/edituser.php?nip=<?= $row[
+                              'nip'
+                          ] ?>"></a>
                       </td>
                       <td>
-                        <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/deleteuser.php?nip=<?= $row['nip'] ?>"></a>
+                        <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/deleteuser.php?nip=<?= $row[
+                            'nip'
+                        ] ?>"></a>
                       </td>
             </div>
             </td>
             </tr>
-          <?php
-                  }
-          ?>
+          <?php }
+                  ?>
           </tbody>
           </table>
           <!-- End Default Table Example -->
@@ -269,9 +268,7 @@
   <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {
-    echo 'maaf Anda belum login.';
-  }
-?>
+<?php } else {echo 'maaf Anda belum login.';}
+  ?>
 
 </html>
