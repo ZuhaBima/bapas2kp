@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<?php include '../config.php';
-$query = pg_query($conn, "SELECT max (id_litmas) as id_litmas FROM litmas");
+<?php
+include '../config.php';
+$query = pg_query($conn, 'SELECT max (id_litmas) as id_litmas FROM litmas');
 $row = pg_fetch_array($query);
 $kode = $row['id_litmas'];
-$id = $kode + 1; ?>
+$id = $kode + 1;
+?>
 
 <html lang="en">
 
@@ -148,24 +150,6 @@ if ($_SESSION['status'] == 'login') { ?>
         </ul>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/jenisLitmas.php">
-          <i class="bi bi-book"></i>
-          <span>Jenis Litmas</span>
-        </a>
-
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/klien.php">
-          <i class="bi bi-person"></i>
-          <span>Klien</span>
-        </a>
-
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="../adminbps/status.php">
-          <i class="bi bi-activity"></i>
-          <span>Status</span>
-        </a>
-
         <li class="nav-item">
         <a class="nav-link collapsed" href="../adminbps/Lapas.php">
           <i class="bi bi-file-code-fill"></i>
@@ -219,7 +203,7 @@ if ($_SESSION['status'] == 'login') { ?>
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="id_litmas" value="<?php echo $id ?>" readonly>
+                      <input type="text" class="form-control" name="id_litmas" value="<?php echo $id; ?>" readonly>
                     </div>
                   </div>
                   <br>

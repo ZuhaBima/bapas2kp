@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
-<?php include '../config.php';
-include '../search.php'; ?>
+<?php
+include '../config.php';
+include '../search.php';
+?>
 <html lang="en">
 
 <head>
@@ -144,22 +146,6 @@ include '../search.php'; ?>
         </ul>
       </li><!-- End Forms Nav -->
 
-      <li class="nav-heading">Pages</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../pegawai/layanan.php">
-          <i class="bi bi-person"></i>
-          <span>Layanan</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../pegawai/tentang.php">
-          <i class="bi bi-question-circle"></i>
-          <span>Tentang</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
-
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
@@ -204,46 +190,48 @@ include '../search.php'; ?>
         <tbody>
           <?php
           $result = pg_query(
-            $conn,
-            'SELECT * FROM litmas  WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
+              $conn,
+              'SELECT * FROM litmas  WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
           $result2 = pg_query(
-            $conn,
-            'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
+              $conn,
+              'SELECT nama_pegawai FROM pegawai INNER JOIN litmas ON pegawai.nip = litmas.nip WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
           $result3 = pg_query(
-            $conn,
-            'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
+              $conn,
+              'SELECT nama_lapas FROM lapas INNER JOIN litmas ON lapas.id_lapas = litmas.id_lapas WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
           $result4 = pg_query(
-            $conn,
-            'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
+              $conn,
+              'SELECT jenis_kasus FROM kasus INNER JOIN litmas ON kasus.id_kasus = litmas.id_kasus WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
           $result5 = pg_query(
-            $conn,
-            'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
+              $conn,
+              'SELECT nama_status_litmas FROM status_litmas INNER JOIN litmas ON status_litmas.id_status = litmas.id_status WHERE id_jenis_litmas = 4 AND id_jenis_klien= 2 ORDER BY id_litmas ASC'
           );
 
           while ($row = pg_fetch_array($result)) {
 
-            $row2 = pg_fetch_array($result2);
-            $row3 = pg_fetch_array($result3);
-            $row4 = pg_fetch_array($result4);
-            $row5 = pg_fetch_array($result5);
-          ?>
+              $row2 = pg_fetch_array($result2);
+              $row3 = pg_fetch_array($result3);
+              $row4 = pg_fetch_array($result4);
+              $row5 = pg_fetch_array($result5);
+              ?>
 
             <tr align="center">
               <td><?= $row['nama_klien'] ?></td>
               <td><?= $row3['nama_lapas'] ?></td>
               <td><?= $row4['jenis_kasus'] ?></td>
               <td><?= $row2['nama_pegawai'] ?></td>
-              <!-- <td><span class="badge rounded-pill bg-secondary"><?= $row5['nama_status_litmas'] ?></span></td> -->
+              <!-- <td><span class="badge rounded-pill bg-secondary"><?= $row5[
+                  'nama_status_litmas'
+              ] ?></span></td> -->
               <td>
                 <?php if (
-                  $row['id_status'] == 1
+                    $row['id_status'] == 1
                 ) { ?><span class="badge rounded-pill bg-secondary">Sedang Diproses</span>
                 <?php } elseif (
-                  $row['id_status'] == 2
+                    $row['id_status'] == 2
                 ) { ?><span class="badge rounded-pill bg-primary">Telah Dikirim</span>
                 <?php } else { ?><span class="badge rounded-pill bg-danger">Ditolak</span>
                 <?php } ?>
@@ -252,7 +240,9 @@ include '../search.php'; ?>
               <td>
 
                 <div class="con">
-                  <a class="bi bi-pencil-square bg-icon-primary " href="../pegawai/bkd-statusar.php?id_litmas=<?= $row['id_litmas'] ?>" style="margin-bottom: 5px; color :blue " role="button"></a>
+                  <a class="bi bi-pencil-square bg-icon-primary " href="../pegawai/bkd-statusar.php?id_litmas=<?= $row[
+                      'id_litmas'
+                  ] ?>" style="margin-bottom: 5px; color :blue " role="button"></a>
                 </div>
               </td>
             </tr>
@@ -296,9 +286,7 @@ include '../search.php'; ?>
   <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {
-    echo 'maaf Anda belum login.';
-  }
-?>
+<?php } else {echo 'maaf Anda belum login.';}
+  ?>
 
 </html>
