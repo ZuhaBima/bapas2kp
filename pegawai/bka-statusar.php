@@ -183,18 +183,14 @@ $row = pg_fetch_array($sql);
                                     <div class="row mb-6">
                                         <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row[
-                                                'id_litmas'
-                                            ]; ?>" required>
+                                            <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row['id_litmas']; ?>" required>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row mb-6">
                                         <label for="inputText" class="col-sm-2 col-form-label" required>Nama Klien</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row[
-                                                'nama_klien'
-                                            ]; ?>" required>
+                                            <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row['nama_klien']; ?>" required>
                                         </div>
                                     </div>
                                     <br>
@@ -229,16 +225,12 @@ $row = pg_fetch_array($sql);
                                                         $status
                                                     )
                                                 ) { ?>
-                                                    <option value="<?php echo $row2[
-                                                        'id_status'
-                                                    ]; ?>" <?php if (
-    $row['id_status'] == $row2['id_status']
-) {
-    echo 'selected';
-} ?>>
-                                                        <?php echo $row2[
-                                                            'nama_status_litmas'
-                                                        ]; ?>
+                                                    <option value="<?php echo $row2['id_status']; ?>" <?php if (
+                                                                                                            $row['id_status'] == $row2['id_status']
+                                                                                                        ) {
+                                                                                                            echo 'selected';
+                                                                                                        } ?>>
+                                                        <?php echo $row2['nama_status_litmas']; ?>
                                                     </option>
                                                 <?php }
                                                 ?>
@@ -267,7 +259,7 @@ $row = pg_fetch_array($sql);
                                                                 </div>
                                                                 <div class="modal-footer ">
                                                                     <div>
-                                                                        <input type="submit" name="tolak" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../pegawai/dataklienar.php">
+                                                                        <input type="submit" name="tolak" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../pegawai/bka-statusar.php">
                                                                     </div>
                                                                     <div>
                                                                         <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
@@ -335,7 +327,9 @@ $row = pg_fetch_array($sql);
     <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {echo 'maaf Anda belum login.';}
-    ?>
+<?php } else {
+        echo 'maaf Anda belum login.';
+    }
+?>
 
 </html>

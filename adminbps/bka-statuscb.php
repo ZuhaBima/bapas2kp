@@ -239,10 +239,10 @@ $row = pg_fetch_array($sql);
                         );
                         while ($row2 = pg_fetch_assoc($lapas)) { ?>
                           <option value="<?php echo $row2['id_lapas']; ?>" <?php if (
-                                    $row['id_lapas'] == $row2['id_lapas']
-                                  ) {
-                                    echo 'selected';
-                                  } ?>>
+                                                                              $row['id_lapas'] == $row2['id_lapas']
+                                                                            ) {
+                                                                              echo 'selected';
+                                                                            } ?>>
                             <?php echo $row2['nama_lapas']; ?>
                           </option>
                         <?php }
@@ -289,10 +289,10 @@ $row = pg_fetch_array($sql);
                         );
                         while ($row2 = pg_fetch_assoc($kasus)) { ?>
                           <option value="<?php echo $row2['id_kasus']; ?>" <?php if (
-                                    $row['id_kasus'] == $row2['id_kasus']
-                                  ) {
-                                    echo 'selected';
-                                  } ?>>
+                                                                              $row['id_kasus'] == $row2['id_kasus']
+                                                                            ) {
+                                                                              echo 'selected';
+                                                                            } ?>>
                             <?php echo $row2['jenis_kasus']; ?>
                           </option>
                         <?php }
@@ -314,10 +314,10 @@ $row = pg_fetch_array($sql);
                         );
                         while ($row2 = pg_fetch_assoc($status)) { ?>
                           <option value="<?php echo $row2['id_status']; ?>" <?php if (
-                                    $row['id_status'] == $row2['id_status']
-                                  ) {
-                                    echo 'selected';
-                                  } ?>>
+                                                                              $row['id_status'] == $row2['id_status']
+                                                                            ) {
+                                                                              echo 'selected';
+                                                                            } ?>>
                             <?php echo $row2['nama_status_litmas']; ?>
                           </option>
                         <?php }
@@ -347,7 +347,7 @@ $row = pg_fetch_array($sql);
                                 </div>
                                 <div class="modal-footer ">
                                   <div>
-                                    <input type="submit" name="tolak" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/dataklienar.php">
+                                    <input type="submit" name="tolak" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/statuscb.php">
                                   </div>
                                   <div>
                                     <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">

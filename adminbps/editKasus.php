@@ -230,7 +230,7 @@ $row = pg_fetch_array($sql); ?>
                                                             </div>
                                                             <div class="modal-footer ">
                                                                 <div>
-                                                                    <input type="submit" name="simpan" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/dataklienar.php">
+                                                                    <input type="submit" name="simpan" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/editKasus.php">
                                                                 </div>
                                                                 <div>
                                                                     <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">

@@ -301,7 +301,7 @@ $id = $kode + 1;
                                 </div>
                                 <div class="modal-footer ">
                                   <div>
-                                    <input type="submit" name="tolak" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../pegawai/dataklienar.php">
+                                    <input type="submit" name="tolak" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../pegawai/bkd-datakliencmb.php">
                                   </div>
                                   <div>
                                     <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">

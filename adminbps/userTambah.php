@@ -195,7 +195,7 @@
                   <div class="row mb-6">
                     <label for="inputText" class="col-sm-2 col-form-label" required>Id Pegawai</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nip_pg" >
+                      <input type="text" class="form-control" name="nip_pg">
                     </div>
                   </div>
                   <br>
@@ -234,7 +234,7 @@
                               </div>
                               <div class="modal-footer ">
                                 <div>
-                                  <input type="submit" name="simpan" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/dataklienar.php">
+                                  <input type="submit" name="simpan" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../adminbps/userTambah.php">
                                 </div>
                                 <div>
                                   <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
@@ -256,20 +256,20 @@
             </div>
       </section>
       <?php if (isset($_POST['simpan'])) {
-          $nip = $_POST['nip_pg'];
-          $nama_peg = $_POST['nama_pg'];
-          $jabatan = $_POST['jabatan_pg'];
+        $nip = $_POST['nip_pg'];
+        $nama_peg = $_POST['nama_pg'];
+        $jabatan = $_POST['jabatan_pg'];
 
-          $sql = pg_query(
-              $conn,
-              "INSERT INTO pegawai (nip,nama_pegawai,jabatan) values ('$nip','$nama_peg', '$jabatan')"
-          );
+        $sql = pg_query(
+          $conn,
+          "INSERT INTO pegawai (nip,nama_pegawai,jabatan) values ('$nip','$nama_peg', '$jabatan')"
+        );
 
-          if ($sql) {
-              echo "<script>alert('Data berhasil ditambah');window.location='../adminbps/userbapas.php';</script>";
-          } else {
-              echo pg_last_error($conn);
-          }
+        if ($sql) {
+          echo "<script>alert('Data berhasil ditambah');window.location='../adminbps/userbapas.php';</script>";
+        } else {
+          echo pg_last_error($conn);
+        }
       } ?>
 
 
@@ -309,7 +309,9 @@
   <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {echo 'maaf Anda belum login.';}
-  ?>
+<?php } else {
+    echo 'maaf Anda belum login.';
+  }
+?>
 
 </html>
