@@ -160,8 +160,8 @@ $row = pg_fetch_array($sql);
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../pegawai/dashboard.php">Beranda</a></li>
                     <li class="breadcrumb-item">BKA</li>
-                    <li class="breadcrumb-item"><a href="../pegawai/bka-asimilasi rumah.php">Cuti Bersyarat</a></li>
-                    <li class="breadcrumb-item"><a href="../pegawai/bka-statusar.php">Ubah Status Klien</a></li>
+                    <li class="breadcrumb-item"><a href="../pegawai/bka-cuti bersyarat.php">Cuti Bersyarat</a></li>
+                    <li class="breadcrumb-item"><a href="../pegawai/bka-statuscb.php">Ubah Status Klien</a></li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -183,14 +183,18 @@ $row = pg_fetch_array($sql);
                                     <div class="row mb-6">
                                         <label for="inputText" class="col-sm-2 col-form-label" required>Nomor Litmas</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row['id_litmas']; ?>" required>
+                                            <input type="text" class="form-control" readonly name="id_litmas" value="<?php echo $row[
+                                                'id_litmas'
+                                            ]; ?>" required>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row mb-6">
                                         <label for="inputText" class="col-sm-2 col-form-label" required>Nama Klien</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row['nama_klien']; ?>" required>
+                                            <input type="text" class="form-control" readonly name="nama_klien" value="<?php echo $row[
+                                                'nama_klien'
+                                            ]; ?>" required>
                                         </div>
                                     </div>
                                     <br>
@@ -225,12 +229,16 @@ $row = pg_fetch_array($sql);
                                                         $status
                                                     )
                                                 ) { ?>
-                                                    <option value="<?php echo $row2['id_status']; ?>" <?php if (
-                                                                $row['id_status'] == $row2['id_status']
-                                                            ) {
-                                                                echo 'selected';
-                                                            } ?>>
-                                                        <?php echo $row2['nama_status_litmas']; ?>
+                                                    <option value="<?php echo $row2[
+                                                        'id_status'
+                                                    ]; ?>" <?php if (
+    $row['id_status'] == $row2['id_status']
+) {
+    echo 'selected';
+} ?>>
+                                                        <?php echo $row2[
+                                                            'nama_status_litmas'
+                                                        ]; ?>
                                                     </option>
                                                 <?php }
                                                 ?>
@@ -327,9 +335,7 @@ $row = pg_fetch_array($sql);
     <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {
-        echo 'maaf Anda belum login.';
-    }
-?>
+<?php } else {echo 'maaf Anda belum login.';}
+    ?>
 
 </html>

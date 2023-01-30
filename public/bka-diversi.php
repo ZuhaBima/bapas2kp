@@ -169,7 +169,7 @@ include '../search.php';
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../public/Dashboard.php">Home</a></li>
           <li class="breadcrumb-item">BKA</li>
-          <li class="breadcrumb-item"><a href="../public/bka-asimilasi rumah.php">Diversi</a></li>
+          <li class="breadcrumb-item"><a href="../public/bka-diversi.php">Diversi</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

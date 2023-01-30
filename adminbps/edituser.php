@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<?php include '../config.php';
+<?php
+include '../config.php';
 $nip = $_GET['nip'];
 $sql = pg_query($conn, "SELECT * from pegawai where nip='$nip'");
-$row = pg_fetch_array($sql); ?>
+$row = pg_fetch_array($sql);
+?>
 
 <html lang="en">
 
@@ -175,7 +177,7 @@ $row = pg_fetch_array($sql); ?>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
-                    <li class="breadcrumb-item">Pegawai</li>
+                    <li class="breadcrumb-item"><a href="../adminbps/userbapas.php">Pegawai</a></li>
                     <li class="breadcrumb-item"><a href="../adminbps/userbapas.php">Edit Data Pegawai</a></li>
                 </ol>
             </nav>
@@ -198,21 +200,27 @@ $row = pg_fetch_array($sql); ?>
                                     <div class="row mb-6">
                                         <label for="inputText" class="col-sm-2 col-form-label" required>NIP</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="nip" value="<?php echo $row['nip']; ?>">
+                                            <input type="text" class="form-control" name="nip" value="<?php echo $row[
+                                                'nip'
+                                            ]; ?>">
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row mb-6">
                                         <label for="inputText" class="col-sm-2 col-form-label" required>Nama Pegawai</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="nama_pg" value="<?php echo $row['nama_pegawai']; ?>">
+                                            <input type="text" class="form-control" name="nama_pg" value="<?php echo $row[
+                                                'nama_pegawai'
+                                            ]; ?>">
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row mb-6">
                                         <label for="inputText" class="col-sm-2 col-form-label" required>Jabatan Pegawai</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="jabatan_pg" value="<?php echo $row['jabatan']; ?>">
+                                            <input type="text" class="form-control" name="jabatan_pg" value="<?php echo $row[
+                                                'jabatan'
+                                            ]; ?>">
                                         </div>
                                     </div>
                                     <div class="container-fluid py-5">
@@ -263,7 +271,10 @@ $row = pg_fetch_array($sql); ?>
                 $nama_peg = $_POST['nama_pg'];
                 $jabatan = $_POST['jabatan_pg'];
 
-                $sql = pg_query($conn, "UPDATE pegawai SET nip='$nip', nama_pegawai='$nama_peg', jabatan='$jabatan' WHERE nip = '$nip'");
+                $sql = pg_query(
+                    $conn,
+                    "UPDATE pegawai SET nip='$nip', nama_pegawai='$nama_peg', jabatan='$jabatan' WHERE nip = '$nip'"
+                );
 
                 if ($sql) {
                     echo "<script>alert('Data berhasil diedit');window.location='../adminbps/userbapas.php';</script>";
@@ -307,9 +318,7 @@ $row = pg_fetch_array($sql); ?>
     <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {
-        echo 'maaf Anda belum login.';
-    }
-?>
+<?php } else {echo 'maaf Anda belum login.';}
+    ?>
 
 </html>

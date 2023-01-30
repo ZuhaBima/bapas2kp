@@ -203,12 +203,11 @@
                 <tbody>
                   <?php
                   $result = pg_query(
-                    $conn,
-                    'SELECT * FROM lapas '
+                      $conn,
+                      'SELECT * FROM lapas ORDER BY id_lapas ASC'
                   );
 
-                  while ($row = pg_fetch_array($result)) {
-                  ?>
+                  while ($row = pg_fetch_array($result)) { ?>
 
                     <tr align="center">
                       <td><?= $row['id_lapas'] ?></td>
@@ -216,17 +215,20 @@
                       <td><?= $row['alamat'] ?></td>
                       <td>
                         <div class="con">
-                          <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/editLapas.php?id_lapas=<?= $row['id_lapas'] ?>"></a>
+                          <a class="bi bi-pencil-square bg-icon-primary" href="../adminbps/editLapas.php?id_lapas=<?= $row[
+                              'id_lapas'
+                          ] ?>"></a>
                       </td>
                       <td>
-                        <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/hapusLapas.php?id_lapas=<?= $row['id_lapas'] ?>"></a>
+                        <a onclick="return confirm('Yakin menghapus data ini ?')" class="bi bi-trash-fill bg-icon-danger" style="color: red;" href="../adminbps/hapusLapas.php?id_lapas=<?= $row[
+                            'id_lapas'
+                        ] ?>"></a>
                       </td>
             </div>
             </td>
             </tr>
-          <?php
-                  }
-          ?>
+          <?php }
+                  ?>
           </tbody>
           </table>
           <!-- End Default Table Example -->
@@ -268,9 +270,7 @@
   <script src="../assets/js/main.js"></script>
 
 </body>
-<?php } else {
-    echo 'maaf Anda belum login.';
-  }
-?>
+<?php } else {echo 'maaf Anda belum login.';}
+  ?>
 
 </html>

@@ -268,12 +268,14 @@ $row = pg_fetch_array($sql);
                                                                     Apakah anda yakin ingin menyimpan data klien ini?
                                                                 </div>
                                                                 <div class="modal-footer ">
+                                                                <div class="modal-footer ">
                                                                     <div>
-                                                                        <input type="submit" name="tolak" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../pegawai/bka-statuscmb.php>
+                                                                        <input type="submit" name="tolak" value="Tidak" class="btn btn-" style="width: 120px; float :right; margin-top :10px" href="../pegawai/bka-statuscb.php">
                                                                     </div>
                                                                     <div>
                                                                         <input type="submit" name="simpan" value="Simpan" class="btn btn-primary" style="width: 120px; float :right; margin-top :10px">
                                                                     </div>
+                                                                </div>
                                                                 </div>
                                                             </div>
                                                         </div>

@@ -201,7 +201,10 @@
                 </thead>
                 <tbody>
                   <?php
-                  $result = pg_query($conn, 'SELECT * FROM pegawai ');
+                  $result = pg_query(
+                      $conn,
+                      'SELECT * FROM pegawai ORDER BY nip ASC'
+                  );
 
                   while ($row = pg_fetch_array($result)) { ?>
 

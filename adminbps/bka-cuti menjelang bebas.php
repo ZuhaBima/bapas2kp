@@ -175,7 +175,7 @@ include '../search.php';
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../adminbps/dashboard.php">Beranda</a></li>
           <li class="breadcrumb-item">BKA</li>
-          <li class="breadcrumb-item"><a href="../adminbps/bka-cuti bersyarat.php">Cuti Menjelang Bebas</a></li>
+          <li class="breadcrumb-item"><a href="../adminbps/bka-cuti menjelang bebas.php">Cuti Menjelang Bebas</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
