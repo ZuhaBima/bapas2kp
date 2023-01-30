@@ -55,7 +55,7 @@
       <ul class="d-flex align-items-center">
 
 
-        <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
+        <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Login</a>
   </header><!-- End Header -->
 
 
@@ -158,14 +158,14 @@
 
   <main id="main" class="main">
 
-    <div class="pagetitle">
-      <h1>Tentang</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../public/Dashboard.php">Beranda</a></li>
-          <li class="breadcrumb-item"><a href="../public/tentang.php">Tentang</a></li>
-        </ol>
-      </nav>
+<div class="pagetitle">
+  <h1>Tentang</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../public/Dashboard.php">Beranda</a></li>
+      <li class="breadcrumb-item"><a href="../public/tentang.php">Tentang</a></li>
+    </ol>
+  </nav>
     </div><!-- End Page Title -->
     <div class="accordion" id="accordionExample">
       <div class="accordion-item">
