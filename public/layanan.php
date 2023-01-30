@@ -55,7 +55,7 @@
       <ul class="d-flex align-items-center">
 
 
-        <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Logout</a>
+        <a class="btn btn-outline-light" style="margin-right: 10px" href="../loginbps.php">Login</a>
   </header><!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
@@ -158,7 +158,7 @@
 
   <main id="main" class="main">
 
-    <div class="pagetitle">
+  <div class="pagetitle">
       <h1>Layanan</h1>
       <nav>
         <ol class="breadcrumb">
@@ -167,12 +167,13 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    <div class="card" style="width: 900px; ">
-      <div class="row">
-        <div class="col-md-4 card-body">
-          <h5 class="card-title">Saran dan Pengaduan</h5>
-          <p class="card-text">Untuk Saran dan Pengaduan dapat menghubungi melalui <a href="https://bapaspekanbaru.kemenkumham.go.id/hubungi-kami">https://bapaspekanbaru.kemenkumham.go.id/hubungi-kami</a>
-        </div>
+    <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Saran dan Pengaduan</h5>
+    <p class="card-text">Untuk Saran dan Pengaduan dapat menghubungi melalui <a href="https://bapaspekanbaru.kemenkumham.go.id/hubungi-kami">https://bapaspekanbaru.kemenkumham.go.id/hubungi-kami</a>
+  </div>
+</div>
+
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
